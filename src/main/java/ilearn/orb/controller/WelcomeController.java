@@ -37,10 +37,6 @@ public class WelcomeController {
 		model.setViewName("index");
 		//model.addObject("name", name);
 
-		System.err.println(locale.toString());
-		System.err.println(session.getAttribute("username"));
-		System.err.println(session.getAttribute("auth"));
-
 		return model;
 
 	}

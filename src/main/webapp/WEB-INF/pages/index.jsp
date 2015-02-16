@@ -30,18 +30,8 @@
       <div class="container">
         <h1>iLearnRW On Line Resource Bank</h1>
         
-        <h3>
-welcome.springmvc : <spring:message code="welcome.message" text="default text" />
-</h3>
-<h2>Hello ${name}, how are you?</h2>
-     
-        
-        <p>This site was developed as part of the iLearnRW project.
-        It is a resource for teachers, parents and students who want help with phonics.
-		Unlike standard text readability tools online, this site not only displays a total score for any text but also gives a heatmap of difficulties and can link any individual word to potential problems.
-		It can also help by giving examples of words with similar features. You can check any word.
-		Furthermore, you can learn more about phonics by seeing the big picture.</p>
-        <a class="btn btn-primary btn-lg" href="http://www.ilearnrw.eu/" role="button" target="_blank">Learn more &raquo;</a></p>
+        <p> <spring:message code="index.message" text="default text" /> </p>
+        <a class="btn btn-primary btn-lg" href="http://www.ilearnrw.eu/" role="button" target="_blank"><spring:message code="index.learnmore" text="default text" /> &raquo;</a></p>
       </div>
     </div>
 
@@ -49,37 +39,37 @@ welcome.springmvc : <spring:message code="welcome.message" text="default text" /
       <!-- Example row of columns -->
       <div class="row">
         <div class="col-md-4">
-          <h2>Analyze a text</h2>
-          <p>Enter a text to find out how difficult it is for your students.</p>
+          <h2><spring:message code="quickinfo.analyze.title" text="default text" /></h2>
+          <p><spring:message code="quickinfo.analyze.text" text="default text" /></p>
           <ul>
-				<li>Readability scores</li>
-				<li>Time estimate</li>
-				<li>Vital statistics</li>
-				<li>Difficulty heatmap</li>          
+				<li><spring:message code="quickinfo.analyze.readability" text="default text" /></li>
+				<li><spring:message code="quickinfo.analyze.time" text="default text" /></li>
+				<li><spring:message code="quickinfo.analyze.stats" text="default text" /></li>
+				<li><spring:message code="quickinfo.analyze.heatmap" text="default text" /></li>          
           </ul>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+          <p><a class="btn btn-default" href="#" role="button"><spring:message code="general.viewdetails" text="default text" /> &raquo;</a></p>
         </div>
         <div class="col-md-4">
-          <h2>Check a word</h2>
-          <p>Check what sort of difficulties a word may present.</p>
+          <h2><spring:message code="quickinfo.checkword.title" text="default text" /></h2>
+          <p><spring:message code="quickinfo.checkword.text" text="default text" /></p>
           <ul>
-				<li>Pronunciation</li>
-				<li>Syllables</li>
-				<li>Phonic breakdown</li>
-				<li>Frequency information</li>          
+				<li><spring:message code="quickinfo.checkword.pronunciation" text="default text" /></li>
+				<li><spring:message code="quickinfo.checkword.syllables" text="default text" /></li>
+				<li><spring:message code="quickinfo.checkword.phonic" text="default text" /></li>
+				<li><spring:message code="quickinfo.checkword.freq" text="default text" /></li>          
           </ul>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+          <p><a class="btn btn-default" href="#" role="button"><spring:message code="general.viewdetails" text="default text" /> &raquo;</a></p>
        </div>
         <div class="col-md-4">
-          <h2>Check a structure</h2>
-          <p>Find out a specific phonic feature or set of feature.</p>
+          <h2><spring:message code="quickinfo.annotation.title" text="default text" /></h2>
+          <p><spring:message code="quickinfo.annotation.text" text="default text" /></p>
           <ul>
-				<li>Complete list of phonic features of English</li>
-				<li>Examples of frequent words using that feature</li>
-				<li>Similar phonic features</li>          
+				<li><spring:message code="quickinfo.annotation.rules" text="default text" /></li>
+				<li><spring:message code="quickinfo.annotation.highlight" text="default text" /></li>
+				<li><spring:message code="quickinfo.annotation.multiple" text="default text" /></li>          
           </ul>
-          <br>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+
+          <p><a class="btn btn-default" href="#" role="button"><spring:message code="general.viewdetails" text="default text" /> &raquo;</a></p>
         </div>
       </div>
 

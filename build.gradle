@@ -27,6 +27,7 @@ dependencies {
 	compile 'org.springframework:spring-webmvc:4.1.4.RELEASE'
 	compile 'jstl:jstl:1.2'
 	compile 'commons-io:commons-io:2.4'
+	compile 'com.google.code.gson:gson:2.3.1'
 	compile 'org.json:json:20141113'
    	compile name: 'ilearnrw'
 		

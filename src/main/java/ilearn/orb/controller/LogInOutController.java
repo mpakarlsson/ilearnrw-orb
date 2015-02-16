@@ -33,6 +33,9 @@ import javax.servlet.http.HttpSession;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.i18n.SessionLocaleResolver;
 
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
+
 @Controller
 public class LogInOutController {
 
@@ -47,21 +50,22 @@ public class LogInOutController {
 	}
 
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
-	public ModelAndView login(@RequestParam String username, 
+	public ModelAndView login(@RequestParam String username,
 			@RequestParam String pass, ModelMap modelMap,
 			HttpServletRequest request, HttpSession session) {
 		ModelAndView model = new ModelAndView();
-		if (session.getAttribute("username") != null){
-			System.out.println(session.getAttribute("username"));
-			//model.setViewName("redirect:/");
-			//return model;
-		}
-		try {				
+
+		try {
 			String jsonTokens = UserServices.getToken(username, pass);
 			JSONObject jsonObj = new JSONObject(jsonTokens);
 			String token = jsonObj.getString("auth");
 			session.setAttribute("username", username);
 			session.setAttribute("auth", token);
+
+			String json = UserServices.getDetails(username);
+			session.setAttribute("id", (new JsonParser().parse(json)
+					.getAsJsonObject()).get("id").toString());
+
 			model.setViewName("redirect:/");
 		} catch (Exception e) {
 			model.setViewName("login");
@@ -75,28 +79,10 @@ public class LogInOutController {
 	public ModelAndView logout(HttpSession session) {
 		session.removeAttribute("auth");
 		session.removeAttribute("username");
+		session.removeAttribute("id");
 		ModelAndView model = new ModelAndView();
 		model.setViewName("logout");
 		return model;
 	}
-	
-	/*@RequestMapping(value = "/login", method = RequestMethod.POST)
-	public ModelAndView login(@RequestParam("username") String username,
-			@RequestParam("pass") String pass) {
-		try{
-			System.err.println(username);
-			System.err.println(pass);
-			ModelAndView model = new ModelAndView();
-			model.setViewName("login");
-			return model;
-		}
-		catch(Exception e){
-			System.err.println(e.toString());
-			ModelAndView model = new ModelAndView();
-			model.setViewName("login");
-			return model;
-		}
-
-	}*/
 
 }

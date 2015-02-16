@@ -5,12 +5,6 @@ package ilearn.orb.services.external;
 
 import ilearn.orb.services.external.utils.Connection;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.InputStream;
-
-import org.apache.commons.io.IOUtils;
 
 /**
  * @author chris
@@ -31,7 +25,6 @@ public class UserServices {
 
 	public static String getProfiles(int id, String token) throws Exception{
 		return Connection.sendGet("application/"+id+"/profiles?token=" + token);
-		//return loadUserList(id);
 	}
 
 	public static String getProfileUpdates(String username) throws Exception{
@@ -40,19 +33,5 @@ public class UserServices {
 
 	public static String getDetails(String username) throws Exception{
 		return Connection.sendGet("/user/details/"+username);
-	}
-	
-	private static String loadUserList(int id){
-		InputStream is;
-		try {
-			is = new FileInputStream("id_"+id);
-			String jsonTxt = IOUtils.toString(is);
-			return jsonTxt;
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		return null;
 	}
 }
