@@ -13,6 +13,7 @@ package ilearn.orb.controller;
 import ilearn.orb.entities.User;
 import ilearn.orb.services.external.UserServices;
 import ilearn.orb.services.external.utils.UtilDateDeserializer;
+import ilearnrw.user.profile.UserProfile;
 
 import java.text.DateFormat;
 import java.util.Locale;
@@ -81,10 +82,11 @@ public class ProfilesController {
             		selectedStudent = student;
             		break;
             	}
-            	else{
-            		System.out.println(student.getId());
-            	}
             modelMap.put("selectedStudent", selectedStudent);
+            
+            json = UserServices.getJsonProfile(userid, session.getAttribute("auth").toString());
+            UserProfile p = new Gson().fromJson(json,UserProfile.class);
+            modelMap.put("selectedProfile", p);
 
 		} catch (NumberFormatException e) {
 			e.printStackTrace();

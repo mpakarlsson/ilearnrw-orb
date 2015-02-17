@@ -11,21 +11,21 @@
 					class="icon-bar"></span> <span class="icon-bar"></span> <span
 					class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="/">iLearnRW</a>
+			<a class="navbar-brand" href="${pageContext.request.contextPath}/">iLearnRW</a>
 		</div>
 		<div id="navbar" class="navbar-collapse collapse">
 			<ul class="nav navbar-nav">
-				<li class="active"><a href="profiles?lang=${pageContext.response.locale}"><spring:message code="navbar.profile" text="default text" /></a></li>
+				<li class="active"><a href="${pageContext.request.contextPath}/profiles?lang=${pageContext.response.locale}"><spring:message code="navbar.profile" text="default text" /></a></li>
 				<li><a href="#about"><spring:message code="navbar.classification" text="default text" /></a></li>
 				<li><a href="#contact"><spring:message code="navbar.annotation" text="default text" /></a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
 				<% if((String) request.getSession().getAttribute("username") == null) {%>
-				<li><a href="login?lang=${pageContext.response.locale}"><span
+				<li><a href="${pageContext.request.contextPath}/login?lang=${pageContext.response.locale}"><span
 						class="glyphicon glyphicon-log-in"></span> <spring:message code="navbar.login" text="default text" /></a></li>
 						<% }else {%>
 						<li><a href="#"><span class="glyphicon glyphicon-user"></span> <%= (String) request.getSession().getAttribute("username") %></a></li>
-				<li><a href="logout"><span class="glyphicon glyphicon-log-out"></span>
+				<li><a href="${pageContext.request.contextPath}/logout?lang=${pageContext.response.locale}"><span class="glyphicon glyphicon-log-out"></span>
 						<spring:message code="navbar.logout" text="default text" /></a></li>
 				<%} %>
 
