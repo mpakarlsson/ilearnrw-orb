@@ -1,0 +1,1689 @@
+{
+  "problemsIndex": [
+    {
+      "uri": "Φωνήματα: Σύμφωνα",
+      "severityType": "zeroToThree",
+      "type": {
+        "url": "Φωνήματα: Σύμφωνα"
+      }
+    },
+    {
+      "uri": "Φωνήματα: Φωνήεντα",
+      "severityType": "zeroToThree",
+      "type": {
+        "url": "Φωνήματα: Φωνήεντα"
+      }
+    },
+    {
+      "uri": "Οπτική Ομοιότητα",
+      "severityType": "binary",
+      "type": {
+        "url": "Οπτική Ομοιότητα"
+      }
+    },
+    {
+      "uri": "Αντιστοίχιση Γραφήματος-Φωνήματος",
+      "severityType": "zeroToThree",
+      "type": {
+        "url": "Αντιστοίχιση Γραφήματος-Φωνήματος, συμφωνικά συμπλέγματα (ομαλά / ανώμαλα)"
+      }
+    },
+    {
+      "uri": "Συλλαβισμός",
+      "severityType": "zeroToThree",
+      "type": {
+        "url": "Συλλαβισμός"
+      }
+    },
+    {
+      "uri": "Προθήματα",
+      "severityType": "zeroToThree",
+      "type": {
+        "url": "Προθήματα"
+      }
+    },
+    {
+      "uri": "Παραγωγικά Επιθήματα",
+      "severityType": "zeroToThree",
+      "type": {
+        "url": "Παραγωγικά Επιθήματα"
+      }
+    },
+    {
+      "uri": "Κλιτικά/Γραμματικά Επιθήματα",
+      "severityType": "zeroToThree",
+      "type": {
+        "url": "Κλιτικά/Γραμματικά Επιθήματα"
+      }
+    },
+    {
+      "uri": "Γραμματικές/Λειτουργικές Λέξεις",
+      "severityType": "zeroToThree",
+      "type": {
+        "url": "Γραμματικές/Λειτουργικές Λέξεις"
+      }
+    }
+  ],
+  "problems": [
+    [
+      {
+        "descriptions": [
+          "t-d",
+          "t-nd",
+          "p-b",
+          "p-mb"
+        ],
+        "problemType": "SOUND_SIMILARITY",
+        "humanReadableDescription": "Λέξεις που περιέχουν τους ήχους \'p\'-\'b\' ή \'t\'-\'d\' (π.χ. τείνω-ντύνω)", 
+        "cluster": 0,
+        "character":"character0"
+      },
+      {
+        "descriptions": [
+          "k-p",
+          "k-t"
+        ],
+        "problemType": "SOUND_SIMILARITY",
+        "humanReadableDescription": "Λέξεις που περιέχουν τους ήχους \'k\'-\'t\' ή \'k\'-\'p\' (π.χ. κάνω-πάνω)", 
+        "cluster": 0,
+        "character":"character0"
+      },
+      {
+        "descriptions": [
+          "m-n",
+          "m-ɲ"
+        ],
+        "problemType": "SOUND_SIMILARITY",
+        "humanReadableDescription": "Λέξεις που περιέχουν τους ήχους \'m\'-\'n\' (π.χ. μένω-Νέμο)", 
+        "cluster": 0,
+        "character":"character0"
+      },
+      {
+        "descriptions": [
+          "θ-ð",
+          "f-v",
+          "χ-γ"
+        ],
+        "problemType": "SOUND_SIMILARITY",
+        "humanReadableDescription": "Λέξεις που περιέχουν τους ήχους \'χ\'-\'γ\', \'f\'-\'v\' ή \'θ\'-\'ð\' (π.χ. θέλω-δένω)", 
+        "cluster": 1,
+        "character":"character0"
+      },
+      {
+        "descriptions": [
+          "k-γ",
+          "k-χ"
+        ],
+        "problemType": "SOUND_SIMILARITY",
+        "humanReadableDescription": "Λέξεις που περιέχουν τους ήχους \'k\'-\'γ\' ή \'k\'-\'χ\' (π.χ. κάνω-χάνω)", 
+        "cluster": 1,
+        "character":"character0"
+      },
+      {
+        "descriptions": [
+          "s-z"
+        ],
+        "problemType": "SOUND_SIMILARITY",
+        "humanReadableDescription": "Λέξεις που περιέχουν τους ήχους \'s\'-\'z\' (π.χ. σώνει-ζώνη)", 
+        "cluster": 2,
+        "character":"character0"
+      },
+      {
+        "descriptions": [
+          "l-r"
+        ],
+        "problemType": "SOUND_SIMILARITY",
+        "humanReadableDescription": "Λέξεις που περιέχουν τους ήχους \'l\'-\'r\' (π.χ. αράζω-αλλάζω)", 
+        "cluster": 2,
+        "character":"character0"
+      },
+      {
+        "descriptions": [
+          "ð-v",
+          "f-θ",
+          "f-v",
+          "θ-ð"
+        ],
+        "problemType": "SOUND_SIMILARITY",
+        "humanReadableDescription": "Λέξεις που περιέχουν τους ήχους \'f\'-\'θ\', \'f\' και \'v\', \'θ\'-\'ð\' ή \'ð\'-\'v\' (π.χ. βαίνω-δένω)", 
+        "cluster": 3,
+        "character":"character0"
+      },
+      {
+        "descriptions": [
+          "kt-pt"
+        ],
+        "problemType": "SOUND_SIMILARITY",
+        "humanReadableDescription": "Λέξεις που περιέχουν τους ήχους \'kt\'-\'pt\' (π.χ. κτήνος-πτηνό)", 
+        "cluster": 3,
+        "character":"character1"
+      },
+      {
+        "descriptions": [
+          "ks-ps",
+          "ks-sk",
+          "ps-sp"
+        ],
+        "problemType": "SOUND_SIMILARITY",
+        "humanReadableDescription": "Λέξεις που περιέχουν τους ήχους \'ks\'-\'ps\', \'ps\'-\'sp\' ή \'ks\'-\'sk\' (π.χ. ξυνή-σκηνή)", 
+        "cluster": 3,
+        "character":"character1"
+      },
+      {
+        "descriptions": [
+          "ðr-θr",
+          "fr-χr"
+        ],
+        "problemType": "SOUND_SIMILARITY",
+        "humanReadableDescription": "Λέξεις που περιέχουν τους ήχους \'ðr\'-\'θr\' ή \'fr\'-\'χr\' (π.χ. αφρός-ωχρός)", 
+        "cluster": 4,
+        "character":"character1"
+      },
+      {
+        "descriptions": [
+          "χθ-fθ"
+        ],
+        "problemType": "SOUND_SIMILARITY",
+        "humanReadableDescription": "Λέξεις που περιέχουν τους ήχους \'χθ\'-\'fθ\' (π.χ. χθεσινός-φθάνω)", 
+        "cluster": 4,
+        "character":"character1"
+      }
+    ],
+    [
+      {
+        "descriptions": [
+          "οϋ"
+        ],
+        "problemType": "CONTAINS",
+        "humanReadableDescription": "Λέξεις που περιέχουν τον συνδυασμό γραμμάτων \'οϋ\' (π.χ. προϋπόθεση)", 
+        "cluster": 5,
+        "character":"character2"
+      },
+      {
+        "descriptions": [
+          "αϊ",
+          "άι"
+        ],
+        "problemType": "CONTAINS",
+        "humanReadableDescription": "Λέξεις που περιέχουν τους συνδυασμούς γραμμάτων \'αϊ\' και \'άι\' (π.χ. μαϊμού)", 
+        "cluster": 5,
+        "character":"character2"
+      },
+      {
+        "descriptions": [
+          "αη"
+        ],
+        "problemType": "CONTAINS",
+        "humanReadableDescription": "Λέξεις που περιέχουν τον συνδυασμό γραμμάτων \'αη\' (π.χ. αηδόνι)", 
+        "cluster": 6,
+        "character":"character2"
+      },
+      {
+        "descriptions": [
+          "οΰ"
+        ],
+        "problemType": "CONTAINS",
+        "humanReadableDescription": "Λέξεις που περιέχουν τον συνδυασμό γραμμάτων \'οΰ\' (π.χ. προΰπαρξη)", 
+        "cluster": 6,
+        "character":"character2"
+      },
+      {
+        "descriptions": [
+          "αΐ"
+        ],
+        "problemType": "CONTAINS",
+        "humanReadableDescription": "Λέξεις που περιέχουν τον συνδυασμό γραμμάτων \'αΐ\' (π.χ. καΐκι)", 
+        "cluster": 6,
+        "character":"character2"
+      }
+    ],
+    [
+      {
+        "descriptions": [
+          "α",
+          "ά",
+          "ο",
+          "ό"
+        ],
+        "problemType": "VISUAL_SIMILARITY",
+        "humanReadableDescription": "Λέξεις που περιέχουν τους χαρακτήρες \'α\', \'ά\', \'ο\' και \'ό\' (π.χ. άποροι)", 
+        "cluster": 7,
+        "character":"character3"
+      },
+      {
+        "descriptions": [
+          "φ",
+          "θ",
+          "Θ",
+          "Β",
+          "β"
+        ],
+        "problemType": "VISUAL_SIMILARITY",
+        "humanReadableDescription": "Λέξεις που περιέχουν τους χαρακτήρες \'φ\', \'θ\' και \'β\' (π.χ. βάθος)", 
+        "cluster": 7,
+        "character":"character3"
+      },
+      {
+        "descriptions": [
+          "ψ",
+          "Ψ",
+          "ω",
+          "ώ"
+        ],
+        "problemType": "VISUAL_SIMILARITY",
+        "humanReadableDescription": "Λέξεις που περιέχουν τους χαρακτήρες \'ψ\', \'ω\' και \'ώ\' (π.χ. ψώνια)", 
+        "cluster": 7,
+        "character":"character3"
+      },
+      {
+        "descriptions": [
+          "3",
+          "ε",
+          "έ",
+          "ξ"
+        ],
+        "problemType": "VISUAL_SIMILARITY",
+        "humanReadableDescription": "Λέξεις που περιέχουν τους χαρακτήρες \'3\', \'ε\', \'έ\' και \'ξ\' (π.χ. ξεχνώ)", 
+        "cluster": 7,
+        "character":"character3"
+      },
+      {
+        "descriptions": [
+          "κ",
+          "γ",
+          "λ",
+          "χ"
+        ],
+        "problemType": "VISUAL_SIMILARITY",
+        "humanReadableDescription": "Λέξεις που περιέχουν τους χαρακτήρες \'κ\', \'γ\', \'λ\' και \'χ\' (π.χ. γλυκό)", 
+        "cluster": 7,
+        "character":"character3"
+      },
+      {
+        "descriptions": [
+          "η",
+          "ή",
+          "μ"
+        ],
+        "problemType": "VISUAL_SIMILARITY",
+        "humanReadableDescription": "Λέξεις που περιέχουν τους χαρακτήρες \'η\', \'ή\' και \'μ\' (π.χ. γραμμή)", 
+        "cluster": 7,
+        "character":"character3"
+      },
+      {
+        "descriptions": [
+          "π",
+          "Π",
+          "Τ",
+          "τ"
+        ],
+        "problemType": "VISUAL_SIMILARITY",
+        "humanReadableDescription": "Λέξεις που περιέχουν τους χαρακτήρες \'π\' και \'τ\' (π.χ. πτηνό)", 
+        "cluster": 7,
+        "character":"character3"
+      },
+      {
+        "descriptions": [
+          "δ",
+          "σ",
+          "ρ",
+          "Ρ",
+          "6"
+        ],
+        "problemType": "VISUAL_SIMILARITY",
+        "humanReadableDescription": "Λέξεις που περιέχουν τους χαρακτήρες \'δ\', \'σ\', \'ρ\' και \'6\' (π.χ. δροσερός)", 
+        "cluster": 7,
+        "character":"character3"
+      }
+    ],
+    [
+      {
+        "descriptions": [
+          "sp",
+          "st",
+          "sk"
+        ],
+        "problemType": "TWO_SYL_WORD_INITIAL_PHONEME",
+        "humanReadableDescription": "Δισύλλαβες λέξεις που ξεκινάνε με έναν από τους ήχους \'sp\', \'st\', \'sk\' (π.χ. σπίτι)", 
+        "cluster": 8,
+        "character":"character4"
+      },
+      {
+        "descriptions": [
+          "pr",
+          "tr",
+          "kr"
+        ],
+        "problemType": "TWO_SYL_WORD_INITIAL_PHONEME",
+        "humanReadableDescription": "Δισύλλαβες λέξεις που ξεκινάνε με έναν από τους ήχους \'pr\', \'tr\', \'kr\' (π.χ. κρέμα)", 
+        "cluster": 8,
+        "character":"character4"
+      },
+      {
+        "descriptions": [
+          "gr",
+          "dr",
+          "br"
+        ],
+        "problemType": "TWO_SYL_WORD_INITIAL_PHONEME",
+        "humanReadableDescription": "Δισύλλαβες λέξεις που ξεκινάνε με έναν από τους ήχους \'gr\', \'dr\', \'br\' (π.χ. γκρεμός)", 
+        "cluster": 8,
+        "character":"character4"
+      },
+      {
+        "descriptions": [
+          "fr",
+          "ðr",
+          "χr",
+          "vr",
+          "γr",
+          "θr"
+        ],
+        "problemType": "TWO_SYL_WORD_INITIAL_PHONEME",
+        "humanReadableDescription": "Δισύλλαβες λέξεις που ξεκινάνε με έναν από τους ήχους \'fr\', \'ðr\', \'χr\', \'vr\', \'γr\', \'θr\' (π.χ. φρούτο)", 
+        "cluster": 8,
+        "character":"character4"
+      },
+      {
+        "descriptions": [
+          "spr",
+          "skr",
+          "str",
+          "sfr"
+        ],
+        "problemType": "TWO_SYL_WORD_INITIAL_PHONEME",
+        "humanReadableDescription": "Δισύλλαβες λέξεις που ξεκινάνε με έναν από τους ήχους \'spr\', \'skr\', \'str\', \'sfr\' (π.χ. σπρώχνω)", 
+        "cluster": 8,
+        "character":"character4"
+      },
+      {
+        "descriptions": [
+          "sp",
+          "st",
+          "sk"
+        ],
+        "problemType": "THREE_SYL_WORD_INITIAL_PHONEME",
+        "humanReadableDescription": "Τρισύλλαβες λέξεις που ξεκινάνε με έναν από τους ήχους \'sp\', \'st\', \'sk\' (π.χ. σπανάκι)", 
+        "cluster": 9,
+        "character":"character5"
+      },
+      {
+        "descriptions": [
+          "pr",
+          "tr",
+          "kr"
+        ],
+        "problemType": "THREE_SYL_WORD_INITIAL_PHONEME",
+        "humanReadableDescription": "Τρισύλλαβες λέξεις που ξεκινάνε με έναν από τους ήχους \'pr\', \'tr\', \'kr\' (π.χ. πρόβατο)", 
+        "cluster": 9,
+        "character":"character5"
+      },
+      {
+        "descriptions": [
+          "gr",
+          "dr",
+          "br"
+        ],
+        "problemType": "THREE_SYL_WORD_INITIAL_PHONEME",
+        "humanReadableDescription": "Τρισύλλαβες λέξεις που ξεκινάνε με έναν από τους ήχους \'gr\', \'dr\', \'br\' (π.χ. μπριζόλα)", 
+        "cluster": 9,
+        "character":"character5"
+      },
+      {
+        "descriptions": [
+          "fr",
+          "ðr",
+          "χr",
+          "vr",
+          "γr",
+          "θr"
+        ],
+        "problemType": "THREE_SYL_WORD_INITIAL_PHONEME",
+        "humanReadableDescription": "Τρισύλλαβες λέξεις που ξεκινάνε με έναν από τους ήχους \'fr\', \'ðr\', \'χr\', \'vr\', \'γr\', \'θr\' (π.χ. δροσερός)", 
+        "cluster": 9,
+        "character":"character5"
+      },
+      {
+        "descriptions": [
+          "spr",
+          "skr",
+          "str",
+          "sfr"
+        ],
+        "problemType": "THREE_SYL_WORD_INITIAL_PHONEME",
+        "humanReadableDescription": "Τρισύλλαβες λέξεις που ξεκινάνε με έναν από τους ήχους \'spr\', \'skr\', \'str\', \'sfr\' (π.χ. σφραγίδα)", 
+        "cluster": 9,
+        "character":"character5"
+      },
+      {
+        "descriptions": [
+          "sp",
+          "st",
+          "sk"
+        ],
+        "problemType": "TWO_SYL_WORD_INTERNAL_PHONEME",
+        "humanReadableDescription": "Δισύλλαβες λέξεις που περιέχουν έναν από τους ήχους \'sp\', \'st\', \'sk\' (π.χ. μάσκα)", 
+        "cluster": 10,
+        "character":"character6"
+      },
+      {
+        "descriptions": [
+          "pr",
+          "tr",
+          "kr"
+        ],
+        "problemType": "TWO_SYL_WORD_INTERNAL_PHONEME",
+        "humanReadableDescription": "Δισύλλαβες λέξεις που περιέχουν έναν από τους ήχους \'pr\', \'tr\', \'kr\' (π.χ. άκρη)", 
+        "cluster": 10,
+        "character":"character6"
+      },
+      {
+        "descriptions": [
+          "gr",
+          "dr",
+          "br",
+          "ŋgr",
+          "ndr",
+          "mbr"
+        ],
+        "problemType": "TWO_SYL_WORD_INTERNAL_PHONEME",
+        "humanReadableDescription": "Δισύλλαβες λέξεις που περιέχουν έναν από τους ήχους \'gr\', \'dr\', \'br\' (π.χ. δέντρο)", 
+        "cluster": 10,
+        "character":"character6"
+      },
+      {
+        "descriptions": [
+          "fr",
+          "ðr",
+          "χr",
+          "vr",
+          "γr",
+          "θr"
+        ],
+        "problemType": "TWO_SYL_WORD_INTERNAL_PHONEME",
+        "humanReadableDescription": "Δισύλλαβες λέξεις που περιέχουν έναν από τους ήχους \'fr\', \'ðr\', \'χr\', \'vr\', \'γr\', \'θr\' (π.χ. αφρός)", 
+        "cluster": 10,
+        "character":"character6"
+      },
+      {
+        "descriptions": [
+          "spr",
+          "skr",
+          "str",
+          "sfr"
+        ],
+        "problemType": "TWO_SYL_WORD_INTERNAL_PHONEME",
+        "humanReadableDescription": "Δισύλλαβες λέξεις που περιέχουν έναν από τους ήχους \'spr\', \'skr\', \'str\', \'sfr\' (π.χ. κάστρο)", 
+        "cluster": 10,
+        "character":"character6"
+      },
+      {
+        "descriptions": [
+          "sp",
+          "st",
+          "sk"
+        ],
+        "problemType": "THREE_SYL_WORD_INTERNAL_PHONEME",
+        "humanReadableDescription": "Τρισύλλαβες λέξεις που περιέχουν έναν από τους ήχους \'sp\', \'st\', \'sk\' (π.χ. δάσκαλος)", 
+        "cluster": 11,
+        "character":"character7"
+      },
+      {
+        "descriptions": [
+          "pr",
+          "tr",
+          "kr"
+        ],
+        "problemType": "THREE_SYL_WORD_INTERNAL_PHONEME",
+        "humanReadableDescription": "Τρισύλλαβες λέξεις που περιέχουν έναν από τους ήχους \'pr\', \'tr\', \'kr\' (π.χ. σφυρίχτρα)", 
+        "cluster": 11,
+        "character":"character7"
+      },
+      {
+        "descriptions": [
+          "gr",
+          "dr",
+          "br",
+          "ŋgr",
+          "ndr",
+          "mbr"
+        ],
+        "problemType": "THREE_SYL_WORD_INTERNAL_PHONEME",
+        "humanReadableDescription": "Τρισύλλαβες λέξεις που περιέχουν έναν από τους ήχους \'gr\', \'dr\', \'br\' (π.χ. τσουγκράνα)", 
+        "cluster": 11,
+        "character":"character7"
+      },
+      {
+        "descriptions": [
+          "fr",
+          "ðr",
+          "χr",
+          "vr",
+          "γr",
+          "θr"
+        ],
+        "problemType": "THREE_SYL_WORD_INTERNAL_PHONEME",
+        "humanReadableDescription": "Τρισύλλαβες λέξεις που περιέχουν έναν από τους ήχους \'fr\', \'ðr\', \'χr\', \'vr\', \'γr\', \'θr\' (π.χ. Δεκέμβρης)", 
+        "cluster": 11,
+        "character":"character7"
+      },
+      {
+        "descriptions": [
+          "spr",
+          "skr",
+          "str",
+          "sfr"
+        ],
+        "problemType": "THREE_SYL_WORD_INTERNAL_PHONEME",
+        "humanReadableDescription": "Τρισύλλαβες λέξεις που περιέχουν έναν από τους ήχους \'spr\', \'skr\', \'str\', \'sfr\' (π.χ. κάτασπρος)", 
+        "cluster": 11,
+        "character":"character7"
+      },
+      {
+        "descriptions": [
+          "ευ",
+          "εύ"
+        ],
+        "problemType": "CONTAINS",
+        "humanReadableDescription": "Λέξεις που περιέχουν τους συνδυασμούς γραμμάτων \'ευ\', \'εύ\' (π.χ. παρασκευή)", 
+        "cluster": 12,
+        "character":"character8"
+      },
+      {
+        "descriptions": [
+          "αυ",
+          "αύ"
+        ],
+        "problemType": "CONTAINS",
+        "humanReadableDescription": "Λέξεις που περιέχουν τους συνδυασμούς γραμμάτων \'αυ\', \'αύ\' (π.χ. αυλάκι)", 
+        "cluster": 12,
+        "character":"character8"
+      },
+      {
+        "descriptions": [
+          "εϋ",
+          "οϋ"
+        ],
+        "problemType": "CONTAINS",
+        "humanReadableDescription": "Λέξεις που περιέχουν τους συνδυασμούς γραμμάτων \'εϋ\', \'οϋ\' (π.χ. Σεϋχέλες)", 
+        "cluster": 13,
+        "character":"character8"
+      },
+      {
+        "descriptions": [
+          "αϊ"
+        ],
+        "problemType": "CONTAINS",
+        "humanReadableDescription": "Λέξεις που περιέχουν τον συνδυασμό γραμμάτων \'αϊ\' (π.χ. γαϊδούρι)", 
+        "cluster": 13,
+        "character":"character8"
+      },
+      {
+        "descriptions": [
+          "οΰ"
+        ],
+        "problemType": "CONTAINS",
+        "humanReadableDescription": "Λέξεις που περιέχουν τον συνδυασμό γραμμάτων \'οΰ\' (π.χ. αραχνοΰφαντο)", 
+        "cluster": 13,
+        "character":"character8"
+      },
+      {
+        "descriptions": [
+          "αΐ"
+        ],
+        "problemType": "CONTAINS",
+        "humanReadableDescription": "Λέξεις που περιέχουν τον συνδυασμό γραμμάτων \'αΐ\' (π.χ. καΐκι)", 
+        "cluster": 13,
+        "character":"character8"
+      }
+    ],
+    [
+      {
+        "descriptions": [
+          "-cv-cv-"
+        ],
+        "problemType": "CONTAINS_PATTERN",
+        "humanReadableDescription": "Λέξεις που κατά τον συλλαβισμό τους σχηματίζουν τον συνδυασμό \'cv-cv\', όπου c:σύμφωνο, v:φωνήεν (π.χ. πηγή)", 
+        "cluster": 14,
+        "character":"character9"
+      },
+      {
+        "descriptions": [
+          "-cv-v-"
+        ],
+        "problemType": "CONTAINS_PATTERN",
+        "humanReadableDescription": "Λέξεις που κατά τον συλλαβισμό τους σχηματίζουν τον συνδυασμό \'cv-v\', όπου c:σύμφωνο, v:φωνήεν (π.χ. νέο)", 
+        "cluster": 14,
+        "character":"character9"
+      },
+      {
+        "descriptions": [
+          "-v-cv-"
+        ],
+        "problemType": "CONTAINS_PATTERN",
+        "humanReadableDescription": "Λέξεις που κατά τον συλλαβισμό τους σχηματίζουν τον συνδυασμό \'v-cv\', όπου c:σύμφωνο, v:φωνήεν (π.χ. εδώ)", 
+        "cluster": 14,
+        "character":"character9"
+      },
+      {
+        "descriptions": [
+          "-cv-vc-"
+        ],
+        "problemType": "CONTAINS_PATTERN",
+        "humanReadableDescription": "Λέξεις που κατά τον συλλαβισμό τους σχηματίζουν τον συνδυασμό \'cv-vc\', όπου c:σύμφωνο, v:φωνήεν (π.χ. νέος)", 
+        "cluster": 14,
+        "character":"character9"
+      },
+      {
+        "descriptions": [
+          "-vc-cv-"
+        ],
+        "problemType": "CONTAINS_PATTERN_OR_ENDS_WITH_EXTRA_CONSONANT",
+        "humanReadableDescription": "Λέξεις που κατά τον συλλαβισμό τους σχηματίζουν τον συνδυασμό \'vc-cv\', όπου c:σύμφωνο, v:φωνήεν. Είτε στον συνδυασμό αυτό περιέχεται και ένα επιπλέον τελικό σύμφωνο (π.χ. ορμή, ανθός)", 
+        "cluster": 15,
+        "character":"character9"
+      },
+      {
+        "descriptions": [
+          "-cvc-cv-"
+        ],
+        "problemType": "CONTAINS_PATTERN_OR_ENDS_WITH_EXTRA_CONSONANT",
+        "humanReadableDescription": "Λέξεις που κατά τον συλλαβισμό τους σχηματίζουν τον συνδυασμό \'cvc-cv\', όπου c:σύμφωνο, v:φωνήεν. Είτε στον συνδυασμό αυτό περιέχεται και ένα επιπλέον τελικό σύμφωνο (π.χ. μορφή, ξανθός)", 
+        "cluster": 15,
+        "character":"character9"
+      },
+      {
+        "descriptions": [
+          "-cv-ccv-"
+        ],
+        "problemType": "CONTAINS_PATTERN_OR_ENDS_WITH_EXTRA_CONSONANT",
+        "humanReadableDescription": "Λέξεις που κατά τον συλλαβισμό τους σχηματίζουν τον συνδυασμό \'cv-ccv\', όπου c:σύμφωνο, v:φωνήεν. Είτε στον συνδυασμό αυτό περιέχεται και ένα επιπλέον τελικό σύμφωνο (π.χ. τάβλι, ληστής)", 
+        "cluster": 16,
+        "character":"character10"
+      },
+      {
+        "descriptions": [
+          "-ccv-cv-"
+        ],
+        "problemType": "CONTAINS_PATTERN_OR_ENDS_WITH_EXTRA_CONSONANT",
+        "humanReadableDescription": "Λέξεις που κατά τον συλλαβισμό τους σχηματίζουν τον συνδυασμό \'ccv-cv\', όπου c:σύμφωνο, v:φωνήεν. Είτε στον συνδυασμό αυτό περιέχεται και ένα επιπλέον τελικό σύμφωνο (π.χ. κρύβω, χλωμός)", 
+        "cluster": 16,
+        "character":"character10"
+      },
+      {
+        "descriptions": [
+          "-ccvc-cv-"
+        ],
+        "problemType": "CONTAINS_PATTERN_OR_ENDS_WITH_EXTRA_CONSONANT",
+        "humanReadableDescription": "Λέξεις που κατά τον συλλαβισμό τους σχηματίζουν τον συνδυασμό \'ccvc-cv\', όπου c:σύμφωνο, v:φωνήεν. Είτε στον συνδυασμό αυτό περιέχεται και ένα επιπλέον τελικό σύμφωνο (π.χ. σκάρτο, γλύπτης)", 
+        "cluster": 16,
+        "character":"character10"
+      },
+      {
+        "descriptions": [
+          "-cv-cccv-"
+        ],
+        "problemType": "CONTAINS_PATTERN_OR_ENDS_WITH_EXTRA_CONSONANT",
+        "humanReadableDescription": "Λέξεις που κατά τον συλλαβισμό τους σχηματίζουν τον συνδυασμό \'cv-cccv\', όπου c:σύμφωνο, v:φωνήεν. Είτε στον συνδυασμό αυτό περιέχεται και ένα επιπλέον τελικό σύμφωνο (π.χ. δίχτυα, ψήκτρες)", 
+        "cluster": 17,
+        "character":"character11"
+      },
+      {
+        "descriptions": [
+          "-v-cccv-"
+        ],
+        "problemType": "CONTAINS_PATTERN_OR_ENDS_WITH_EXTRA_CONSONANT",
+        "humanReadableDescription": "Λέξεις που κατά τον συλλαβισμό τους σχηματίζουν τον συνδυασμό \'v-cccv\', όπου c:σύμφωνο, v:φωνήεν. Είτε στον συνδυασμό αυτό περιέχεται και ένα επιπλέον τελικό σύμφωνο (π.χ. άστρα, άσπρων)", 
+        "cluster": 17,
+        "character":"character11"
+      },
+      {
+        "descriptions": [
+          "ιά-ε",
+          "ία-ε"
+        ],
+        "problemType": "CONTAINS_BUT_EXCLUDE_PREVIOUS_LETTERS",
+        "humanReadableDescription": "Λέξεις που γράφονται με \'ιά\' ή \'ία\' (π.χ. ανεργία)", 
+        "cluster": 18,
+        "character":"character12"
+      },
+      {
+        "descriptions": [
+          "ειά",
+          "εία"
+        ],
+        "problemType": "CONTAINS",
+        "humanReadableDescription": "Λέξεις που γράφονται με \'εία\' ή \'ειά\' (π.χ. γηρατειά)", 
+        "cluster": 18,
+        "character":"character12"
+      },
+      {
+        "descriptions": [
+          "αΐ",
+          "εΐ",
+          "οΐ"
+        ],
+        "problemType": "CONTAINS",
+        "humanReadableDescription": "Λέξεις που περιέχουν τους συνδυασμούς \'αΐ\' ή \'εΐ\' ή \'οΐ\' (π.χ. φαΐ)", 
+        "cluster": 19,
+        "character":"character12"
+      },
+      {
+        "descriptions": [
+          "αί",
+          "οί",
+          "εί"
+        ],
+        "problemType": "CONTAINS_LETTERS_ON_SAME_SYLLABLES",
+        "humanReadableDescription": "Λέξεις που περιέχουν τους συνδυασμούς \'αί\', \'οί\' ή \'εί\' στην ίδια συλλαβή (π.χ. πλοίου)", 
+        "cluster": 19,
+        "character":"character12"
+      },
+      {
+        "descriptions": [
+          "άι",
+          "όι",
+          "έι"
+        ],
+        "problemType": "CONTAINS_LETTERS_ON_SAME_SYLLABLES",
+        "humanReadableDescription": "Λέξεις που περιέχουν τους συνδυασμούς \'άι\', \'όι\' ή \'έι\' στην ίδια συλλαβή (π.χ. νεράιδα)", 
+        "cluster": 19,
+        "character":"character12"
+      },
+      {
+        "descriptions": [
+          "αι",
+          "οι",
+          "ει",
+          "αϊ",
+          "οϊ",
+          "εϊ"
+        ],
+        "problemType": "CONTAINS",
+        "humanReadableDescription": "Λέξεις που περιέχουν τους συνδυασμούς \'αι\', \'οι\' ή \'ει\', \'αϊ\', \'οϊ\' ή \'εϊ\' (π.χ. προϊόν)", 
+        "cluster": 20,
+        "character":"character12"
+      },
+      {
+        "descriptions": [
+          "ου",
+          "ού",
+          "οϋ",
+          "οΰ"
+        ],
+        "problemType": "CONTAINS",
+        "humanReadableDescription": "Λέξεις που περιέχουν τους συνδυασμούς \'ου\', \'ού\', \'οϋ\' ή \'οΰ\' (π.χ. προϋπόθεση)", 
+        "cluster": 20,
+        "character":"character12"
+      },
+      {
+        "descriptions": [
+          "αυ",
+          "αϋ",
+          "αύ",
+          "αΰ"
+        ],
+        "problemType": "CONTAINS",
+        "humanReadableDescription": "Λέξεις που περιέχουν τους συνδυασμούς \'αυ\', \'αϋ\', \'αϋ\' ή \'αΰ\' (π.χ. κεραυνός)", 
+        "cluster": 21,
+        "character":"character13"
+      },
+      {
+        "descriptions": [
+          "εύω",
+          "εύεις",
+          "εύει",
+          "εύουμε",
+          "εύετε",
+          "εύουν",
+          "ευα",
+          "ευες",
+          "ευαν",
+          "ευαμε",
+          "ευατε",
+          "ευαν"
+        ],
+        "problemType": "CONTAINS",
+        "humanReadableDescription": "Λέξεις που περιέχουν τους συνδυασμούς \'εύω\', \'εύεις\', \'εύει\', \'εύουμε\', \'εύετε\', \'εύουν\', \'ευα\', \'ευες\', \'ευαν\', \'ευαμε\', \'ευατε\' ή \'ευαν\' (π.χ. παιδεύω)", 
+        "cluster": 21,
+        "character":"character13"
+      }
+    ],
+    [
+      {
+        "descriptions": [
+          "α",
+          "ά",
+          "αντι",
+          "αντί",
+          "δυσ",
+          "δύσ"
+        ],
+        "problemType": "IS_ADJ_AND_STARTS_WITH",
+        "humanReadableDescription": "Επίθετα που ξεκινάνε με \'α\', \'ά\', \'αντι\', \'αντί\', \'δυσ\' ή \'δύσ\' (π.χ. άλυτος)", 
+        "cluster": 22,
+        "character":"character14"
+      },
+      {
+        "descriptions": [
+          "υπερ",
+          "υπο",
+          "κατα",
+          "υπέρ",
+          "υπό",
+          "κατά"
+        ],
+        "problemType": "IS_NOUN_OR_ADJ_AND_STARTS_WITH",
+        "humanReadableDescription": "Επίθετα ή ουσιαστικά που ξεκινάνε με \'υπερ\', \'υπο\', \'κατα\', \'υπέρ\', \'υπό\' ή \'κατά\' (π.χ. υπερβολή)", 
+        "cluster": 22,
+        "character":"character14"
+      },
+      {
+        "descriptions": [
+          "υπερ",
+          "υπο",
+          "υπέρ",
+          "υπό"
+        ],
+        "problemType": "IS_VERB_AND_STARTS_WITH",
+        "humanReadableDescription": "Ρήματα που ξεκινάνε με \'υπερ\', \'υπο\', \'υπέρ\' ή \'υπό\' (π.χ. υπερβάλω)", 
+        "cluster": 23,
+        "character":"character14"
+      },
+      {
+        "descriptions": [
+          "δι",
+          "τρι",
+          "πρωτο",
+          "αυτο",
+          "πολυ",
+          "μικρο",
+          "ψιλο",
+          "ημι",
+          "δί",
+          "τρί",
+          "πρωτό",
+          "αυτό",
+          "πολύ",
+          "μικρό",
+          "ψιλό",
+          "ημί"
+        ],
+        "problemType": "STARTS_WITH",
+        "humanReadableDescription": "Λέξεις που ξεκινάνε με \'δι'\, '\τρι'\, '\πρωτο'\, '\αυτο'\, '\πολυ'\, '\μικρο'\, '\ψιλο'\, '\ημι\', \'δί'\, '\τρί'\, '\πρωτό'\, '\αυτό'\, '\πολύ'\, '\μικρό'\, '\ψιλό'\ ή '\ημί\' (π.χ. ψιλοβρόχι)", 
+        "cluster": 23,
+        "character":"character15"
+      },
+      {
+        "descriptions": [
+          "ανα",
+          "αντι",
+          "απο",
+          "δια",
+          "εισ",
+          "εκ",
+          "εξ",
+          "εν",
+          "επι",
+          "κατα",
+          "μετα",
+          "παρα",
+          "παρά",
+          "περι",
+          "προ",
+          "προσ",
+          "συν"
+        ],
+        "problemType": "IS_VERB_AND_STARTS_WITH",
+        "humanReadableDescription": "Ρήματα που ξεκινάνε με \'ανα'\, '\αντι'\, '\απο'\, '\δια'\, '\εισ'\, '\εκ'\, '\εξ'\, '\εν'\, '\επι'\, '\κατα'\, '\μετα'\, '\παρα'\, '\παρά'\, '\περι'\, '\προ'\, '\προσ'\ ή '\συν\' (π.χ. αναγνωρίζω)", 
+        "cluster": 24,
+        "character":"character15"
+      },
+      {
+        "descriptions": [
+          "ψιλο",
+          "μισο",
+          "κουτσο",
+          "ψευτο"
+        ],
+        "problemType": "IS_VERB_AND_STARTS_WITH",
+        "humanReadableDescription": "Ρήματα που ξεκινάνε με \'ψιλο'\, '\μισο'\, '\κουτσο'\ ή '\ψευτο\' (π.χ. μισογεμίζω)", 
+        "cluster": 24,
+        "character":"character15"
+      }
+    ],
+    [
+      {
+        "descriptions": [
+          "άκι",
+          "άκης",
+          "άκος",
+          "ίτσα",
+          "κας",
+          "οπούλα",
+          "όπουλο",
+          "ούδι",
+          "ούλα",
+          "ούλης",
+          "ούλης",
+          "ούλα",
+          "ούλικο",
+          "ούτσικος",
+          "ούτσικη",
+          "ούτσικο"
+        ],
+        "problemType": "IS_BIG_NOUN_OR_ADJ_AND_ENDS_WITH",
+        "humanReadableDescription": "Επίθετα ή ουσιαστικά που τελειώνουν με \'άκι'\, '\άκης'\, '\άκος'\, '\ίτσα'\, '\κας'\, '\οπούλα'\, '\όπουλο'\, '\ούδι'\, '\ούλα'\, '\ούλης'\, '\ούλης'\, '\ούλα'\, '\ούλικο'\, '\ούτσικος'\, '\ούτσικη'\ ή '\ούτσικο\' (π.χ. λιμνούλα)", 
+        "cluster": 25,
+        "character":"character16"
+      },
+      {
+        "descriptions": [
+          "άκλα",
+          "άρα",
+          "αράς",
+          "αρόνα",
+          "αρος",
+          "ούκλα"
+        ],
+        "problemType": "IS_BIG_NOUN_OR_ADJ_AND_ENDS_WITH",
+        "humanReadableDescription": "Επίθετα ή ουσιαστικά που τελειώνουν με \'άκλα'\, '\άρα'\, '\αράς'\, '\αρόνα'\, '\αρος'\ ή '\ούκλα\' (π.χ. ζημιάρα)", 
+        "cluster": 25,
+        "character":"character16"
+      },
+      {
+        "descriptions": [
+          "έας",
+          "ιάς",
+          "δόρος",
+          "άρης",
+          "ιάρης",
+          "ιέρης",
+          "ιέρα",
+          "ίτης",
+          "ιώτης",
+          "ίστας",
+          "ιστής",
+          "ίστρια",
+          "της",
+          "τής",
+          "τρια",
+          "τισσα",
+          "τζής",
+          "τζού",
+          "τίας",
+          "τορας"
+        ],
+        "problemType": "IS_BIG_NOUN_AND_ENDS_WITH",
+        "humanReadableDescription": "Ουσιαστικά που τελειώνουν με \'έας'\, '\ιάς'\, '\δόρος'\, '\άρης'\, '\ιάρης'\, '\ιέρης'\, '\ιέρα'\, '\ίτης'\, '\ιώτης'\, '\ίστας'\, '\ιστής'\, '\ίστρια'\, '\της'\, '\τής'\, '\τρια'\, '\τισσα'\, '\τζής'\, '\τζού'\, '\τίας'\ ή '\τορας\' (π.χ. νικητής)", 
+        "cluster": 26,
+        "character":"character16"
+      },
+      {
+        "descriptions": [
+          "είο",
+          "ιά",
+          "ία",
+          "ικο",
+          "δικο"
+        ],
+        "problemType": "IS_BIG_NOUN_AND_ENDS_WITH",
+        "humanReadableDescription": "Ουσιαστικά που τελειώνουν με \'είο'\, '\ιά'\, '\ία'\, '\ικο'\ ή '\δικο\' (π.χ. ιατρείο)", 
+        "cluster": 26,
+        "character":"character16"
+      },
+      {
+        "descriptions": [
+          "έας",
+          "ερό",
+          "ιέρα",
+          "τήρας",
+          "τήρι",
+          "τήριο",
+          "τρα",
+          "της"
+        ],
+        "problemType": "IS_BIG_NOUN_AND_ENDS_WITH",
+        "humanReadableDescription": "Ουσιαστικά που τελειώνουν με \'έας'\, '\ερό'\, '\ιέρα'\, '\τήρας'\, '\τήρι'\, '\τήριο'\, '\τρα'\ ή '\της\' (π.χ. προβολέας)", 
+        "cluster": 27,
+        "character":"character16"
+      },
+      {
+        "descriptions": [
+          "άδα",
+          "εια",
+          "ίλα",
+          "ιλίκι",
+          "μάρα",
+          "οσύνη",
+          "ούρα",
+          "σιά",
+          "ξιά",
+          "ότητα",
+          "ύτητα"
+        ],
+        "problemType": "IS_BIG_NOUN_AND_ENDS_WITH",
+        "humanReadableDescription": "Ουσιαστικά που τελειώνουν με \'άδα'\, '\εια'\, '\ίλα'\, '\ιλίκι'\, '\μάρα'\, '\οσύνη'\, '\ούρα'\, '\σιά'\, '\ξιά'\, '\ότητα'\ ή '\ύτητα\' (π.χ. φρεσκάδα)", 
+        "cluster": 27,
+        "character":"character16"
+      },
+      {
+        "descriptions": [
+          "ί",
+          "ιά"
+        ],
+        "problemType": "IS_BIG_NOUN_AND_ENDS_WITH",
+        "humanReadableDescription": "Ουσιαστικά που τελειώνουν με \'ί\' ή \'ιά\' (π.χ. θαλασσί)", 
+        "cluster": 27,
+        "character":"character16"
+      },
+      {
+        "descriptions": [
+          "άλα",
+          "εία",
+          "ειά",
+          "εια",
+          "ση",
+          "ξη",
+          "ψη",
+          "ία",
+          "σιά",
+          "ψιά",
+          "ξιά",
+          "ματιά",
+          "σιμο",
+          "ξιμο",
+          "ψιμο",
+          "αμα",
+          "ημα",
+          "ωμα",
+          "σμα",
+          "γμα",
+          "μός",
+          "ητό",
+          "ατό",
+          "κτό",
+          "χτό",
+          "φτό",
+          "πτό"
+        ],
+        "problemType": "IS_BIG_NOUN_AND_ENDS_WITH",
+        "humanReadableDescription": "Ουσιαστικά που τελειώνουν με \'άλα'\, '\εία'\, '\ειά'\, '\εια'\, '\ση'\, '\ξη'\, '\ψη'\, '\ία'\, '\σιά'\, '\ψιά'\, '\ξιά'\, '\ματιά'\, '\σιμο'\, '\ξιμο'\, '\ψιμο'\, '\αμα'\, '\ημα'\, '\ωμα'\, '\σμα'\, '\γμα'\, '\μός'\, '\ητό'\, '\ατό'\, '\κτό'\, '\χτό'\, '\φτό'\ ή '\πτό\' (π.χ. γραπτό)", 
+        "cluster": 27,
+        "character":"character16"
+      },
+      {
+        "descriptions": [
+          "ικός",
+          "ική",
+          "ικό",
+          "σιμος",
+          "σιμη",
+          "σιμο",
+          "ιάρης",
+          "ιάρα",
+          "άρικο",
+          "ερός",
+          "ερή",
+          "ερό",
+          "τός",
+          "τή",
+          "τό",
+          "άτος",
+          "άτη",
+          "άτο",
+          "ινος",
+          "ινη",
+          "ινο",
+          "ιακός",
+          "ιακή",
+          "ιακό",
+          "ανός",
+          "ανή",
+          "ανό",
+          "ούρης",
+          "ούρα",
+          "ούρικο"
+        ],
+        "problemType": "IS_BIG_ADJ_AND_ENDS_WITH",
+        "humanReadableDescription": "Επίθετα που τελειώνουν με \'ικός'\, '\ική'\, '\ικό'\, '\σιμος'\, '\σιμη'\, '\σιμο'\, '\ιάρης'\, '\ιάρα'\, '\άρικο'\, '\ερός'\, '\ερή'\, '\ερό'\, '\τός'\, '\τή'\, '\τό'\, '\άτος'\, '\άτη'\, '\άτο'\, '\ινος'\, '\ινη'\, '\ινο'\, '\ιακός'\, '\ιακή'\, '\ιακό'\, '\ανός'\, '\ανή'\, '\ανό'\, '\ούρης'\, '\ούρα'\ ή '\ούρικο\' (π.χ. σοκολατένιος)", 
+        "cluster": 28,
+        "character":"character17"
+      },
+      {
+        "descriptions": [
+          "ίστικος",
+          "ίστικη",
+          "ίστικο",
+          "ήσιος",
+          "ήσια",
+          "ήσιο",
+          "λέος",
+          "λέα",
+          "λέο",
+          "αίος",
+          "αία",
+          "αίο",
+          "ωπός",
+          "ωπή",
+          "ωπό",
+          "ένιος",
+          "ένια",
+          "ένιο",
+          "τέος",
+          "τέα",
+          "τέο",
+          "ώδης",
+          "ώδες"
+        ],
+        "problemType": "IS_BIG_ADJ_AND_ENDS_WITH",
+        "humanReadableDescription": "Επίθετα που τελειώνουν με \'ίστικος'\, '\ίστικη'\, '\ίστικο'\, '\ήσιος'\, '\ήσια'\, '\ήσιο'\, '\λέος'\, '\λέα'\, '\λέο'\, '\αίος'\, '\αία'\, '\αίο'\, '\ωπός'\, '\ωπή'\, '\ωπό'\, '\ένιος'\, '\ένια'\, '\ένιο'\, '\τέος'\, '\τέα'\, '\τέο'\, '\ώδης'\ ή '\ώδες\' (π.χ. νεφώδης)", 
+        "cluster": 28,
+        "character":"character17"
+      },
+      {
+        "descriptions": [
+          "ίζω",
+          "άζω",
+          "ιάζω",
+          "αίνω",
+          "ώνω",
+          "ύνω",
+          "εύω",
+          "άρω"
+        ],
+        "problemType": "IS_BIG_VERB_AND_ENDS_WITH",
+        "humanReadableDescription": "Ρήματα που τελειώνουν με \'ίζω'\, '\άζω'\, '\ιάζω'\, '\αίνω'\, '\ώνω'\, '\ύνω'\, '\εύω'\ ή '\άρω\' (π.χ. προβάρω)", 
+        "cluster": 29,
+        "character":"character18"
+      },
+      {
+        "descriptions": [
+          "βολώ",
+          "λογώ",
+          "ποιώ"
+        ],
+        "problemType": "IS_BIG_VERB_AND_ENDS_WITH",
+        "humanReadableDescription": "Ρήματα που τελειώνουν με \'βολώ\', \'λογώ\' ή \'ποιώ\' (π.χ. πετροβολώ)", 
+        "cluster": 29,
+        "character":"character18"
+      },
+      {
+        "descriptions": [
+          "ειδής",
+          "ειδές",
+          "μελής",
+          "μελές",
+          "ετής",
+          "ετές"
+        ],
+        "problemType": "IS_BIG_ADJ_AND_ENDS_WITH",
+        "humanReadableDescription": "Επίθετα που τελειώνουν με \'ειδής'\, '\ειδές'\, '\μελής'\, '\μελές'\, '\ετής'\ ή '\ετές\' (π.χ. τριμελής)", 
+        "cluster": 29,
+        "character":"character18"
+      }
+    ],
+    [
+      {
+        "descriptions": [
+          "(ενικός)-ος",
+          "(ενικός)-ο",
+          "(ενικός)-ας",
+          "(ενικός)-α",
+          "(ενικός)-ης",
+          "(ενικός)-η"
+        ],
+        "problemType": "IS_NOUN_AND_ENDS_WITH",
+        "humanReadableDescription": "Ουσιαστικά στον ενικό που τελειώνουν με \'ος'\, '\ο'\, '\ας'\, '\α'\, '\ης'\, '\η'\, '\α'\, '\η'\ ή '\ο\' (π.χ. μαθητής)", 
+        "cluster": 30,
+        "character":"character19"
+      },
+      {
+        "descriptions": [
+          "(πληθυντικός)-οί",
+          "(πληθυντικός)-οι",
+          "(πληθυντικός)-ούς",
+          "(πληθυντικός)-ους",
+          "(πληθυντικός)-ές",
+          "(πληθυντικός)-ες",
+          "(πληθυντικός)-είς",
+          "(πληθυντικός)-εις",
+          "(πληθυντικός)-ά",
+          "(πληθυντικός)-α"
+        ],
+        "problemType": "IS_NOUN_AND_ENDS_WITH",
+        "humanReadableDescription": "Ουσιαστικά στον πληθυντικό που τελειώνουν με \'οι'\, '\ους'\, '\ες'\, '\εις'\ ή '\α\' (π.χ. μαθητές)", 
+        "cluster": 30,
+        "character":"character19"
+      },
+      {
+        "descriptions": [
+          "(γενική)-ου",
+          "(γενική)-ες",
+          "(γενική)-ές",
+          "(γενική)-εις",
+          "(γενική)-εων",
+          "(γενική)-είς",
+          "(γενική)-έων",
+          "(γενική)-ών",
+          "(γενική)-ού",
+          "(γενική)-ων"
+        ],
+        "problemType": "IS_NOUN_AND_ENDS_WITH",
+        "humanReadableDescription": "Ουσιαστικά στην γενική που τελειώνουν με \'ου'\, '\ες'\, '\ές'\, '\εις'\, '\εων'\, '\είς'\, '\έων'\, '\ών'\, '\ού'\ ή '\ων\' (π.χ. ανθρώπων)", 
+        "cluster": 30,
+        "character":"character19"
+      },
+      {
+        "descriptions": [
+          "(ενικός)-ες",
+          "(ενικός)-ές",
+          "(ενικός)-ε",
+          "(ενικός)-άς",
+          "(ενικός)-ά",
+          "(ενικός)-ούς",
+          "(ενικός)-ού",
+          "(ενικός)-ι",
+          "(ενικός)-ον",
+          "(ενικός)-ος",
+          "(ενικός)-ας",
+          "(ενικός)-α",
+          "(ενικός)-υ"
+        ],
+        "problemType": "IS_NOUN_AND_ENDS_WITH",
+        "humanReadableDescription": "Ουσιαστικά στον ενικό που τελειώνουν με \'ες'\, '\ές'\, '\ε'\, '\άς'\, '\ά'\, '\ούς'\, '\ού'\, '\ού'\, '\ι'\, '\ον'\, '\ος'\, '\ας'\, '\α'\ ή '\υ\' (π.χ. φρέσκα)", 
+        "cluster": 31,
+        "character":"character19"
+      },
+      {
+        "descriptions": [
+          "(πληθυντικός)-έδες",
+          "(πληθυντικός)-άδες",
+          "(πληθυντικός)-ούδες",
+          "(πληθυντικός)-οντα",
+          "(πληθυντικός)-η",
+          "(πληθυντικός)-ατα",
+          "(πληθυντικός)-ατά",
+          "(πληθυντικός)-άτα",
+          "(πληθυντικός)-ά"
+        ],
+        "problemType": "IS_NOUN_AND_ENDS_WITH",
+        "humanReadableDescription": "Ουσιαστικά στον πληθυντικό που τελειώνουν με \'έδες'\, '\άδες'\, '\ούδες'\, '\οντα'\, '\ά'\, '\η'\ ή '\ατα\' (π.χ. καρδιά)", 
+        "cluster": 31,
+        "character":"character19"
+      },
+      {
+        "descriptions": [
+          "(γενική)-έδων",
+          "(γενική)-άδων",
+          "(γενική)-ού",
+          "(γενική)-ούδων",
+          "(γενική)-ούς",
+          "(γενική)-ούδων",
+          "(γενική)-ιού",
+          "(γενική)-ιών",
+          "(γενική)-οντος",
+          "(γενική)-όντων",
+          "(γενική)-ατος",
+          "(γενική)-ά",
+          "(γενική)-έ",
+          "(γενική)-άτων"
+        ],
+        "problemType": "IS_NOUN_AND_ENDS_WITH",
+        "humanReadableDescription": "Ουσιαστικά στην γενική που τελειώνουν με \'έ'\, '\έδων'\, '\ά'\, '\άδων'\, '\ού'\, '\ούδων'\, '\ούς'\, '\ούδων'\, '\ιού'\, '\ιών'\, '\οντος'\, '\όντων'\, '\ατος'\ ή '\άτων\' (π.χ. κρεάτων)", 
+        "cluster": 31,
+        "character":"character19"
+      },
+      {
+        "descriptions": [
+          "(ενικός)-άδικο",
+          "(ενικός)-ικο",
+          "(ενικός)-ικάς",
+          "(ενικός)-ικού",
+          "(ενικός)-ος",
+          "(ενικός)-ας",
+          "(ενικός)-άς",
+          "(ενικός)-ός",
+          "(ενικός)-ιά",
+          "(ενικός)-ης",
+          "(ενικός)-η",
+          "(ενικός)-ό",
+          "(ενικός)-ο",
+          "(ενικός)-ά",
+          "(ενικός)-α"
+        ],
+        "problemType": "IS_ADJ_AND_ENDS_WITH",
+        "humanReadableDescription": "Επίθετα στον ενικό που τελειώνουν με \'ος'\, '\η'\, '\ο'\, '\α'\, '\ας'\, '\άς'\, '\ός'\, '\ιά'\, '\ό'\, '\ης'\, '\ά'\, '\ικο'\, '\ικάς'\, '\ικού'\ ή '\άδικο\' (π.χ. τρύπιος)", 
+        "cluster": 32,
+        "character":"character20"
+      },
+      {
+        "descriptions": [
+          "filters number:",
+          "(ενικός)-ύς",
+          "(ενικός)-ιά",
+          "(ενικός)-ύ",
+          "(ενικός)-ής",
+          "(ενικός)-ή",
+          "(ενικός)-ί",
+          "(ενικός)-ές"
+        ],
+        "problemType": "IS_ADJ_AND_ENDS_WITH",
+        "humanReadableDescription": "Επίθετα στον ενικό που τελειώνουν με \'ύς'\, '\ιά'\, '\ύ'\, '\ής'\, '\ί'\, '\ές'\ και '\ή'\ (π.χ. βαθύς)", 
+        "cluster": 32,
+        "character":"character20"
+      },
+      {
+        "descriptions": [
+          "(πληθυντικός)-άδες",
+          "(πληθυντικός)-ούδες",
+          "(πληθυντικός)-άδικα",
+          "(πληθυντικός)-ηδες",
+          "(πληθυντικός)-ήδες",
+          "(πληθυντικός)-ικα",
+          "(πληθυντικός)-οι",
+          "(πληθυντικός)-ες",
+          "(πληθυντικός)-α"
+        ],
+        "problemType": "IS_ADJ_AND_ENDS_WITH",
+        "humanReadableDescription": "Επίθετα στον πληθυντικό που τελειώνουν με \'οι'\, '\ες'\, '\α'\, '\ηδες'\, '\ες'\, '\ικα'\, '\άδες'\, '\ούδες'\ ή '\άδικα\' (π.χ. γκρινιάρικα)", 
+        "cluster": 32,
+        "character":"character20"
+      },
+      {
+        "descriptions": [
+          "(πληθυντικός)-ιοί",
+          "(πληθυντικός)-οί",
+          "(πληθυντικός)-ιές",
+          "(πληθυντικός)-ές",
+          "(πληθυντικός)-ιά",
+          "(πληθυντικός)-ά",
+          "(πληθυντικός)-είς",
+          "(πληθυντικός)-ή"
+        ],
+        "problemType": "IS_ADJ_AND_ENDS_WITH",
+        "humanReadableDescription": "Επίθετα στον πληθυντικό που τελειώνουν με \'ιοί'\, '\ιές'\, '\ιά'\, '\είς'\ και '\ή'\ (π.χ. βαθιά)", 
+        "cluster": 32,
+        "character":"character20"
+      },
+      {
+        "descriptions": [
+          "(γενική)-άδικου",
+          "(γενική)-ικου",
+          "(γενική)-ου",
+          "(γενική)-ης",
+          "(γενική)-ας",
+          "(γενική)-ιων",
+          "(γενική)-ιών",
+          "(γενική)-ων",
+          "(γενική)-ών",
+          "(γενική)-ού",
+          "(γενική)-ιάς",
+          "(γενική)-ους",
+          "(γενική)-ούς",
+          "(γενική)-η",
+          "(γενική)-ά"
+        ],
+        "problemType": "IS_ADJ_AND_ENDS_WITH",
+        "humanReadableDescription": "Επίθετα στην γενική που τελειώνουν με \'ου'\, '\ης'\, '\ου'\, '\ου'\, '\ας'\, '\ου'\, '\ού'\, '\ιάς'\, '\ού'\, '\η'\, '\ας'\, '\ικου'\, '\ά'\, '\ούς'\ ή '\άδικου\' (π.χ. γκρίζου)", 
+        "cluster": 33,
+        "character":"character20"
+      },
+      {
+        "descriptions": [
+          "(γενική)-ιού",
+          "(γενική)-ιάς",
+          "(γενική)-ιού",
+          "(γενική)-ιών",
+          "(γενική)-ούς",
+          "(γενική)-ών"
+        ],
+        "problemType": "IS_ADJ_AND_ENDS_WITH",
+        "humanReadableDescription": "Επίθετα στην γενική που τελειώνουν με \'ιού'\, '\ιάς'\, '\ιού'\, '\ιών'\, '\ούς'\ ή '\ών\' (π.χ. παλιού)", 
+        "cluster": 33,
+        "character":"character20"
+      },
+      {
+        "descriptions": [
+          "(ενεστώτας, ενεργητική)-ούμε",
+          "(ενεστώτας, ενεργητική)-είτε",
+          "(ενεστώτας, ενεργητική)-ούν",
+          "(ενεστώτας, ενεργητική)-ούνε",
+          "(ενεστώτας, ενεργητική)-εις",
+          "(ενεστώτας, ενεργητική)-άει",
+          "(ενεστώτας, ενεργητική)-ουμε",
+          "(ενεστώτας, ενεργητική)-ετε",
+          "(ενεστώτας, ενεργητική)-ουν",
+          "(ενεστώτας, ενεργητική)-άμε",
+          "(ενεστώτας, ενεργητική)-ούμε",
+          "(ενεστώτας, ενεργητική)-άτε",
+          "(ενεστώτας, ενεργητική)-ούνε",
+          "(ενεστώτας, ενεργητική)-άνε",
+          "(ενεστώτας, ενεργητική)-είς",
+          "(ενεστώτας, ενεργητική)-ει",
+          "(ενεστώτας, ενεργητική)-εί",
+          "(ενεστώτας, ενεργητική)-άν",
+          "(ενεστώτας, ενεργητική)-άς",
+          "(ενεστώτας, ενεργητική)-ώ",
+          "(ενεστώτας, ενεργητική)-ά",
+          "(ενεστώτας, ενεργητική)-ω"
+        ],
+        "problemType": "IS_VERB_AND_ENDS_WITH",
+        "humanReadableDescription": "Ρήματα σε ενεργητική φωνή ενεστώτα που τελειώνουν με \'ω'\, '\εις'\, '\ει'\, '\ουμε'\, '\ετε'\, '\ουν'\, '\ώ'\, '\άς'\, '\ά'\, '\άει'\, '\άμε'\, '\ούμε'\, '\άτε'\, '\ούν'\, '\ούνε'\, '\άν'\, '\άνε'\, '\ούν'\, '\ώ'\, '\είς'\, '\εί'\, '\ούμε'\, '\είτε'\, '\ούν'\ ή '\ούνε\' (π.χ. αγαπάτε)", 
+        "cluster": 34,
+        "character":"character21"
+      },
+      {
+        "descriptions": [
+          "(αόριστος, ενεργητική)-άγαμε",
+          "(αόριστος, ενεργητική)-άγατε",
+          "(αόριστος, ενεργητική)-αγαν",
+          "(αόριστος, ενεργητική)-άγανε",
+          "(αόριστος, ενεργητική)-ούσα",
+          "(αόριστος, ενεργητική)-ούσες",
+          "(αόριστος, ενεργητική)-ούσε",
+          "(αόριστος, ενεργητική)-ούσαμε",
+          "(αόριστος, ενεργητική)-ούσατε",
+          "(αόριστος, ενεργητική)-ούσαν",
+          "(αόριστος, ενεργητική)-ούσανε",
+          "(αόριστος, ενεργητική)-αμε",
+          "(αόριστος, ενεργητική)-ατε",
+          "(αόριστος, ενεργητική)-άνε",
+          "(αόριστος, ενεργητική)-αγα",
+          "(αόριστος, ενεργητική)-αγες",
+          "(αόριστος, ενεργητική)-αγε",
+          "(αόριστος, ενεργητική)-αν",
+          "(αόριστος, ενεργητική)-α",
+          "(αόριστος, ενεργητική)-ες",
+          "(αόριστος, ενεργητική)-ε"
+        ],
+        "problemType": "IS_VERB_AND_ENDS_WITH",
+        "humanReadableDescription": "Ρήματα σε ενεργητική φωνή αορίστου που τελειώνουν με \'α'\, '\ες'\, '\ε'\, '\αμε'\, '\ατε'\, '\αν'\, '\άνε'\, '\αγα'\, '\αγες'\, '\αγε'\, '\άγαμε'\, '\άγατε'\, '\αγαν'\, '\άγανε'\, '\ούσα'\, '\ούσες'\, '\ούσε'\, '\ούσαμε'\, '\ούσατε'\, '\ούσαν'\ ή '\ούσανε\' (π.χ. έντυσα)", 
+        "cluster": 34,
+        "character":"character21"
+      },
+      {
+        "descriptions": [
+          "(παθητική)-ομαι",
+          "(παθητική)-εσαι",
+          "(παθητική)-εται",
+          "(παθητική)-όμαστε",
+          "(παθητική)-όσαστε",
+          "(παθητική)-εστε",
+          "(παθητική)-ονται",
+          "(παθητική)-ιέμαι",
+          "(παθητική)-ιέσαι",
+          "(παθητική)-ιέται",
+          "(παθητική)-ιόμαστε",
+          "(παθητική)-ιέστε",
+          "(παθητική)-ιούνται",
+          "(παθητική)-ιόνται",
+          "(παθητική)-ιούμαι",
+          "(παθητική)-είσαι",
+          "(παθητική)-είται",
+          "(παθητική)-ούμαστε",
+          "(παθητική)-είστε",
+          "(παθητική)-ούνται"
+        ],
+        "problemType": "IS_VERB_AND_ENDS_WITH",
+        "humanReadableDescription": "Ρήματα σε παθητική φωνή που τελειώνουν με \'ομαι'\, '\εσαι'\, '\εται'\, '\όμαστε'\, '\όσαστε'\, '\εστε'\, '\ονται'\, '\ιέμαι'\, '\ιέσαι'\, '\ιέται'\, '\ιόμαστε'\, '\ιέστε'\, '\ιούνται'\, '\ιόνται'\, '\ιούμαι'\, '\είσαι'\, '\είται'\, '\ούμαστε'\, '\είστε'\ ή '\ούνται\' (π.χ. βαριόμαστε)", 
+        "cluster": 35,
+        "character":"character21"
+      },
+      {
+        "descriptions": [
+          "(παθητική)-όμουν",
+          "(παθητική)-όμουνα",
+          "(παθητική)-όσουν",
+          "(παθητική)-όμουνα",
+          "(παθητική)-ότανε",
+          "(παθητική)-όμασταν",
+          "(παθητική)-όμαστε",
+          "(παθητική)-όσασταν",
+          "(παθητική)-όσαστε",
+          "(παθητική)-ονταν",
+          "(παθητική)-όντανε",
+          "(παθητική)-όντουσαν",
+          "(παθητική)-ούμουν",
+          "(παθητική)-ούμουνα",
+          "(παθητική)-ούσουν",
+          "(παθητική)-ούσουνα",
+          "(παθητική)-ούνταν",
+          "(παθητική)-ούμασταν",
+          "(παθητική)-ούμαστε",
+          "(παθητική)-ούσασταν",
+          "(παθητική)-ούσαστε",
+          "(παθητική)-ούνταν",
+          "(παθητική)-ούντανε",
+          "(παθητική)-όταν",
+          "(παθητική)-ηκα",
+          "(παθητική)-ηκες",
+          "(παθητική)-ηκε",
+          "(παθητική)-ήκαμε",
+          "(παθητική)-ήκατε",
+          "(παθητική)-αν"
+        ],
+        "problemType": "IS_VERB_AND_ENDS_WITH",
+        "humanReadableDescription": "Ρήματα σε παθητική φωνή που τελειώνουν με \'όμουν'\, '\όμουνα'\, '\όσουν'\, '\όμουνα'\, '\όταν'\, '\ότανε'\, '\όμασταν'\, '\όμαστε'\, '\όσασταν'\, '\όσαστε'\, '\ονταν'\, '\όντανε'\, '\όντουσαν'\, '\ούμουν'\, '\ούμουνα'\, '\ούσουν'\, '\ούσουνα'\, '\ούνταν'\, '\ούμασταν'\, '\ούμαστε'\, '\ούσασταν'\, '\ούσαστε'\, '\ούνταν'\, '\ούντανε'\, '\ηκα'\, '\ηκες'\, '\ηκε'\, '\ήκαμε'\, '\ήκατε'\ ή '\αν\' (π.χ. θεωρούμαστε)", 
+        "cluster": 35,
+        "character":"character21"
+      },
+      {
+        "descriptions": [
+          "ών",
+          "ούσα",
+          "όν",
+          "είς",
+          "είσα",
+          "έν"
+        ],
+        "problemType": "IS_ADJ_AND_ENDS_WITH",
+        "humanReadableDescription": "Επίθετα που τελειώνουν με \'ών'\, '\ούσα'\, '\όν'\, '\είς'\, '\είσα'\ ή '\έν\' (π.χ. τραχείς)", 
+        "cluster": 36,
+        "character":"character22"
+      }
+    ],
+    [
+      {
+        "descriptions": [
+          "ένας",
+          "μία",
+          "ένα"
+        ],
+        "problemType": "EQUALS",
+        "humanReadableDescription": "Λέξεις \'ένας'\, '\μία'\, '\ένα\'", 
+        "cluster": 37,
+        "character":"character23"
+      },
+      {
+        "descriptions": [
+          "ενός",
+          "μίας",
+          "μιας"
+        ],
+        "problemType": "EQUALS",
+        "humanReadableDescription": "Λέξεις \'ενός\', \'μιας\'", 
+        "cluster": 37,
+        "character":"character23"
+      },
+      {
+        "descriptions": [
+          "ο",
+          "η",
+          "το",
+          "τον"
+        ],
+        "problemType": "EQUALS",
+        "humanReadableDescription": "Λέξεις \'ο\', \'η\', \'το\'", 
+        "cluster": 38,
+        "character":"character23"
+      },
+      {
+        "descriptions": [
+          "του",
+          "της"
+        ],
+        "problemType": "EQUALS",
+        "humanReadableDescription": "Λέξεις \'του\', \'της\'", 
+        "cluster": 38,
+        "character":"character23"
+      },
+      {
+        "descriptions": [
+          "οι",
+          "τα"
+        ],
+        "problemType": "EQUALS",
+        "humanReadableDescription": "Λέξεις \'οι\', \'τα\'", 
+        "cluster": 38,
+        "character":"character23"
+      },
+      {
+        "descriptions": [
+          "των"
+        ],
+        "problemType": "EQUALS",
+        "humanReadableDescription": "Λέξη \'των\'", 
+        "cluster": 38,
+        "character":"character23"
+      },
+      {
+        "descriptions": [
+          "σε"
+        ],
+        "problemType": "EQUALS",
+        "humanReadableDescription": "Λέξη \'σε\'", 
+        "cluster": 39,
+        "character":"character24"
+      },
+      {
+        "descriptions": [
+          "με"
+        ],
+        "problemType": "EQUALS",
+        "humanReadableDescription": "Λέξη \'με\'", 
+        "cluster": 39,
+        "character":"character24"
+      },
+      {
+        "descriptions": [
+          "για"
+        ],
+        "problemType": "EQUALS",
+        "humanReadableDescription": "Λέξη \'για\'", 
+        "cluster": 40,
+        "character":"character24"
+      },
+      {
+        "descriptions": [
+          "από"
+        ],
+        "problemType": "EQUALS",
+        "humanReadableDescription": "Λέξη \'από\'", 
+        "cluster": 40,
+        "character":"character24"
+      }
+    ]
+  ],
+  "language": "GR"
+}

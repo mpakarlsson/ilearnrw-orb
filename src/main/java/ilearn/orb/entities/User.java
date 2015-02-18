@@ -1,5 +1,7 @@
 package ilearn.orb.entities;
 
+import ilearnrw.utils.LanguageCode;
+
 import java.util.Date;
 
 /*
@@ -21,6 +23,15 @@ public class User {
 	private String language;
 
 	public User() {
+	}
+
+	public User(LanguageCode lc, String username, int id) {
+		this.username = username;
+		this.language = lc.toString();
+		this.id = id;
+		this.birthdate = new Date(56789988);
+		this.enabled = false;
+		this.gender = "F";
 	}
 
 	public User(String id) {
