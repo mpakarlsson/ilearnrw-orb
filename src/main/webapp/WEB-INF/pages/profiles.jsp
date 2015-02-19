@@ -25,11 +25,11 @@
 
 	<div class="container">
 		<div class="row">
-			<div class="col-md-3">
+			<div class="col-md-3"><br>
 				<table class="table table-hover">
 					<thead>
 						<tr>
-							<th>Available Profiles</th>
+							<th><spring:message code="profile.listheader" text="default text" /></th>
 						</tr>
 					</thead>
 					<tbody>
@@ -47,10 +47,10 @@
 			<div class="col-md-9">
 				<c:choose>
 					<c:when test="${selectedStudent == null}">
-						<h2>Please select a profile</h2>
+						<h2><spring:message code="profile.selectprofile" text="default text" /></h2>
 					</c:when>
 					<c:otherwise>
-						<h2>${selectedStudent.getUsername()}</h2>
+						<h2>${selectedStudent.getUsername()}, <spring:message code="profile.difficulties" text="default text" /></h2>
 
 						<div class="panel-group" id="accordion" role="tablist"
 							aria-multiselectable="true">

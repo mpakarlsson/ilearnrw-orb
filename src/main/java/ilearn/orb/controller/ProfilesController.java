@@ -10,12 +10,11 @@ package ilearn.orb.controller;
  * webtests / webtests / WelcomeController.java
  */
 
+import ilearn.orb.controller.utils.profiles.HardcodedUsers;
 import ilearn.orb.entities.User;
 import ilearn.orb.services.external.UserServices;
 import ilearn.orb.services.external.utils.UtilDateDeserializer;
-import ilearn.orb.utils.profiles.ProfileGenerator;
 import ilearnrw.user.profile.UserProfile;
-import ilearnrw.utils.LanguageCode;
 
 import java.text.DateFormat;
 import java.util.Locale;
@@ -62,7 +61,7 @@ public class ProfilesController {
 			} catch (NullPointerException e) {
 			}
 			if (students == null || students.length == 0) {
-				students = defaultStudents();
+				students = HardcodedUsers.defaultStudents();
 			}
 			modelMap.put("students", students);
 
@@ -88,9 +87,9 @@ public class ProfilesController {
 			UserProfile p = null;
 			User selectedStudent = null;
 			if (userid < 0) {
-				students = defaultStudents();
+				students = HardcodedUsers.defaultStudents();
 				selectedStudent = selectedStudent(students, userid.intValue());
-				p = defaultProfile(selectedStudent.getId());
+				p = HardcodedUsers.defaultProfile(selectedStudent.getId());
 			} else {
 				Gson gson = new GsonBuilder()
 						.registerTypeAdapter(java.util.Date.class,
@@ -130,25 +129,5 @@ public class ProfilesController {
 				break;
 			}
 		return selectedStudent;
-	}
-	
-	private static User[] defaultStudents() {
-		User[] students = new User[4];
-		students[0] = new User(LanguageCode.EN, "english_low", -50);
-		students[1] = new User(LanguageCode.EN, "english_high", -40);
-		students[2] = new User(LanguageCode.EN, "greek_low", -30);
-		students[3] = new User(LanguageCode.EN, "greek_high", -20);
-		return students;
-	}
-	
-	private static UserProfile defaultProfile(int id){
-		if (id == -20)
-			return ProfileGenerator.createProfile(LanguageCode.GR, 3);
-		else if (id == -30)
-			return ProfileGenerator.createProfile(LanguageCode.GR, 1);
-		if (id == -40)
-			return ProfileGenerator.createProfile(LanguageCode.EN, 3);
-		else
-			return ProfileGenerator.createProfile(LanguageCode.EN, 1);
 	}
 }

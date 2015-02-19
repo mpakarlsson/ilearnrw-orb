@@ -16,8 +16,7 @@
 		<div id="navbar" class="navbar-collapse collapse">
 			<ul class="nav navbar-nav">
 				<li class="active"><a href="${pageContext.request.contextPath}/profiles?lang=${pageContext.response.locale}"><spring:message code="navbar.profile" text="default text" /></a></li>
-				<li><a href="#about"><spring:message code="navbar.classification" text="default text" /></a></li>
-				<li><a href="#contact"><spring:message code="navbar.annotation" text="default text" /></a></li>
+				<li><a href="${pageContext.request.contextPath}/analysis?lang=${pageContext.response.locale}"><spring:message code="navbar.analysis" text="default text" /></a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
 				<% if((String) request.getSession().getAttribute("username") == null) {%>
@@ -29,8 +28,8 @@
 						<spring:message code="navbar.logout" text="default text" /></a></li>
 				<%} %>
 
-				<li><a href="?lang=en">EN</a></li>
-				<li><a href="?lang=el_GR">EL</a></li>
+				<li><a href="?lang=en"><img border="0" alt="English" src="${pageContext.request.contextPath}/resources/assets/images/uk_flag.png" width="20" height="20"></a></li>
+				<li><a href="?lang=el_GR"><img border="0" alt="Greek" src="${pageContext.request.contextPath}/resources/assets/images/gr_flag.png" width="20" height="20"></a></li>
 
 			</ul>
 		</div>
