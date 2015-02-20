@@ -5,6 +5,8 @@
 <html>
 <head>
 
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
 <jsp:include page="includes/includes.jsp"></jsp:include>
 
 <title>iLearnRW ORB</title>
@@ -24,20 +26,41 @@
 
 
 	<div class="container">
-		<br>
-		<form>
-			<select class="form-control">
-				<c:forEach items="${students}" var="student">
-					<option value="${student.getId()}">
-						${student.getUsername()}</option>
-				</c:forEach>
-			</select> <br>
-			<div class="form-group">
-				<textarea class="form-control" rows="10"></textarea>
-			</div>
-			<button type="submit" class="btn btn-default">Submit</button>
-		</form>
+		<div class="row">
+			<div class="col-md-6">
+				<br>
+				<form name="textForm" action="" method="post">
+					<select class="form-control"  name="selectedId">
+						<c:forEach items="${students}" var="student">
+							<option value="${student.getId()}">
+								${student.getUsername()}</option>
+						</c:forEach>
+					</select> <br>
+					<div class="form-group">
+						<textarea class="form-control" rows="10" name="inputText" >${text}</textarea>
+					</div>
+					<button type="submit" class="btn btn-default">Submit</button>
+				</form>
 
+			</div>
+			<div class="col-md-6">
+				<br>
+				<table class="table table-bordered" id = "resultsTable">
+					<thead>
+						<tr>
+							<th>Property</th>
+							<th>Value</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class="active">
+							<td>Number of Words</td>
+							<td>23</td>
+						</tr>
+				</table>
+			</div>
+		</div>
+	
 		<hr>
 
 		<footer>

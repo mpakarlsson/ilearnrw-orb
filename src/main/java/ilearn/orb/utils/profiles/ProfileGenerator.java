@@ -48,8 +48,11 @@ public class ProfileGenerator {
 		for (int i = 0; i < us.getLength(); i++) {
 			us.getSystemIndices()[i] = 0;
 			us.getTeacherIndices()[i] = 0;
+			int curValue = value;
+			if (pdi.getProblemDefinition(i).getSeverityType().equals("binary"))
+				curValue = value < 2 ? value : 1;
 			for (int j = 0; j < us.getSeverities()[i].length; j++) {
-				us.setSeverity(i, j, value);
+				us.setSeverity(i, j, curValue);
 			}
 		}
 		return us;

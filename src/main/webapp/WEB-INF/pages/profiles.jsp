@@ -100,7 +100,8 @@
 													</c:choose>
 
 													<th scope="row">${j+1}.</th>
-													<td>${selectedProfile.getUserProblems().getProblemDescription(i, j).getHumanReadableDescription()}</td>
+													<td>${selectedProfile.getUserProblems().getProblemDescription(i, j).getHumanReadableDescription()} </td>
+													<td style="min-width: 90px"> <a href = "www.google.com">[word bank]</a></td>
 
 													<td style="min-width: 50px">${selectedProfile.getUserProblems().getUserSeverity(i, j)}
 														/

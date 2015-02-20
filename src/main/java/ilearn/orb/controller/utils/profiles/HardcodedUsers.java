@@ -8,23 +8,17 @@ import ilearnrw.utils.LanguageCode;
 public class HardcodedUsers {
 	
 	public static User[] defaultStudents() {
-		User[] students = new User[4];
-		students[0] = new User(LanguageCode.EN, "english_low", -50);
-		students[1] = new User(LanguageCode.EN, "english_high", -40);
-		students[2] = new User(LanguageCode.EN, "greek_low", -30);
-		students[3] = new User(LanguageCode.EN, "greek_high", -20);
+		User[] students = new User[2];
+		students[0] = new User(LanguageCode.EN, "english_profile", -10);
+		students[1] = new User(LanguageCode.EN, "greek_profile", -20);
 		return students;
 	}
 	
 	public static UserProfile defaultProfile(int id){
 		if (id == -20)
 			return ProfileGenerator.createProfile(LanguageCode.GR, 3);
-		else if (id == -30)
-			return ProfileGenerator.createProfile(LanguageCode.GR, 1);
-		if (id == -40)
+		else 
 			return ProfileGenerator.createProfile(LanguageCode.EN, 3);
-		else
-			return ProfileGenerator.createProfile(LanguageCode.EN, 1);
 	}
 
 }
