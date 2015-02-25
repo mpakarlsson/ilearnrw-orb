@@ -19,6 +19,20 @@
 	href=${pageContext.request.contextPath}/resources/libs/css/jumbotron.css
 	rel="stylesheet">
 
+<script>
+
+$(document).ready(function () {
+	alert("ok");
+    $('tr.success').click(function() {
+        var id = $(this).data('details');
+        alert(id);
+        //$('table.hidden').hide();
+        //$('#'+id).show();
+    });
+});    
+
+</script>
+
 </head>
 
 <body>
@@ -32,7 +46,8 @@
 				<br>
 
 				<form name="textForm" action="" method="post">
-					<select class="form-control" name="selectedId">
+					<label for="male"><spring:message code="text.analysis.select" text="default text" /></label> <select class="form-control"
+						name="selectedId">
 						<c:forEach items="${students}" var="student">
 							<option value="${student.getId()}"
 								${profileId == student.getId() ? "selected": ""}>
@@ -40,93 +55,91 @@
 						</c:forEach>
 					</select> <br>
 					<div class="form-group">
+					<label for="male"><spring:message code="text.analysis.inserttext" text="default text" /></label>
 						<textarea class="form-control" rows="30" name="inputText">${text}</textarea>
 					</div>
-					<button type="submit" class="btn btn-default">Submit</button>
+					<button type="submit" class="btn btn-default"><spring:message code="text.analysis.calculate" text="default text" /></button>
 				</form>
 
 			</div>
 			<div class="col-md-4">
 				<br>
-				<h4>Generic Metrics</h4>
+				<h4><spring:message code="text.analysis.metrics" text="default text" /></h4>
 				<table class="table table-striped" id="resultsTable">
 					<thead>
 						<tr>
-							<th>Property</th>
-							<th>Value</th>
+							<th><spring:message code="text.analysis.property" text="default text" /></th>
+							<th><spring:message code="text.analysis.value" text="default text" /></th>
 						</tr>
 					</thead>
 					<tbody>
 						<tr>
-							<td>Number of Words</td>
+							<td><spring:message code="text.analysis.words" text="default text" /></td>
 							<td>${analysisResults.getNumberOfTotalWords() }</td>
 						</tr>
 						<tr>
-							<td>Polysyllabic Words</td>
+							<td><spring:message code="text.analysis.bigwords" text="default text" /></td>
 							<td>${analysisResults.getNumberOfPolysyllabicWords()}</td>
 						</tr>
 						<tr>
-							<td>Number of Sentences</td>
+							<td><spring:message code="text.analysis.sentences" text="default text" /></td>
 							<td>${analysisResults.getNumberOfSentences() }</td>
 						</tr>
 						<tr>
-							<td>15 or more word Sentences</td>
+							<td><spring:message code="text.analysis.bigsentences" text="default text" /></td>
 							<td>${analysisResults.getNumberOfBigSentences() }</td>
 						</tr>
 						<tr>
-							<td>Number of Paragraphs</td>
+							<td><spring:message code="text.analysis.paragraphs" text="default text" /></td>
 							<td>${analysisResults.getNumberOfParagraphs() }</td>
 						</tr>
 						<tr>
-							<td>Average Word Length</td>
+							<td><spring:message code="text.analysis.avgword" text="default text" /></td>
 							<td><fmt:formatNumber type="number" maxFractionDigits="2"
 									minFractionDigits="2"
 									value="${analysisResults.getAverageWordLength() }" /></td>
 						</tr>
 						<tr>
-							<td>Average Number of Syllables</td>
+							<td><spring:message code="text.analysis.avgsyllables" text="default text" /></td>
 							<td><fmt:formatNumber type="number" maxFractionDigits="2"
 									minFractionDigits="2"
 									value="${analysisResults.getAverageSyllablesPerWord() }" /></td>
 						</tr>
 						<tr>
-							<td>Average Words per Sentence</td>
+							<td><spring:message code="text.analysis.avgwordspersentence" text="default text" /></td>
 							<td><fmt:formatNumber type="number" maxFractionDigits="2"
 									minFractionDigits="2"
 									value="${analysisResults.getAverageWordsPerSentence() }" /></td>
 						</tr>
 						<tr>
-							<td>Flesch-Kincaid</td>
+							<td><spring:message code="text.analysis.flesch" text="default text" /></td>
 							<td><fmt:formatNumber type="number" maxFractionDigits="2"
 									minFractionDigits="2"
 									value="${analysisResults.getFleschKincaid()}" /></td>
 						</tr>
 				</table>
 				<hr>
-				<h4>User Related Metrics</h4>
+				<h4><spring:message code="text.analysis.usermetrics" text="default text" /></h4>
 				<table class="table table-striped" id="resultsTable">
 					<thead>
 						<tr>
-							<th>Property</th>
-							<th>Value</th>
+							<th><spring:message code="text.analysis.property" text="default text" /></th>
+							<th><spring:message code="text.analysis.value" text="default text" /></th>
 						</tr>
 					</thead>
 					<tbody>
 						<tr>
-							<td>Text Difficulty</td>
+							<td><spring:message code="text.analysis.difficulty" text="default text" /></td>
 							<td><fmt:formatNumber type="number" maxFractionDigits="2"
 									minFractionDigits="2" value="${analysisResults.getTscore()}" /></td>
 						</tr>
 						<tr>
-							<td>Difficult Words</td>
-							<td><fmt:formatNumber type="number" maxFractionDigits="2"
-									minFractionDigits="2" value="${analysisResults.getDiffWords()}" /></td>
+							<td><spring:message code="text.analysis.diffwords" text="default text" /></td>
+							<td>${analysisResults.getDiffWords()}</td>
 						</tr>
 						<tr>
-							<td>Very Difficult Words</td>
-							<td><fmt:formatNumber type="number" maxFractionDigits="2"
-									minFractionDigits="2"
-									value="${analysisResults.getVeryDiffWords()}" /></td>
+							<td><spring:message code="text.analysis.verydiffwords" text="default text" /></td>
+							<td>${analysisResults.getVeryDiffWords()}</td>
 						</tr>
 				</table>
 
@@ -170,7 +183,7 @@
 														end="${selectedProfile.getUserProblems().getRowLength(i)-1}"
 														var="j">
 
-														<tr class="success">
+														<tr class="success" data-details="data${i}_${j}">
 															<td
 																style="font-size:${65+135*analysisResults.getUserCounters().getValue(i, j) / maxWordsMatched}%">${selectedProfile.getUserProblems().getProblemDescription(i, j).getHumanReadableDescription()}
 															</td>

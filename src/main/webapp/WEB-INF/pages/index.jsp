@@ -58,7 +58,6 @@
 				<li><spring:message code="quickinfo.checkword.phonic" text="default text" /></li>
 				<li><spring:message code="quickinfo.checkword.freq" text="default text" /></li>          
           </ul>
-          <p><a class="btn btn-default" href="#" role="button"><spring:message code="general.viewdetails" text="default text" /> &raquo;</a></p>
        </div>
         <div class="col-md-4">
           <h2><spring:message code="quickinfo.annotation.title" text="default text" /></h2>
@@ -68,8 +67,6 @@
 				<li><spring:message code="quickinfo.annotation.highlight" text="default text" /></li>
 				<li><spring:message code="quickinfo.annotation.multiple" text="default text" /></li>          
           </ul>
-
-          <p><a class="btn btn-default" href="#" role="button"><spring:message code="general.viewdetails" text="default text" /> &raquo;</a></p>
         </div>
       </div>
 

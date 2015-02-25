@@ -19,4 +19,4 @@
     <![endif]-->
 	
 <!-- Basic JS file -->
-<script src="${pageContext.request.contextPath}/resources/project-libs/js/test.js"></script>
+<script src="${pageContext.request.contextPath}/resources/libs/js/jquery-2.1.3.min.js"></script>
