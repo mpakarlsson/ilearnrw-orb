@@ -81,23 +81,23 @@
 													end="${selectedProfile.getUserProblems().getRowLength(i)-1}"
 													var="j">
 
-													<c:choose>
-														<c:when
-															test="${selectedProfile.getUserProblems().getUserSeverity(i, j)/(selectedProfile.getUserProblems().getProblemDefinition(i).getSeverityType().equals(\"binary\")?1:3) == 1}">
-															<tr class="danger">
-														</c:when>
-														<c:when
-															test="${selectedProfile.getUserProblems().getUserSeverity(i, j)/(selectedProfile.getUserProblems().getProblemDefinition(i).getSeverityType().equals(\"binary\")?1:3) > 0.6}">
-															<tr class="warning">
-														</c:when>
-														<c:when
-															test="${selectedProfile.getUserProblems().getUserSeverity(i, j)/(selectedProfile.getUserProblems().getProblemDefinition(i).getSeverityType().equals(\"binary\")?1:3) > 0.3}">
-															<tr class="info">
-														</c:when>
-														<c:otherwise>
-															<tr class="success">
-														</c:otherwise>
-													</c:choose>
+												<%!String str = "success";%>
+												<c:choose>
+													<c:when
+														test="${selectedProfile.getUserProblems().getUserSeverity(i, j)/(selectedProfile.getUserProblems().getProblemDefinition(i).getSeverityType().equals(\"binary\")?1:3) > 0.9}">
+														<% str = "danger"; %>
+													</c:when>
+													<c:when
+														test="${selectedProfile.getUserProblems().getUserSeverity(i, j)/(selectedProfile.getUserProblems().getProblemDefinition(i).getSeverityType().equals(\"binary\")?1:3) > 0.6}">
+														<% str = "warning"; %>
+													</c:when>
+													<c:when
+														test="${selectedProfile.getUserProblems().getUserSeverity(i, j)/(selectedProfile.getUserProblems().getProblemDefinition(i).getSeverityType().equals(\"binary\")?1:3) > 0.3}">
+														<% str = "info"; %>
+													</c:when>
+												</c:choose>
+												
+													<tr class="<%= str %>">
 
 													<th scope="row">${j+1}.</th>
 													<td>${selectedProfile.getUserProblems().getProblemDescription(i, j).getHumanReadableDescription()} </td>
@@ -105,7 +105,8 @@
 
 													<td style="min-width: 50px">${selectedProfile.getUserProblems().getUserSeverity(i, j)}
 														/
-														${selectedProfile.getUserProblems().getProblemDefinition(i).getSeverityType().equals("binary")?1:3}</td>
+														${selectedProfile.getUserProblems().getProblemDefinition(i).getSeverityType().equals("binary")?1:3}
+													</td>
 													</tr>
 												</c:forEach>
 											</table>
