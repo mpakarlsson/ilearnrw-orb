@@ -81,18 +81,18 @@
 													end="${selectedProfile.getUserProblems().getRowLength(i)-1}"
 													var="j">
 
-												<%!String str = "success";%>
+												<% String str = "success";%>
 												<c:choose>
 													<c:when
-														test="${selectedProfile.getUserProblems().getUserSeverity(i, j)/(selectedProfile.getUserProblems().getProblemDefinition(i).getSeverityType().equals(\"binary\")?1:3) > 0.9}">
+														test="${selectedProfile.getUserProblems().getUserSeverity(i, j)/(selectedProfile.getUserProblems().getProblemDefinition(i).getSeverityType().equals(\"binary\")?1.0:3.0) > 0.9}">
 														<% str = "danger"; %>
 													</c:when>
 													<c:when
-														test="${selectedProfile.getUserProblems().getUserSeverity(i, j)/(selectedProfile.getUserProblems().getProblemDefinition(i).getSeverityType().equals(\"binary\")?1:3) > 0.6}">
+														test="${selectedProfile.getUserProblems().getUserSeverity(i, j)/(selectedProfile.getUserProblems().getProblemDefinition(i).getSeverityType().equals(\"binary\")?1.0:3.0) > 0.5}">
 														<% str = "warning"; %>
 													</c:when>
 													<c:when
-														test="${selectedProfile.getUserProblems().getUserSeverity(i, j)/(selectedProfile.getUserProblems().getProblemDefinition(i).getSeverityType().equals(\"binary\")?1:3) > 0.3}">
+														test="${selectedProfile.getUserProblems().getUserSeverity(i, j)/(selectedProfile.getUserProblems().getProblemDefinition(i).getSeverityType().equals(\"binary\")?1.0:3.0) > 0.3}">
 														<% str = "info"; %>
 													</c:when>
 												</c:choose>
@@ -104,7 +104,7 @@
 													<td style="min-width: 90px"> <a href = "www.google.com">[word bank]</a></td>
 
 													<td style="min-width: 50px">${selectedProfile.getUserProblems().getUserSeverity(i, j)}
-														/
+														-
 														${selectedProfile.getUserProblems().getProblemDefinition(i).getSeverityType().equals("binary")?1:3}
 													</td>
 													</tr>

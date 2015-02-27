@@ -2,6 +2,7 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page contentType="text/html;charset=UTF-8"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 
 <html>
 <head>
@@ -13,8 +14,6 @@
 <title>iLearnRW ORB</title>
 
 
-<!-- Custom styles for this template
-    <link href="css/jumbotron.css" rel="stylesheet"> -->
 <link
 	href=${pageContext.request.contextPath}/resources/libs/css/jumbotron.css
 	rel="stylesheet">
@@ -23,12 +22,21 @@
 	$(document).ready(function() {
 		$('.badge').click(function() {
 			var id = $(this).data('details');
-			alert(id);
-			//$('table.hidden').hide();
-			//$('#'+id).show();
+			$('table.hiddens').hide();
+			$('#' + id).show();
 		});
 	});
 </script>
+
+<style>
+.show {
+	display: block;
+}
+
+.hiddens {
+	display: none;
+}
+</style>
 
 </head>
 
@@ -169,110 +177,117 @@
 		</div>
 
 
+		<c:choose>
+			<c:when test="${selectedProfile != null}">
+			<hr>
+				<div class="row">
+					<div class="col-md-8">
+						<div class="panel-group" id="accordion" role="tablist"
+							aria-multiselectable="true">
+
+							<c:forEach begin="0"
+								end="${selectedProfile.getUserProblems().getNumerOfRows()-1}"
+								var="i">
 
 
-		<div class="container">
-			<c:choose>
-				<c:when test="${selectedProfile != null}">
-					<div class="row">
-						<div class="col-md-8">
-							<div class="panel-group" id="accordion" role="tablist"
-								aria-multiselectable="true">
 
-								<c:forEach begin="0"
-									end="${selectedProfile.getUserProblems().getNumerOfRows()-1}"
-									var="i">
+								<div class="panel panel-default">
+									<div class="panel-heading" style="padding: 5px 15px;">${selectedProfile.getUserProblems().getProblemDefinition(i).getUri()}</div>
+									<div class="panel-body">
+										<c:forEach begin="0"
+											end="${selectedProfile.getUserProblems().getRowLength(i)-1}"
+											var="j">
 
-									<%-- 									<div class="panel panel-default">
-										<div class="panel-heading" role="tab"
-											id="heading<c:out value="${i}" />">
-											<h4 class="panel-title">
-												<a data-toggle="collapse" data-parent="#accordion"
-													href="#collapse<c:out value="${i}" />"
-													aria-expanded="${i == 0}"
-													aria-controls="collapse<c:out value="${i}" />">
-													${selectedProfile.getUserProblems().getProblemDefinition(i).getUri()}
-												</a>
-											</h4>
-										</div>
-										<div id="collapse<c:out value="${i}" />"
-											class="panel-collapse collapse" role="tabpanel"
-											aria-labelledby="heading<c:out value="${i}" />">
-											<div class="panel-body">
+											<%
+												String str = "success";
+											%>
+											<c:choose>
+												<c:when
+													test="${selectedProfile.getUserProblems().getUserSeverity(i, j)/(selectedProfile.getUserProblems().getProblemDefinition(i).getSeverityType().equals(\"binary\")?1.0:3.0) > 0.9}">
+													<%
+														str = "danger";
+													%>
+												</c:when>
+												<c:when
+													test="${selectedProfile.getUserProblems().getUserSeverity(i, j)/(selectedProfile.getUserProblems().getProblemDefinition(i).getSeverityType().equals(\"binary\")?1.0:3.0) > 0.5}">
+													<%
+														str = "warning";
+													%>
+												</c:when>
+												<c:when
+													test="${selectedProfile.getUserProblems().getUserSeverity(i, j)/(selectedProfile.getUserProblems().getProblemDefinition(i).getSeverityType().equals(\"binary\")?1.0:3.0) > 0.3}">
+													<%
+														str = "info";
+													%>
+												</c:when>
+											</c:choose>
 
-												<table class="table table-condensed">
-													<c:forEach begin="0"
-														end="${selectedProfile.getUserProblems().getRowLength(i)-1}"
-														var="j">
-
-														<tr class="success" data-details="data${i}_${j}">
-															<td
-																style="font-size:${65+135*analysisResults.getUserCounters().getValue(i, j) / maxWordsMatched}%">${selectedProfile.getUserProblems().getProblemDescription(i, j).getHumanReadableDescription()}
-															</td>
-															<td style="min-width: 90px" align="right"> <span
-																class="badge" data-details="data${i}_${j}"
-																style="font-size:${65+200*analysisResults.getUserCounters().getValue(i, j) / maxWordsMatched}%">
-																${analysisResults.getUserCounters().getValue(i, j)} </span> </td>
-
-
-														</tr>
-													</c:forEach>
-												</table>
-											</div>
-										</div>
-									</div> --%>
-
-									<div class="panel panel-default">
-										<div class="panel-heading">${selectedProfile.getUserProblems().getProblemDefinition(i).getUri()}</div>
-										<div class="panel-body">
-											<c:forEach begin="0"
-												end="${selectedProfile.getUserProblems().getRowLength(i)-1}"
-												var="j">
-
-												<%!String str = "success";%>
-												<c:choose>
-													<c:when
-														test="${selectedProfile.getUserProblems().getUserSeverity(i, j)/(selectedProfile.getUserProblems().getProblemDefinition(i).getSeverityType().equals(\"binary\")?1:3) == 1}">
-
-														<%
-															str = "danger";
-														%>
-													</c:when>
-													<c:when
-														test="${selectedProfile.getUserProblems().getUserSeverity(i, j)/(selectedProfile.getUserProblems().getProblemDefinition(i).getSeverityType().equals(\"binary\")?1:3) > 0.6}">
-														<%
-															str = "warning";
-														%>
-													</c:when>
-													<c:when
-														test="${selectedProfile.getUserProblems().getUserSeverity(i, j)/(selectedProfile.getUserProblems().getProblemDefinition(i).getSeverityType().equals(\"binary\")?1:3) > 0.3}">
-														<%
-															str = "info";
-														%>
-													</c:when>
-												</c:choose>
-
-												<span class="badge alert-<%= str %>"
-													data-details="data${i}_${j}" data-toggle="tooltip"
-													data-placement="top"
-													title="${selectedProfile.getUserProblems().getProblemDescription(i, j).getHumanReadableDescription()}"
-													style="font-size:${65+170*analysisResults.getUserCounters().getValue(i, j) / maxWordsMatched}%">
-													${analysisResults.getUserCounters().getValue(i, j)} </span>
-											</c:forEach>
-										</div>
+											<span class="badge alert-<%= str %>"
+												data-details="data${i}_${j}" data-toggle="tooltip"
+												data-placement="top"
+												title="${selectedProfile.getUserProblems().getProblemDescription(i, j).getHumanReadableDescription()}"
+												style="cursor:pointer; font-size:${75+170*analysisResults.getUserCounters().getValue(i, j) / maxWordsMatched}%">
+												${analysisResults.getUserCounters().getValue(i, j)} </span>
+										</c:forEach>
 									</div>
+								</div>
 
 
 
-								</c:forEach>
-							</div>
-
+							</c:forEach>
 						</div>
-					</div>
-				</c:when>
-			</c:choose>
-		</div>
 
+					</div>
+					<div class="col-md-4">
+
+
+						<c:forEach begin="0"
+							end="${selectedProfile.getUserProblems().getNumerOfRows()-1}"
+							var="i">
+
+							<c:forEach begin="0"
+								end="${selectedProfile.getUserProblems().getRowLength(i)-1}"
+								var="j">
+								<table id="data${i}_${j}" class="table table-bordered hiddens">
+      <thead>
+									<tr>
+										<th colspan="3">
+											${selectedProfile.getUserProblems().getProblemDescription(i, j).getHumanReadableDescription()}
+										</th>
+
+										<tr><td>Word</td>
+										<td>Syllables</td>
+										<td>Phonetics</td>
+									</tr>
+      </thead>
+      <tbody>
+
+									<c:choose>
+										<c:when
+											test="${analysisResults.getProblematicWords().getTable()[i][j].getWordList().size() > 0}">
+											<c:forEach begin="0"
+												end="${analysisResults.getProblematicWords().getTable()[i][j].getWordList().size()-1}"
+												var="k">
+												<tr>
+													<td>${ analysisResults.getProblematicWords().getTable()[i][j].getWordList().get(k).toString() }
+													</td>
+													<td>${ analysisResults.getProblematicWords().getTable()[i][j].getWordList().get(k).getWordInToSyllables().toLowerCase() }
+													</td>
+													<td>${ analysisResults.getProblematicWords().getTable()[i][j].getWordList().get(k).getPhonetics() }
+													</td>
+												</tr>
+											</c:forEach>
+										</c:when>
+									</c:choose>
+      </tbody>
+								</table>
+
+							</c:forEach>
+						</c:forEach>
+					</div>
+				</div>
+			</c:when>
+		</c:choose>
 
 
 

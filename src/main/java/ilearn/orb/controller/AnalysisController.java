@@ -86,6 +86,7 @@ public class AnalysisController {
 			AnalysisResults analysisResults = null;
 			analysisResults = (new Gson()).fromJson(json, AnalysisResults.class);
 			modelMap.put("analysisResults", analysisResults);
+			analysisResults.getProblematicWords().getTable()[0][0].getWordList().get(0).getPhonetics();
 			UserProfile pr = retrieveProfile(session, Integer.parseInt(profileId));
 			modelMap.put("selectedProfile", pr);
 			int maxWordsMatched = 0;
