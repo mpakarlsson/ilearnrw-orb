@@ -179,7 +179,7 @@
 
 		<c:choose>
 			<c:when test="${selectedProfile != null}">
-			<hr>
+				<hr>
 				<div class="row">
 					<div class="col-md-8">
 						<div class="panel-group" id="accordion" role="tablist"
@@ -236,7 +236,12 @@
 
 							</c:forEach>
 						</div>
-
+						<hr>
+						<ul>
+							<li><spring:message code="text.analysis.legend.colours" text="default"/></li>
+							<li><spring:message code="text.analysis.legend.numbers" text="default"/></li>
+							<li><spring:message code="text.analysis.legend.click" text="default"/></li>
+						</ul>
 					</div>
 					<div class="col-md-4">
 
@@ -249,41 +254,41 @@
 								end="${selectedProfile.getUserProblems().getRowLength(i)-1}"
 								var="j">
 								<table id="data${i}_${j}" class="table table-bordered hiddens">
-      <thead>
-									<tr>
-										<th colspan="3">
-											${selectedProfile.getUserProblems().getProblemDescription(i, j).getHumanReadableDescription()}
-										</th>
+									<thead>
+										<tr>
+											<th colspan="3">
+												${selectedProfile.getUserProblems().getProblemDescription(i, j).getHumanReadableDescription()}
+											</th>
+										<tr>
+											<td>Word</td>
+											<td>Syllables</td>
+											<td>Phonetics</td>
+										</tr>
+									</thead>
+									<tbody>
 
-										<tr><td>Word</td>
-										<td>Syllables</td>
-										<td>Phonetics</td>
-									</tr>
-      </thead>
-      <tbody>
-
-									<c:choose>
-										<c:when
-											test="${analysisResults.getProblematicWords().getTable()[i][j].getWordList().size() > 0}">
-											<c:forEach begin="0"
-												end="${analysisResults.getProblematicWords().getTable()[i][j].getWordList().size()-1}"
-												var="k">
-												<tr>
-													<td>${ analysisResults.getProblematicWords().getTable()[i][j].getWordList().get(k).toString() }
-													</td>
-													<td>${ analysisResults.getProblematicWords().getTable()[i][j].getWordList().get(k).getWordInToSyllables().toLowerCase() }
-													</td>
-													<td>${ analysisResults.getProblematicWords().getTable()[i][j].getWordList().get(k).getPhonetics() }
-													</td>
-												</tr>
-											</c:forEach>
-										</c:when>
-									</c:choose>
-      </tbody>
+										<c:choose>
+											<c:when
+												test="${analysisResults.getProblematicWords().getTable()[i][j].getWordList().size() > 0}">
+												<c:forEach begin="0"
+													end="${analysisResults.getProblematicWords().getTable()[i][j].getWordList().size()-1}"
+													var="k">
+													<tr>
+														<td>${ analysisResults.getProblematicWords().getTable()[i][j].getWordList().get(k).toString() }
+														</td>
+														<td>${ analysisResults.getProblematicWords().getTable()[i][j].getWordList().get(k).getWordInToSyllables().toLowerCase() }
+														</td>
+														<td>${ analysisResults.getProblematicWords().getTable()[i][j].getWordList().get(k).getPhonetics() }
+														</td>
+													</tr>
+												</c:forEach>
+											</c:when>
+										</c:choose>
+									</tbody>
 								</table>
-
 							</c:forEach>
 						</c:forEach>
+
 					</div>
 				</div>
 			</c:when>
