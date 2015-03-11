@@ -28,7 +28,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.google.gson.Gson;
@@ -91,27 +93,6 @@ public class AnnotationController {
 			UserProfile pr = retrieveProfile(session,
 					Integer.parseInt(profileId));
 
-			/*String annotatedJson = TextServices.getAnnotatedText(
-					Integer.parseInt(profileId), "EN",
-					session.getAttribute("auth").toString(), text);
-			annotatedPack = (new Gson()).fromJson(annotatedJson,
-					AnnotatedPack.class);
-
-			txModule.setProfile(pr);
-			txModule.initializePresentationModule();
-			txModule.setInputHTMLFile(annotatedPack.getHtml());
-			txModule.setJSonObject(annotatedPack.getWordSet());
-
-			txModule.getPresentationRulesModule().setPresentationRule(0, 0,
-					Rule.HIGHLIGHT_WHOLE_WORD);
-			txModule.getPresentationRulesModule().setTextColor(0, 0, 123);
-			txModule.getPresentationRulesModule().setHighlightingColor(0, 0,
-					211);
-			txModule.getPresentationRulesModule().setActivated(0, 0, true);
-			txModule.annotateText();
-			System.err.println(txModule.getAnnotatedHTMLFile());
-			modelMap.put("annotatedText", txModule.getAnnotatedHTMLFile());*/
-
 		} catch (NumberFormatException e) {
 			e.printStackTrace();
 		} catch (Exception e) {
@@ -121,9 +102,68 @@ public class AnnotationController {
 
 	}
 
-	@RequestMapping(value = "/annotated")
+	@RequestMapping(value = "/annotation/{userid}", method = RequestMethod.GET)
+	public ModelAndView textUserAnnotation(Locale locale, ModelMap modelMap,
+			HttpServletRequest request, HttpSession session,
+			@PathVariable("userid") Integer userid) {
+
+		try {
+			request.setCharacterEncoding("UTF-8");
+		} catch (UnsupportedEncodingException e1) {
+			e1.printStackTrace();
+		}
+
+		// System.err.println(request.getRemoteAddr());
+		// System.err.println(request.getRemoteHost());
+		// System.err.println(request.getRemotePort());
+
+		txModule = new TextAnnotationModule();
+
+		ModelAndView model = new ModelAndView();
+		model.setViewName("annotation");
+
+		try {
+			User[] students = null;
+			UserProfile p = null;
+			User selectedStudent = null;
+			if (userid < 0) {
+				students = HardcodedUsers.defaultStudents();
+				selectedStudent = selectedStudent(students, userid.intValue());
+				p = HardcodedUsers.defaultProfile(selectedStudent.getId());
+			} else {
+				Gson gson = new GsonBuilder()
+						.registerTypeAdapter(java.util.Date.class,
+								new UtilDateDeserializer())
+						.setDateFormat(DateFormat.LONG).create();
+				String json = UserServices
+						.getProfiles(userid, session
+								.getAttribute("auth").toString());
+				students = gson.fromJson(json, User[].class);
+				selectedStudent = selectedStudent(students, userid.intValue());
+
+				json = UserServices.getJsonProfile(userid, session
+						.getAttribute("auth").toString());
+				if (json != null)
+					p = new Gson().fromJson(json, UserProfile.class);
+			}
+			modelMap.put("selectedStudent", selectedStudent);
+			modelMap.put("students", students);
+			modelMap.put("selectedProfile", p);
+		} catch (NumberFormatException e) {
+			e.printStackTrace();
+		} catch (NullPointerException e) {
+			e.printStackTrace();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return model;
+
+	}
+
+	@RequestMapping(value = "/annotated/{userid}")
 	public ModelAndView annotatedText(Locale locale, ModelMap modelMap,
-			HttpServletRequest request, HttpSession session) {
+			HttpServletRequest request, HttpSession session,
+			@PathVariable("userid") Integer userid) {
 		try {
 			request.setCharacterEncoding("UTF-8");
 		} catch (UnsupportedEncodingException e1) {
@@ -153,19 +193,17 @@ public class AnnotationController {
 			}
 			modelMap.put("students", students);
 			String text = request.getParameter("inputText");
-			String profileId = request.getParameter("selectedId");
 			if (text != null) {
 				text = new String(text.getBytes("8859_1"), "UTF-8");
 			} else
 				text = "";
 			
-			modelMap.put("profileId", profileId);
+			modelMap.put("profileId", userid);
 			modelMap.put("text", text);
-			UserProfile pr = retrieveProfile(session,
-					Integer.parseInt(profileId));
+			System.err.println(text);
+			UserProfile pr = retrieveProfile(session, userid);
 
-			String annotatedJson = TextServices.getAnnotatedText(
-					Integer.parseInt(profileId), "EN",
+			String annotatedJson = TextServices.getAnnotatedText(userid, "EN",
 					session.getAttribute("auth").toString(), text);
 			annotatedPack = (new Gson()).fromJson(annotatedJson,
 					AnnotatedPack.class);

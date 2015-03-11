@@ -18,6 +18,13 @@
 	href=${pageContext.request.contextPath}/resources/libs/css/jumbotron.css
 	rel="stylesheet">
 
+<link
+	href=${pageContext.request.contextPath}/resources/project-libs/css/test.css
+	rel="stylesheet">
+
+
+</head>
+
 </head>
 
 <body>
@@ -30,16 +37,127 @@
 			<div class="col-md-8">
 				<br>
 
-				<form name="textForm" action="${pageContext.request.contextPath}/annotated" method="post" target="_blank">
-					<label for="male"><spring:message
-							code="text.analysis.select" text="default text" /></label> <select
-						class="form-control" name="selectedId">
+				<div class="dropdown">
+					<button class="btn btn-default dropdown-toggle" type="button"
+						id="menu1" data-toggle="dropdown">
+						<spring:message code="text.analysis.select" text="default text" />
+						<span class="caret"></span>
+					</button>
+					<ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
 						<c:forEach items="${students}" var="student">
-							<option value="${student.getId()}"
-								${profileId == student.getId() ? "selected": ""}>
-								${student.getUsername()}</option>
+							<li role="presentation"><a role="menuitem" tabindex="-1"
+								href="${pageContext.request.contextPath}/annotation/${student.getId()}">${student.getUsername()}</a></li>
 						</c:forEach>
-					</select> <br>
+					</ul>
+				</div>
+
+				<!--  <table class="table table-striped">
+					<thead>
+						<tr>
+							<th style="width: 100%">Col 1</th>
+							<th></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr> <td style="width: 100%">..</td><td>..</td> </tr>
+						<tr> <td style="width: 100%">..</td><td>..</td> </tr>
+						<tr> <td style="width: 100%">..</td><td>..</td> </tr>
+						<tr> <td style="width: 100%">..</td><td>..</td> </tr>
+					</tbody>
+				</table> -->
+
+				<hr>
+				<c:choose>
+					<c:when test="${selectedStudent == null}">
+						<h2>
+							<spring:message code="profile.selectprofile" text="default text" />
+						</h2>
+					</c:when>
+					<c:otherwise>
+						<h2>${selectedStudent.getUsername()},
+							<spring:message code="profile.difficulties" text="default text" />
+						</h2>
+
+						<div class="panel-group" id="accordion" role="tablist"
+							aria-multiselectable="true">
+
+							<c:forEach begin="0"
+								end="${selectedProfile.getUserProblems().getNumerOfRows()-1}"
+								var="i">
+
+								<div class="panel panel-default">
+									<div class="panel-heading" role="tab"
+										id="heading<c:out value="${i}" />">
+										<h4 class="panel-title">
+											<a data-toggle="collapse" data-parent="#accordion"
+												href="#collapse<c:out value="${i}" />"
+												aria-expanded="${i == 0}"
+												aria-controls="collapse<c:out value="${i}" />">
+												${selectedProfile.getUserProblems().getProblemDefinition(i).getUri()}
+											</a>
+										</h4>
+									</div>
+									<div id="collapse<c:out value="${i}" />"
+										class="panel-collapse collapse" role="tabpanel"
+										aria-labelledby="heading<c:out value="${i}" />">
+										<div class="panel-body">
+
+											<table class="table table-condensed">
+												<c:forEach begin="0"
+													end="${selectedProfile.getUserProblems().getRowLength(i)-1}"
+													var="j">
+
+													<%
+														String str = "success";
+													%>
+													<c:choose>
+														<c:when
+															test="${selectedProfile.getUserProblems().getUserSeverity(i, j)/(selectedProfile.getUserProblems().getProblemDefinition(i).getSeverityType().equals(\"binary\")?1.0:3.0) > 0.9}">
+															<%
+																str = "danger";
+															%>
+														</c:when>
+														<c:when
+															test="${selectedProfile.getUserProblems().getUserSeverity(i, j)/(selectedProfile.getUserProblems().getProblemDefinition(i).getSeverityType().equals(\"binary\")?1.0:3.0) > 0.5}">
+															<%
+																str = "warning";
+															%>
+														</c:when>
+														<c:when
+															test="${selectedProfile.getUserProblems().getUserSeverity(i, j)/(selectedProfile.getUserProblems().getProblemDefinition(i).getSeverityType().equals(\"binary\")?1.0:3.0) > 0.3}">
+															<%
+																str = "info";
+															%>
+														</c:when>
+													</c:choose>
+
+													<tr class="<%=str%>">
+
+														<th scope="row">${j+1}.</th>
+														<td>${selectedProfile.getUserProblems().getProblemDescription(i, j).getHumanReadableDescription()}
+														</td>
+														<td style="min-width: 50px">
+														<a href="test">
+														<span
+															class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
+															</a>
+														</td>
+													</tr>
+												</c:forEach>
+											</table>
+										</div>
+									</div>
+								</div>
+							</c:forEach>
+						</div>
+
+					</c:otherwise>
+				</c:choose>
+
+				<form name="textForm"
+					action="${pageContext.request.contextPath}/annotated/${profileId}" method="post"
+					target="_blank">
+
 					<div class="form-group">
 						<label for="male"><spring:message
 								code="text.analysis.inserttext" text="default text" /></label>
@@ -50,11 +168,19 @@
 					</button>
 				</form>
 
+
+
 			</div>
 
 			<div class="col-md-4">
 				Test
-
+				<div id="tag-info" class="input-append">
+					<input type="text">
+					<button class="btn" type="button">
+						Add <i class="icon-plus"></i>
+					</button>
+				</div>
+				<ul id="tag-cloud"></ul>
 			</div>
 		</div>
 

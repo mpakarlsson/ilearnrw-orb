@@ -1,13 +1,10 @@
-body {
-    background-color: #d0e4fe;
-}
 
-h1 {
-    color: orange;
-    text-align: center;
+table{
+ height:200px; 
 }
-
-p {
-    font-family: "Times New Roman";
-    font-size: 20px;
+tbody{
+  overflow-y: scroll;
+  height: 200px;
+  width: 92%;
+  position: absolute;
 }
