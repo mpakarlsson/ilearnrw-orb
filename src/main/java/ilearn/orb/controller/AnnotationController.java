@@ -136,7 +136,8 @@ public class AnnotationController {
 								new UtilDateDeserializer())
 						.setDateFormat(DateFormat.LONG).create();
 				String json = UserServices
-						.getProfiles(userid, session
+						.getProfiles(Integer.parseInt(session
+								.getAttribute("id").toString()), session
 								.getAttribute("auth").toString());
 				students = gson.fromJson(json, User[].class);
 				selectedStudent = selectedStudent(students, userid.intValue());
@@ -146,6 +147,7 @@ public class AnnotationController {
 				if (json != null)
 					p = new Gson().fromJson(json, UserProfile.class);
 			}
+			modelMap.put("profileId", userid);
 			modelMap.put("selectedStudent", selectedStudent);
 			modelMap.put("students", students);
 			modelMap.put("selectedProfile", p);
@@ -220,7 +222,7 @@ public class AnnotationController {
 					211);
 			txModule.getPresentationRulesModule().setActivated(0, 0, true);
 			txModule.annotateText();
-			System.err.println(txModule.getAnnotatedHTMLFile());
+
 			modelMap.put("annotatedText", txModule.getAnnotatedHTMLFile());
 			
 			

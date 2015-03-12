@@ -1,0 +1,9 @@
+.scr_table{
+ height:200px; 
+}
+.scr_tbody{
+  overflow-y: scroll;
+  height: 200px;
+  width: 92%;
+  position: absolute;
+}

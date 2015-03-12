@@ -19,9 +19,37 @@
 	rel="stylesheet">
 
 <link
-	href=${pageContext.request.contextPath}/resources/project-libs/css/test.css
+	href=${pageContext.request.contextPath}/resources/project-libs/css/scrollable_table.css
 	rel="stylesheet">
 
+
+
+<script>
+	$(document).ready(function() {
+		$('.add').click(function() {
+			var id = $(this).data('details');
+			$(this).css("color", "green");
+			$('table.tr.hiddens').hide();
+			$('#' + id).show();
+		});
+
+		$('.enabled').click(function() {
+			var id = $(this).data('details');
+			$(this).parent().parent().hide();
+			$('#' + id).css("color", "red");
+		});
+	});
+</script>
+
+<style>
+.show {
+	display: block;
+}
+
+.hiddens {
+	display: none;
+}
+</style>
 
 </head>
 
@@ -102,48 +130,49 @@
 										aria-labelledby="heading<c:out value="${i}" />">
 										<div class="panel-body">
 
-											<table class="table table-condensed">
-												<c:forEach begin="0"
-													end="${selectedProfile.getUserProblems().getRowLength(i)-1}"
-													var="j">
+											<table class="table table-condensed scr_table">
+												<tbody class="scr_tbody">
+													<c:forEach begin="0"
+														end="${selectedProfile.getUserProblems().getRowLength(i)-1}"
+														var="j">
 
-													<%
-														String str = "success";
-													%>
-													<c:choose>
-														<c:when
-															test="${selectedProfile.getUserProblems().getUserSeverity(i, j)/(selectedProfile.getUserProblems().getProblemDefinition(i).getSeverityType().equals(\"binary\")?1.0:3.0) > 0.9}">
-															<%
-																str = "danger";
-															%>
-														</c:when>
-														<c:when
-															test="${selectedProfile.getUserProblems().getUserSeverity(i, j)/(selectedProfile.getUserProblems().getProblemDefinition(i).getSeverityType().equals(\"binary\")?1.0:3.0) > 0.5}">
-															<%
-																str = "warning";
-															%>
-														</c:when>
-														<c:when
-															test="${selectedProfile.getUserProblems().getUserSeverity(i, j)/(selectedProfile.getUserProblems().getProblemDefinition(i).getSeverityType().equals(\"binary\")?1.0:3.0) > 0.3}">
-															<%
-																str = "info";
-															%>
-														</c:when>
-													</c:choose>
+														<%
+															String str = "success";
+														%>
+														<c:choose>
+															<c:when
+																test="${selectedProfile.getUserProblems().getUserSeverity(i, j)/(selectedProfile.getUserProblems().getProblemDefinition(i).getSeverityType().equals(\"binary\")?1.0:3.0) > 0.9}">
+																<%
+																	str = "danger";
+																%>
+															</c:when>
+															<c:when
+																test="${selectedProfile.getUserProblems().getUserSeverity(i, j)/(selectedProfile.getUserProblems().getProblemDefinition(i).getSeverityType().equals(\"binary\")?1.0:3.0) > 0.5}">
+																<%
+																	str = "warning";
+																%>
+															</c:when>
+															<c:when
+																test="${selectedProfile.getUserProblems().getUserSeverity(i, j)/(selectedProfile.getUserProblems().getProblemDefinition(i).getSeverityType().equals(\"binary\")?1.0:3.0) > 0.3}">
+																<%
+																	str = "info";
+																%>
+															</c:when>
+														</c:choose>
+														<tr class="<%=str%>">
 
-													<tr class="<%=str%>">
-
-														<th scope="row">${j+1}.</th>
-														<td>${selectedProfile.getUserProblems().getProblemDescription(i, j).getHumanReadableDescription()}
-														</td>
-														<td style="min-width: 50px">
-														<a href="test">
-														<span
-															class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
-															</a>
-														</td>
-													</tr>
-												</c:forEach>
+															<th scope="row">${j+1}.</th>
+															<td>${selectedProfile.getUserProblems().getProblemDescription(i, j).getHumanReadableDescription()}
+															</td>
+															<td style="min-width: 50px"><span id="enabled${i}_${j}"
+																data-details="data${i}_${j}" data-toggle="tooltip"
+																data-placement="top" style="color:red"
+																title="${selectedProfile.getUserProblems().getProblemDescription(i, j).getHumanReadableDescription()}"
+																class="add glyphicon glyphicon-plus-sign"
+																aria-hidden="true" style="cursor: pointer;"> </span></td>
+														</tr>
+													</c:forEach>
+												</tbody>
 											</table>
 										</div>
 									</div>
@@ -155,8 +184,8 @@
 				</c:choose>
 
 				<form name="textForm"
-					action="${pageContext.request.contextPath}/annotated/${profileId}" method="post"
-					target="_blank">
+					action="${pageContext.request.contextPath}/annotated/${profileId}"
+					method="post" target="_blank">
 
 					<div class="form-group">
 						<label for="male"><spring:message
@@ -173,14 +202,79 @@
 			</div>
 
 			<div class="col-md-4">
-				Test
-				<div id="tag-info" class="input-append">
-					<input type="text">
-					<button class="btn" type="button">
-						Add <i class="icon-plus"></i>
-					</button>
-				</div>
-				<ul id="tag-cloud"></ul>
+
+
+
+				<c:choose>
+					<c:when test="${selectedStudent != null}">
+
+						<h2>
+							<spring:message code="text.annotation.list" text="default text" />
+						</h2>
+
+						<div class="panel-group" id="accordion" role="tablist"
+							aria-multiselectable="true">
+							<table class="table table-condensed">
+
+								<c:forEach begin="0"
+									end="${selectedProfile.getUserProblems().getNumerOfRows()-1}"
+									var="i">
+
+									<!-- ${selectedProfile.getUserProblems().getProblemDefinition(i).getUri()} -->
+
+									<c:forEach begin="0"
+										end="${selectedProfile.getUserProblems().getRowLength(i)-1}"
+										var="j">
+
+										<%
+											String str = "success";
+										%>
+										<c:choose>
+											<c:when
+												test="${selectedProfile.getUserProblems().getUserSeverity(i, j)/(selectedProfile.getUserProblems().getProblemDefinition(i).getSeverityType().equals(\"binary\")?1.0:3.0) > 0.9}">
+												<%
+													str = "danger";
+												%>
+											</c:when>
+											<c:when
+												test="${selectedProfile.getUserProblems().getUserSeverity(i, j)/(selectedProfile.getUserProblems().getProblemDefinition(i).getSeverityType().equals(\"binary\")?1.0:3.0) > 0.5}">
+												<%
+													str = "warning";
+												%>
+											</c:when>
+											<c:when
+												test="${selectedProfile.getUserProblems().getUserSeverity(i, j)/(selectedProfile.getUserProblems().getProblemDefinition(i).getSeverityType().equals(\"binary\")?1.0:3.0) > 0.3}">
+												<%
+													str = "info";
+												%>
+											</c:when>
+										</c:choose>
+
+										<tr id="data${i}_${j}" class="<%=str%> hiddens">
+											<td>${selectedProfile.getUserProblems().getProblemDescription(i, j).getHumanReadableDescription()}
+											</td>
+											<td style="min-width: 70px"><a href="test"> <span
+													class="glyphicon glyphicon-text-color" aria-hidden="true"></span>
+											</a> <a href="test"> <span
+													class="glyphicon glyphicon-text-size" aria-hidden="true"></span>
+											</a></td>
+											<td style="min-width: 50px"><span
+												data-details="enabled${i}_${j}" data-toggle="tooltip"
+												data-placement="top"
+												title="${selectedProfile.getUserProblems().getProblemDescription(i, j).getHumanReadableDescription()}"
+												class="glyphicon glyphicon-trash enabled" aria-hidden="true"
+												style="cursor: pointer;"> </span></td>
+										</tr>
+									</c:forEach>
+								</c:forEach>
+							</table>
+						</div>
+
+					</c:when>
+				</c:choose>
+
+
+
 			</div>
 		</div>
 
