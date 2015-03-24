@@ -171,7 +171,21 @@ public class AnnotationController {
 		} catch (UnsupportedEncodingException e1) {
 			e1.printStackTrace();
 		}
-
+		ActiveRule activeRules[] = null;
+		String activatedRules = request.getParameter("activeRules");
+		if (!activatedRules.trim().isEmpty()){
+			String p[] = activatedRules.trim().split(",");
+			activeRules = new ActiveRule[p.length];
+			for (int i=0; i<p.length; i++){
+				activeRules[i] = new ActiveRule();
+				String q[] = p[i].trim().split("_");
+				activeRules[i].category = Integer.parseInt(q[0]);
+				activeRules[i].index = Integer.parseInt(q[1]);
+				activeRules[i].rule = Integer.parseInt(q[2]);
+				activeRules[i].color = Integer.parseInt(q[3].substring(1), 16);
+			}
+		}
+		
 		ModelAndView model = new ModelAndView();
 		model.setViewName("annotated");
 
@@ -202,7 +216,6 @@ public class AnnotationController {
 			
 			modelMap.put("profileId", userid);
 			modelMap.put("text", text);
-			System.err.println(text);
 			UserProfile pr = retrieveProfile(session, userid);
 
 			String annotatedJson = TextServices.getAnnotatedText(userid, "EN",
@@ -215,12 +228,16 @@ public class AnnotationController {
 			txModule.setInputHTMLFile(annotatedPack.getHtml());
 			txModule.setJSonObject(annotatedPack.getWordSet());
 
-			txModule.getPresentationRulesModule().setPresentationRule(0, 0,
-					Rule.HIGHLIGHT_PROBLEMATIC_PARTS);
-			txModule.getPresentationRulesModule().setTextColor(0, 0, 123);
-			txModule.getPresentationRulesModule().setHighlightingColor(0, 0,
-					211);
-			txModule.getPresentationRulesModule().setActivated(0, 0, true);
+			if (activeRules != null && activeRules.length > 0){
+				for (ActiveRule ar : activeRules){
+					txModule.getPresentationRulesModule().setPresentationRule(ar.category, ar.index,
+							ar.rule);
+					txModule.getPresentationRulesModule().setTextColor(ar.category, ar.index, ar.color);
+					txModule.getPresentationRulesModule().setHighlightingColor(ar.category, ar.index,
+							ar.color);
+					txModule.getPresentationRulesModule().setActivated(ar.category, ar.index, true);
+				}
+			}
 			txModule.annotateText();
 
 			modelMap.put("annotatedText", txModule.getAnnotatedHTMLFile());
@@ -235,6 +252,10 @@ public class AnnotationController {
 
 	}
 
+	private class ActiveRule{
+		int category, index, rule, color;
+	}
+	
 	private static UserProfile retrieveProfile(HttpSession session, int userId)
 			throws NumberFormatException, Exception {
 		UserProfile p = null;
