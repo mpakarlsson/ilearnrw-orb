@@ -82,7 +82,11 @@ public class AnalysisController {
 				text = "";
 			modelMap.put("profileId", profileId);
 			modelMap.put("text", text);
-			String json = TextServices.getAnalysisJson(Integer.parseInt(profileId), session.getAttribute("auth").toString(), text);
+			String json;
+			if (Integer.parseInt(profileId) > 0)
+				json = TextServices.getAnalysisJson(Integer.parseInt(profileId), session.getAttribute("auth").toString(), text);
+			else
+				json = TextServices.getAnalysisJson(HardcodedUsers.defaultProfileLanguage(Integer.parseInt(profileId)), text);
 			AnalysisResults analysisResults = null;
 			analysisResults = (new Gson()).fromJson(json, AnalysisResults.class);
 			modelMap.put("analysisResults", analysisResults);
@@ -114,7 +118,11 @@ public class AnalysisController {
 		if (userId < 0) {
 			students = HardcodedUsers.defaultStudents();
 			selectedStudent = selectedStudent(students, userId);
-			p = HardcodedUsers.defaultProfile(selectedStudent.getId());
+			//p = HardcodedUsers.defaultProfile(selectedStudent.getId());
+			String json = UserServices.getDefaultProfile(HardcodedUsers.defaultProfileLanguage(selectedStudent.getId()));
+			if (json != null)
+				p = new Gson().fromJson(json, UserProfile.class);
+			
 		} else {
 			Gson gson = new GsonBuilder()
 					.registerTypeAdapter(java.util.Date.class,

@@ -129,7 +129,10 @@ public class AnnotationController {
 			if (userid < 0) {
 				students = HardcodedUsers.defaultStudents();
 				selectedStudent = selectedStudent(students, userid.intValue());
-				p = HardcodedUsers.defaultProfile(selectedStudent.getId());
+				//p = HardcodedUsers.defaultProfile(selectedStudent.getId());
+				String json = UserServices.getDefaultProfile(HardcodedUsers.defaultProfileLanguage(selectedStudent.getId()));
+				if (json != null)
+					p = new Gson().fromJson(json, UserProfile.class);
 			} else {
 				Gson gson = new GsonBuilder()
 						.registerTypeAdapter(java.util.Date.class,
@@ -218,8 +221,12 @@ public class AnnotationController {
 			modelMap.put("text", text);
 			UserProfile pr = retrieveProfile(session, userid);
 
-			String annotatedJson = TextServices.getAnnotatedText(userid, "EN",
-					session.getAttribute("auth").toString(), text);
+			String annotatedJson;
+			if (userid>0)
+				annotatedJson = TextServices.getAnnotatedText(userid, "EN",
+						session.getAttribute("auth").toString(), text);
+			else
+				annotatedJson = TextServices.getAnnotatedText(HardcodedUsers.defaultProfileLanguage(userid), text);
 			annotatedPack = (new Gson()).fromJson(annotatedJson,
 					AnnotatedPack.class);
 
@@ -264,7 +271,10 @@ public class AnnotationController {
 		if (userId < 0) {
 			students = HardcodedUsers.defaultStudents();
 			selectedStudent = selectedStudent(students, userId);
-			p = HardcodedUsers.defaultProfile(selectedStudent.getId());
+			//p = HardcodedUsers.defaultProfile(selectedStudent.getId());
+			String json = UserServices.getDefaultProfile(HardcodedUsers.defaultProfileLanguage(userId));
+			if (json != null)
+				p = new Gson().fromJson(json, UserProfile.class);
 		} else {
 			Gson gson = new GsonBuilder()
 					.registerTypeAdapter(java.util.Date.class,

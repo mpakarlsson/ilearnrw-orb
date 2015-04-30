@@ -83,19 +83,23 @@ public class ProfilesController {
 		model.setViewName("profiles");
 
 		try {
+			String json;
 			User[] students = null;
 			UserProfile p = null;
 			User selectedStudent = null;
 			if (userid < 0) {
 				students = HardcodedUsers.defaultStudents();
 				selectedStudent = selectedStudent(students, userid.intValue());
-				p = HardcodedUsers.defaultProfile(selectedStudent.getId());
+				//p = HardcodedUsers.defaultProfile(selectedStudent.getId());
+				json = UserServices.getDefaultProfile(HardcodedUsers.defaultProfileLanguage(userid));
+				if (json != null)
+					p = new Gson().fromJson(json, UserProfile.class);
 			} else {
 				Gson gson = new GsonBuilder()
 						.registerTypeAdapter(java.util.Date.class,
 								new UtilDateDeserializer())
 						.setDateFormat(DateFormat.LONG).create();
-				String json = UserServices
+				json = UserServices
 						.getProfiles(Integer.parseInt(session
 								.getAttribute("id").toString()), session
 								.getAttribute("auth").toString());

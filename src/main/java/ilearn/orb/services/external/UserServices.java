@@ -27,6 +27,10 @@ public class UserServices {
 		return Connection.sendGet("application/"+id+"/profiles?token=" + token);
 	}
 
+	public static String getDefaultProfile(String lc) throws Exception{
+		return Connection.sendGet("public/profile?lc="+lc);
+	}
+
 	public static String getProfileUpdates(String username) throws Exception{
 		return Connection.sendGet("logs/"+username+"?applicationId=PROFILE_UPDATER&tags=PROFILE_UPDATE");
 	}

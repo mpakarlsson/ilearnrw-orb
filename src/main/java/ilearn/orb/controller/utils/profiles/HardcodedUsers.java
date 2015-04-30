@@ -14,11 +14,18 @@ public class HardcodedUsers {
 		return students;
 	}
 	
-	public static UserProfile defaultProfile(int id){
+	/*public static UserProfile defaultProfile(int id){
 		if (id == -20)
 			return ProfileGenerator.createProfile(LanguageCode.GR, 3);
 		else 
 			return ProfileGenerator.createProfile(LanguageCode.EN, 3);
+	}*/
+
+	public static String defaultProfileLanguage(int id){
+		if (id == -20)
+			return "GR";
+		else 
+			return "EN";
 	}
 
 }
