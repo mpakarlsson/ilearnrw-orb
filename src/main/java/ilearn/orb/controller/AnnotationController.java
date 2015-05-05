@@ -90,8 +90,8 @@ public class AnnotationController {
 				text = "";
 			modelMap.put("profileId", profileId);
 			modelMap.put("text", text);
-			UserProfile pr = retrieveProfile(session,
-					Integer.parseInt(profileId));
+			//UserProfile pr = retrieveProfile(session,
+			//		Integer.parseInt(profileId));
 
 		} catch (NumberFormatException e) {
 			e.printStackTrace();
@@ -212,9 +212,7 @@ public class AnnotationController {
 			}
 			modelMap.put("students", students);
 			String text = request.getParameter("inputText");
-			if (text != null) {
-				text = new String(text.getBytes("8859_1"), "UTF-8");
-			} else
+			if (text == null)
 				text = "";
 			
 			modelMap.put("profileId", userid);
@@ -247,7 +245,8 @@ public class AnnotationController {
 			}
 			txModule.annotateText();
 
-			modelMap.put("annotatedText", txModule.getAnnotatedHTMLFile());
+			String result = new String(txModule.getAnnotatedHTMLFile());
+			modelMap.put("annotatedText", result);
 			
 			
 		} catch (NumberFormatException e) {
@@ -266,25 +265,15 @@ public class AnnotationController {
 	private static UserProfile retrieveProfile(HttpSession session, int userId)
 			throws NumberFormatException, Exception {
 		UserProfile p = null;
-		User[] students = null;
-		User selectedStudent = null;
 		if (userId < 0) {
-			students = HardcodedUsers.defaultStudents();
-			selectedStudent = selectedStudent(students, userId);
 			//p = HardcodedUsers.defaultProfile(selectedStudent.getId());
 			String json = UserServices.getDefaultProfile(HardcodedUsers.defaultProfileLanguage(userId));
 			if (json != null)
 				p = new Gson().fromJson(json, UserProfile.class);
 		} else {
-			Gson gson = new GsonBuilder()
-					.registerTypeAdapter(java.util.Date.class,
-							new UtilDateDeserializer())
-					.setDateFormat(DateFormat.LONG).create();
 			String json = UserServices.getProfiles(
 					Integer.parseInt(session.getAttribute("id").toString()),
 					session.getAttribute("auth").toString());
-			students = gson.fromJson(json, User[].class);
-			selectedStudent = selectedStudent(students, userId);
 
 			json = UserServices.getJsonProfile(userId,
 					session.getAttribute("auth").toString());

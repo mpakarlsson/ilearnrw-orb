@@ -44,8 +44,6 @@
 			var id = $(this).data('details');
 			$(this).parent().parent().hide();
 			$('#' + id).css("color", "red");
-			alert(t);
-			alert(id);
 		});
 
 	});
@@ -191,7 +189,7 @@
 							value="test">
 					</div>
 					<button type="submit" class="btn btn-default">
-						<spring:message code="text.analysis.calculate" text="default text" />
+						<spring:message code="text.annotation.annotate" text="default text" />
 					</button>
 				</form>
 
@@ -201,7 +199,6 @@
 								var visibles = $(".hiddens:visible");
 								var i;
 								var str = "";
-								alert(str);
 								if (visibles.length > 0) {
 									var e = document.getElementById("select"
 											+ visibles[0].id);
@@ -222,7 +219,6 @@
 											+ "_"
 											+ c.options[c.selectedIndex].value;
 								}
-								alert(str);
 								$("#activeRules").val(str);
 							});
 				</script>
@@ -284,7 +280,7 @@
 													<option value="0">Nothing</option>
 													<option value="1">Paint Problematic Word Parts</option>
 													<option value="2">Paint Problematic Words</option>
-													<option value="3">Hightlight Problematic Word
+													<option value="3" selected="selected">Hightlight Problematic Word
 														Parts</option>
 													<option value="4">Hightlight Problematic Words</option>
 											</select> <select id="color${i}_${j}">
