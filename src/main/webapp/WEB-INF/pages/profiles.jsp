@@ -15,6 +15,10 @@
 <link
 	href=${pageContext.request.contextPath}/resources/libs/css/jumbotron.css
 	rel="stylesheet">
+<script
+	src="${pageContext.request.contextPath}/resources/libs/js/d3.min.js"></script>
+<script
+	src="${pageContext.request.contextPath}/resources/project-libs/js/circledProfile.js"></script>
 
 </head>
 
@@ -25,11 +29,13 @@
 
 	<div class="container">
 		<div class="row">
-			<div class="col-md-3"><br>
+			<div class="col-md-3">
+				<br>
 				<table class="table table-hover">
 					<thead>
 						<tr>
-							<th><spring:message code="profile.listheader" text="default text" /></th>
+							<th><spring:message code="profile.listheader"
+									text="default text" /></th>
 						</tr>
 					</thead>
 					<tbody>
@@ -47,10 +53,23 @@
 			<div class="col-md-9">
 				<c:choose>
 					<c:when test="${selectedStudent == null}">
-						<h2><spring:message code="profile.selectprofile" text="default text" /></h2>
+						<h2>
+							<spring:message code="profile.selectprofile" text="default text" />
+						</h2>
 					</c:when>
 					<c:otherwise>
-						<h2>${selectedStudent.getUsername()}, <spring:message code="profile.difficulties" text="default text" /></h2>
+						<div>
+							<h1>Visualized Profile of user
+								${selectedStudent.getUsername()}</h1>
+							<div id=test></div>
+							<div id=descriptions></div>
+						</div>
+						<script>
+createCircles(${dataForCircles });
+</script>
+						<h2>${selectedStudent.getUsername()},
+							<spring:message code="profile.difficulties" text="default text" />
+						</h2>
 
 						<div class="panel-group" id="accordion" role="tablist"
 							aria-multiselectable="true">
@@ -81,32 +100,42 @@
 													end="${selectedProfile.getUserProblems().getRowLength(i)-1}"
 													var="j">
 
-												<% String str = "success";%>
-												<c:choose>
-													<c:when
-														test="${selectedProfile.getUserProblems().getUserSeverity(i, j)/(selectedProfile.getUserProblems().getProblemDefinition(i).getSeverityType().equals(\"binary\")?1.0:3.0) > 0.9}">
-														<% str = "danger"; %>
-													</c:when>
-													<c:when
-														test="${selectedProfile.getUserProblems().getUserSeverity(i, j)/(selectedProfile.getUserProblems().getProblemDefinition(i).getSeverityType().equals(\"binary\")?1.0:3.0) > 0.5}">
-														<% str = "warning"; %>
-													</c:when>
-													<c:when
-														test="${selectedProfile.getUserProblems().getUserSeverity(i, j)/(selectedProfile.getUserProblems().getProblemDefinition(i).getSeverityType().equals(\"binary\")?1.0:3.0) > 0.3}">
-														<% str = "info"; %>
-													</c:when>
-												</c:choose>
-												
-													<tr class="<%= str %>">
+													<%
+														String str = "success";
+													%>
+													<c:choose>
+														<c:when
+															test="${selectedProfile.getUserProblems().getUserSeverity(i, j)/(selectedProfile.getUserProblems().getProblemDefinition(i).getSeverityType().equals(\"binary\")?1.0:3.0) > 0.9}">
+															<%
+																str = "danger";
+															%>
+														</c:when>
+														<c:when
+															test="${selectedProfile.getUserProblems().getUserSeverity(i, j)/(selectedProfile.getUserProblems().getProblemDefinition(i).getSeverityType().equals(\"binary\")?1.0:3.0) > 0.5}">
+															<%
+																str = "warning";
+															%>
+														</c:when>
+														<c:when
+															test="${selectedProfile.getUserProblems().getUserSeverity(i, j)/(selectedProfile.getUserProblems().getProblemDefinition(i).getSeverityType().equals(\"binary\")?1.0:3.0) > 0.3}">
+															<%
+																str = "info";
+															%>
+														</c:when>
+													</c:choose>
 
-													<th scope="row">${j+1}.</th>
-													<td>${selectedProfile.getUserProblems().getProblemDescription(i, j).getHumanReadableDescription()} </td>
-													<td style="min-width: 90px"> <a href = "www.google.com">[word bank]</a></td>
+													<tr class="<%=str%>">
 
-													<td style="min-width: 50px">${selectedProfile.getUserProblems().getUserSeverity(i, j)}
-														-
-														${selectedProfile.getUserProblems().getProblemDefinition(i).getSeverityType().equals("binary")?1:3}
-													</td>
+														<th scope="row">${j+1}.</th>
+														<td>${selectedProfile.getUserProblems().getProblemDescription(i, j).getHumanReadableDescription()}
+														</td>
+														<td style="min-width: 90px"><a href="www.google.com">[word
+																bank]</a></td>
+
+														<td style="min-width: 50px">${selectedProfile.getUserProblems().getUserSeverity(i, j)}
+															-
+															${selectedProfile.getUserProblems().getProblemDefinition(i).getSeverityType().equals("binary")?1:3}
+														</td>
 													</tr>
 												</c:forEach>
 											</table>
@@ -137,6 +166,8 @@
     <script src="js/bootstrap.min.js"></script> -->
 	<script
 		src="${pageContext.request.contextPath}/resources/libs/js/jquery-2.1.3.min.js"></script>
+	<script
+		src="${pageContext.request.contextPath}/resources/libs/js/d3.min.js"></script>
 	<script
 		src="${pageContext.request.contextPath}/resources/libs/js/bootstrap.min.js"></script>
 	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug

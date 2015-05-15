@@ -14,6 +14,7 @@ import ilearn.orb.controller.utils.profiles.HardcodedUsers;
 import ilearn.orb.entities.User;
 import ilearn.orb.services.external.UserServices;
 import ilearn.orb.services.external.utils.UtilDateDeserializer;
+import ilearnrw.user.problems.ProblemDescription;
 import ilearnrw.user.profile.UserProfile;
 
 import java.text.DateFormat;
@@ -111,9 +112,28 @@ public class ProfilesController {
 				if (json != null)
 					p = new Gson().fromJson(json, UserProfile.class);
 			}
+			String dataForCircles = "";
+			if (p != null){
+				String categories = "[";
+				dataForCircles = "[";
+				ProblemDescription probs[][] = p.getUserProblems().getProblems().getProblems();
+				for (int i=0; i<probs.length; i++){
+					for (int j=0; j<probs[i].length;j++){
+						dataForCircles = dataForCircles+"["+i+", "+p.getUserProblems().getUserSeverity(i, j)+",\""+probs[i][j].getHumanReadableDescription()+"\"]";
+						if (i != probs.length-1 || j!= probs[i].length-1)
+							dataForCircles = dataForCircles + ", ";
+					}
+					categories = categories + "\""+p.getUserProblems().getProblemDefinition(i).getUri()+"\"";
+					if (i != probs.length-1)
+						categories = categories + ", ";
+				}
+				categories = categories+"]";
+				dataForCircles = dataForCircles+"], "+categories+", "+probs.length+", \""+p.getLanguage()+"\"";
+			}
 			modelMap.put("selectedStudent", selectedStudent);
 			modelMap.put("students", students);
 			modelMap.put("selectedProfile", p);
+			modelMap.put("dataForCircles", dataForCircles);
 		} catch (NumberFormatException e) {
 			e.printStackTrace();
 		} catch (NullPointerException e) {
