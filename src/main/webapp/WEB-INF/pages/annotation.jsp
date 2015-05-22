@@ -283,6 +283,7 @@
 													<option value="3" selected="selected">Hightlight Problematic Word
 														Parts</option>
 													<option value="4">Hightlight Problematic Words</option>
+													<option value="5">Hide Problematic Words</option>
 											</select> <select id="color${i}_${j}">
 													<option value="#A0522D" data-color="#A0522D">sienna</option>
 													<option value="#CD5C5C" data-color="#CD5C5C">indianred</option>
@@ -300,7 +301,9 @@
 													<option value="#DC143C" data-color="#DC143C">crimson</option>
 													<option value="#FF8C00" data-color="#FF8C00">darkorange</option>
 													<option value="#C71585" data-color="#C71585">mediumvioletred</option>
-													<option value="#000000" data-color="#000000">black</option>
+													<option value="#000000" data-color="#000000">black</option> 
+													<option value="#FFFFFF" data-color="#FFFFFF">white</option>
+													<option value="#E8E8E8" data-color="#E8E8E8">lightgray</option>
 											</select>
 											</td>
 											<td style="min-width: 50px"><span

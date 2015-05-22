@@ -15,7 +15,8 @@
 		</div>
 		<div id="navbar" class="navbar-collapse collapse">
 			<ul class="nav navbar-nav">
-				<li class="active"><a href="${pageContext.request.contextPath}/profiles?lang=${pageContext.response.locale}"><spring:message code="navbar.profile" text="profiles" /></a></li>
+				<!-- <li class="active"><a href="${pageContext.request.contextPath}/profiles?lang=${pageContext.response.locale}"><spring:message code="navbar.profile" text="profiles" /></a></li> -->
+				<li><a href="${pageContext.request.contextPath}/profiles?lang=${pageContext.response.locale}"><spring:message code="navbar.profile" text="profiles" /></a></li>
 				<li><a href="${pageContext.request.contextPath}/analysis?lang=${pageContext.response.locale}"><spring:message code="navbar.analysis" text="analysis" /></a></li>
 				<li><a href="${pageContext.request.contextPath}/annotation?lang=${pageContext.response.locale}"><spring:message code="navbar.annotation" text="annotation" /></a></li>
 			</ul>

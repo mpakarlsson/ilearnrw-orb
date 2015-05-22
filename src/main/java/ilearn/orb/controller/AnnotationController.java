@@ -228,6 +228,7 @@ public class AnnotationController {
 			annotatedPack = (new Gson()).fromJson(annotatedJson,
 					AnnotatedPack.class);
 
+			txModule = new TextAnnotationModule();
 			txModule.setProfile(pr);
 			txModule.initializePresentationModule();
 			txModule.setInputHTMLFile(annotatedPack.getHtml());
