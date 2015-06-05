@@ -1,5 +1,7 @@
 package ilearn.orb.services.external.utils;
-
+/*
+ * Copyright (c) 2015, iLearnRW. Licensed under Modified BSD Licence. See licence.txt for details.
+ */
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;

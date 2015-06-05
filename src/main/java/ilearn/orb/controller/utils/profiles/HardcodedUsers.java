@@ -1,5 +1,7 @@
 package ilearn.orb.controller.utils.profiles;
-
+/*
+ * Copyright (c) 2015, iLearnRW. Licensed under Modified BSD Licence. See licence.txt for details.
+ */
 import ilearn.orb.entities.User;
 import ilearn.orb.utils.profiles.ProfileGenerator;
 import ilearnrw.user.profile.UserProfile;

@@ -2,7 +2,9 @@
  * 
  */
 package ilearn.orb.controller;
-
+/*
+ * Copyright (c) 2015, iLearnRW. Licensed under Modified BSD Licence. See licence.txt for details.
+ */
 /**
  * @author chris
  * Jan 28, 2015

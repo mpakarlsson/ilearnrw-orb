@@ -1,5 +1,7 @@
 package ilearn.orb.utils.files;
-
+/*
+ * Copyright (c) 2015, iLearnRW. Licensed under Modified BSD Licence. See licence.txt for details.
+ */
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;

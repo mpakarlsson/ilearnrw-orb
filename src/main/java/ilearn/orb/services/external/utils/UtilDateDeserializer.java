@@ -1,5 +1,7 @@
 package ilearn.orb.services.external.utils;
-
+/*
+ * Copyright (c) 2015, iLearnRW. Licensed under Modified BSD Licence. See licence.txt for details.
+ */
 import java.lang.reflect.Type;
 import com.google.gson.JsonDeserializationContext;
 import com.google.gson.JsonDeserializer;
