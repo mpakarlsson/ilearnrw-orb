@@ -19,6 +19,9 @@
 	src="${pageContext.request.contextPath}/resources/libs/js/d3.min.js"></script>
 <script
 	src="${pageContext.request.contextPath}/resources/project-libs/js/circledProfile.js"></script>
+<link
+	href=${pageContext.request.contextPath}/resources/project-libs/css/scrollable_table.css
+	rel="stylesheet">
 
 </head>
 
@@ -59,10 +62,16 @@
 					</c:when>
 					<c:otherwise>
 						<div>
-							<h1>Visualized Profile of user
-								${selectedStudent.getUsername()}</h1>
+							<h2><spring:message code="profile.visualized" text="default text" />
+								${selectedStudent.getUsername()}</h2>
 							<div id=test></div>
 							<div id=descriptions></div>
+							<hr>
+							<ul>
+							<li><spring:message code="profile.visualized.circle" text="default text" /></li>
+							<li><spring:message code="profile.visualized.circlesize" text="default text" /></li>
+							</ul>
+							<hr>
 						</div>
 						<script>
 createCircles(${dataForCircles });
@@ -95,7 +104,8 @@ createCircles(${dataForCircles });
 										aria-labelledby="heading<c:out value="${i}" />">
 										<div class="panel-body">
 
-											<table class="table table-condensed">
+											<table class="table table-condensed scr_table">
+												<tbody class="scr_tbody">
 												<c:forEach begin="0"
 													end="${selectedProfile.getUserProblems().getRowLength(i)-1}"
 													var="j">
@@ -127,10 +137,10 @@ createCircles(${dataForCircles });
 													<tr class="<%=str%>">
 
 														<th scope="row">${j+1}.</th>
-														<td>${selectedProfile.getUserProblems().getProblemDescription(i, j).getHumanReadableDescription()}
+														<td style="width: 100%">${selectedProfile.getUserProblems().getProblemDescription(i, j).getHumanReadableDescription()}
 														</td>
-														<td style="min-width: 90px"><a href="www.google.com">[word
-																bank]</a></td>
+														<!--  <td style="min-width: 90px"><a href="www.google.com">[word
+																bank]</a></td> -->
 
 														<td style="min-width: 50px">${selectedProfile.getUserProblems().getUserSeverity(i, j)}
 															-
@@ -138,6 +148,7 @@ createCircles(${dataForCircles });
 														</td>
 													</tr>
 												</c:forEach>
+												</tbody>
 											</table>
 										</div>
 									</div>

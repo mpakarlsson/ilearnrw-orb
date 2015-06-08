@@ -2,6 +2,7 @@
  * 
  */
 package ilearn.orb.controller;
+
 /*
  * Copyright (c) 2015, iLearnRW. Licensed under Modified BSD Licence. See licence.txt for details.
  */
@@ -18,9 +19,9 @@ import ilearn.orb.services.external.TextServices;
 import ilearn.orb.services.external.UserServices;
 import ilearn.orb.services.external.utils.UtilDateDeserializer;
 import ilearnrw.annotation.AnnotatedPack;
-import ilearnrw.textadaptation.Rule;
 import ilearnrw.textadaptation.TextAnnotationModule;
 import ilearnrw.user.profile.UserProfile;
+import ilearnrw.utils.LanguageCode;
 
 import java.io.UnsupportedEncodingException;
 import java.text.DateFormat;
@@ -56,16 +57,12 @@ public class AnnotationController {
 		} catch (UnsupportedEncodingException e1) {
 			e1.printStackTrace();
 		}
-
 		// System.err.println(request.getRemoteAddr());
 		// System.err.println(request.getRemoteHost());
 		// System.err.println(request.getRemotePort());
-
 		txModule = new TextAnnotationModule();
-
 		ModelAndView model = new ModelAndView();
 		model.setViewName("annotation");
-
 		try {
 			Gson gson = new GsonBuilder()
 					.registerTypeAdapter(java.util.Date.class,
@@ -92,38 +89,31 @@ public class AnnotationController {
 				text = "";
 			modelMap.put("profileId", profileId);
 			modelMap.put("text", text);
-			//UserProfile pr = retrieveProfile(session,
-			//		Integer.parseInt(profileId));
-
+			// UserProfile pr = retrieveProfile(session,
+			// Integer.parseInt(profileId));
 		} catch (NumberFormatException e) {
 			e.printStackTrace();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return model;
-
 	}
 
 	@RequestMapping(value = "/annotation/{userid}", method = RequestMethod.GET)
 	public ModelAndView textUserAnnotation(Locale locale, ModelMap modelMap,
 			HttpServletRequest request, HttpSession session,
 			@PathVariable("userid") Integer userid) {
-
 		try {
 			request.setCharacterEncoding("UTF-8");
 		} catch (UnsupportedEncodingException e1) {
 			e1.printStackTrace();
 		}
-
 		// System.err.println(request.getRemoteAddr());
 		// System.err.println(request.getRemoteHost());
 		// System.err.println(request.getRemotePort());
-
 		txModule = new TextAnnotationModule();
-
 		ModelAndView model = new ModelAndView();
 		model.setViewName("annotation");
-
 		try {
 			User[] students = null;
 			UserProfile p = null;
@@ -131,8 +121,9 @@ public class AnnotationController {
 			if (userid < 0) {
 				students = HardcodedUsers.defaultStudents();
 				selectedStudent = selectedStudent(students, userid.intValue());
-				//p = HardcodedUsers.defaultProfile(selectedStudent.getId());
-				String json = UserServices.getDefaultProfile(HardcodedUsers.defaultProfileLanguage(selectedStudent.getId()));
+				// p = HardcodedUsers.defaultProfile(selectedStudent.getId());
+				String json = UserServices.getDefaultProfile(HardcodedUsers
+						.defaultProfileLanguage(selectedStudent.getId()));
 				if (json != null)
 					p = new Gson().fromJson(json, UserProfile.class);
 			} else {
@@ -146,7 +137,6 @@ public class AnnotationController {
 								.getAttribute("auth").toString());
 				students = gson.fromJson(json, User[].class);
 				selectedStudent = selectedStudent(students, userid.intValue());
-
 				json = UserServices.getJsonProfile(userid, session
 						.getAttribute("auth").toString());
 				if (json != null)
@@ -164,7 +154,6 @@ public class AnnotationController {
 			e.printStackTrace();
 		}
 		return model;
-
 	}
 
 	@RequestMapping(value = "/annotated/{userid}")
@@ -178,10 +167,10 @@ public class AnnotationController {
 		}
 		ActiveRule activeRules[] = null;
 		String activatedRules = request.getParameter("activeRules");
-		if (!activatedRules.trim().isEmpty()){
+		if (!activatedRules.trim().isEmpty()) {
 			String p[] = activatedRules.trim().split(",");
 			activeRules = new ActiveRule[p.length];
-			for (int i=0; i<p.length; i++){
+			for (int i = 0; i < p.length; i++) {
 				activeRules[i] = new ActiveRule();
 				String q[] = p[i].trim().split("_");
 				activeRules[i].category = Integer.parseInt(q[0]);
@@ -190,12 +179,9 @@ public class AnnotationController {
 				activeRules[i].color = Integer.parseInt(q[3].substring(1), 16);
 			}
 		}
-		
 		ModelAndView model = new ModelAndView();
 		model.setViewName("annotated");
-
-		try {			
-
+		try {
 			Gson gson = new GsonBuilder()
 					.registerTypeAdapter(java.util.Date.class,
 							new UtilDateDeserializer())
@@ -216,68 +202,63 @@ public class AnnotationController {
 			String text = request.getParameter("inputText");
 			if (text == null)
 				text = "";
-			
 			modelMap.put("profileId", userid);
 			modelMap.put("text", text);
 			UserProfile pr = retrieveProfile(session, userid);
-
 			String annotatedJson;
-			if (userid>0)
-				annotatedJson = TextServices.getAnnotatedText(userid, "EN",
+			if (userid > 0)
+				annotatedJson = TextServices.getAnnotatedText(userid, pr.getLanguage()==LanguageCode.EN?"EN":"GR",
 						session.getAttribute("auth").toString(), text);
 			else
-				annotatedJson = TextServices.getAnnotatedText(HardcodedUsers.defaultProfileLanguage(userid), text);
+				annotatedJson = TextServices.getAnnotatedText(
+						HardcodedUsers.defaultProfileLanguage(userid), text);
 			annotatedPack = (new Gson()).fromJson(annotatedJson,
 					AnnotatedPack.class);
-
 			txModule = new TextAnnotationModule();
 			txModule.setProfile(pr);
 			txModule.initializePresentationModule();
 			txModule.setInputHTMLFile(annotatedPack.getHtml());
 			txModule.setJSonObject(annotatedPack.getWordSet());
-
-			if (activeRules != null && activeRules.length > 0){
-				for (ActiveRule ar : activeRules){
-					txModule.getPresentationRulesModule().setPresentationRule(ar.category, ar.index,
-							ar.rule);
-					txModule.getPresentationRulesModule().setTextColor(ar.category, ar.index, ar.color);
-					txModule.getPresentationRulesModule().setHighlightingColor(ar.category, ar.index,
-							ar.color);
-					txModule.getPresentationRulesModule().setActivated(ar.category, ar.index, true);
+			if (activeRules != null && activeRules.length > 0) {
+				for (ActiveRule ar : activeRules) {
+					txModule.getPresentationRulesModule().setPresentationRule(
+							ar.category, ar.index, ar.rule);
+					txModule.getPresentationRulesModule().setTextColor(
+							ar.category, ar.index, ar.color);
+					txModule.getPresentationRulesModule().setHighlightingColor(
+							ar.category, ar.index, ar.color);
+					txModule.getPresentationRulesModule().setActivated(
+							ar.category, ar.index, true);
 				}
 			}
 			txModule.annotateText();
-
 			String result = new String(txModule.getAnnotatedHTMLFile());
 			modelMap.put("annotatedText", result);
-			
-			
 		} catch (NumberFormatException e) {
 			e.printStackTrace();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return model;
-
 	}
 
-	private class ActiveRule{
+	private class ActiveRule {
 		int category, index, rule, color;
 	}
-	
+
 	private static UserProfile retrieveProfile(HttpSession session, int userId)
 			throws NumberFormatException, Exception {
 		UserProfile p = null;
 		if (userId < 0) {
-			//p = HardcodedUsers.defaultProfile(selectedStudent.getId());
-			String json = UserServices.getDefaultProfile(HardcodedUsers.defaultProfileLanguage(userId));
+			// p = HardcodedUsers.defaultProfile(selectedStudent.getId());
+			String json = UserServices.getDefaultProfile(HardcodedUsers
+					.defaultProfileLanguage(userId));
 			if (json != null)
 				p = new Gson().fromJson(json, UserProfile.class);
 		} else {
 			String json = UserServices.getProfiles(
 					Integer.parseInt(session.getAttribute("id").toString()),
 					session.getAttribute("auth").toString());
-
 			json = UserServices.getJsonProfile(userId,
 					session.getAttribute("auth").toString());
 			if (json != null)
@@ -295,5 +276,4 @@ public class AnnotationController {
 			}
 		return selectedStudent;
 	}
-
 }

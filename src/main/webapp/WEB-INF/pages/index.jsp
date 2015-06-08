@@ -47,7 +47,7 @@
 				<li><spring:message code="quickinfo.analyze.stats" text="default text" /></li>
 				<li><spring:message code="quickinfo.analyze.heatmap" text="default text" /></li>          
           </ul>
-          <p><a class="btn btn-default" href="#" role="button"><spring:message code="general.viewdetails" text="default text" /> &raquo;</a></p>
+          <!--  <p><a class="btn btn-default" href="#" role="button"><spring:message code="general.viewdetails" text="default text" /> &raquo;</a></p> -->
         </div>
         <div class="col-md-4">
           <h2><spring:message code="quickinfo.checkword.title" text="default text" /></h2>
