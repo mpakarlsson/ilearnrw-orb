@@ -1,0 +1,840 @@
+{
+  "groups": [
+    {
+      "groupTitle": "Φωνήματα: Σύμφωνα", 
+      "subgroups": [
+        {
+          "items": [
+            {
+              "category": 0, 
+              "defaultColourHEX": "3CB371", 
+              "index": 0
+            }, 
+            {
+              "category": 0, 
+              "defaultColourHEX": "3CB371", 
+              "index": 1
+            }, 
+            {
+              "category": 0, 
+              "defaultColourHEX": "3CB371", 
+              "index": 2
+            }
+          ], 
+          "subgroupTitle": "κλειστά"
+        }, 
+        {
+          "items": [
+            {
+              "category": 0, 
+              "defaultColourHEX": "ADD8E6", 
+              "index": 3
+            }, 
+            {
+              "category": 0, 
+              "defaultColourHEX": "ADD8E6", 
+              "index": 4
+            }
+          ], 
+          "subgroupTitle": "τριβόμενα"
+        }, 
+        {
+          "items": [
+            {
+              "category": 0, 
+              "defaultColourHEX": "C0C0C0", 
+              "index": 5
+            }, 
+            {
+              "category": 0, 
+              "defaultColourHEX": "C0C0C0", 
+              "index": 6
+            }
+          ], 
+          "subgroupTitle": "συριστικά, υγρά"
+        }, 
+        {
+          "items": [
+            {
+              "category": 0, 
+              "defaultColourHEX": "CCFB5D", 
+              "index": 7
+            }, 
+            {
+              "category": 0, 
+              "defaultColourHEX": "CCFB5D", 
+              "index": 8
+            }, 
+            {
+              "category": 0, 
+              "defaultColourHEX": "CCFB5D", 
+              "index": 9
+            }
+          ], 
+          "subgroupTitle": "συμπλέγματα: κλειστά-συριστικά"
+        }, 
+        {
+          "items": [
+            {
+              "category": 0, 
+              "defaultColourHEX": "FFF380", 
+              "index": 10
+            }, 
+            {
+              "category": 0, 
+              "defaultColourHEX": "FFF380", 
+              "index": 11
+            }
+          ], 
+          "subgroupTitle": "συμπλέγματα: τριβόμενα-υγρά"
+        }
+      ]
+    }, 
+    {
+      "groupTitle": "Φωνήματα: Φωνήεντα", 
+      "subgroups": [
+        {
+          "items": [
+            {
+              "category": 1, 
+              "defaultColourHEX": "ADD8E6", 
+              "index": 0
+            }, 
+            {
+              "category": 1, 
+              "defaultColourHEX": "ADD8E6", 
+              "index": 1
+            }
+          ], 
+          "subgroupTitle": "διαλυτικά, άτονα"
+        }, 
+        {
+          "items": [
+            {
+              "category": 1, 
+              "defaultColourHEX": "C0C0C0", 
+              "index": 2
+            }, 
+            {
+              "category": 1, 
+              "defaultColourHEX": "C0C0C0", 
+              "index": 3
+            }, 
+            {
+              "category": 1, 
+              "defaultColourHEX": "C0C0C0", 
+              "index": 4
+            }
+          ], 
+          "subgroupTitle": "διαλυτικά, τονισμένα"
+        }
+      ]
+    }, 
+    {
+      "groupTitle": "Οπτική Ομοίτητα", 
+      "subgroups": [
+        {
+          "items": [
+            {
+              "category": 2, 
+              "defaultColourHEX": "C0C0C0", 
+              "index": 0
+            }, 
+            {
+              "category": 2, 
+              "defaultColourHEX": "C0C0C0", 
+              "index": 1
+            }, 
+            {
+              "category": 2, 
+              "defaultColourHEX": "C0C0C0", 
+              "index": 2
+            }, 
+            {
+              "category": 2, 
+              "defaultColourHEX": "C0C0C0", 
+              "index": 3
+            }, 
+            {
+              "category": 2, 
+              "defaultColourHEX": "C0C0C0", 
+              "index": 4
+            }, 
+            {
+              "category": 2, 
+              "defaultColourHEX": "C0C0C0", 
+              "index": 5
+            }, 
+            {
+              "category": 2, 
+              "defaultColourHEX": "C0C0C0", 
+              "index": 6
+            }, 
+            {
+              "category": 2, 
+              "defaultColourHEX": "C0C0C0", 
+              "index": 7
+            }
+          ], 
+          "subgroupTitle": "γράμματα και αριθμοί που μοιάζουν μεταξύ τους"
+        }
+      ]
+    }, 
+    {
+      "groupTitle": "Αντιστοίχιση Γραφήματος-Φωνήματος", 
+      "subgroups": [
+        {
+          "items": [
+            {
+              "category": 3, 
+              "defaultColourHEX": "CCFB5D", 
+              "index": 0
+            }, 
+            {
+              "category": 3, 
+              "defaultColourHEX": "CCFB5D", 
+              "index": 1
+            }, 
+            {
+              "category": 3, 
+              "defaultColourHEX": "CCFB5D", 
+              "index": 2
+            }, 
+            {
+              "category": 3, 
+              "defaultColourHEX": "CCFB5D", 
+              "index": 3
+            }, 
+            {
+              "category": 3, 
+              "defaultColourHEX": "CCFB5D", 
+              "index": 4
+            }
+          ], 
+          "subgroupTitle": "2-σύλλαβες, σε αρχική θέση"
+        }, 
+        {
+          "items": [
+            {
+              "category": 3, 
+              "defaultColourHEX": "FFF380", 
+              "index": 5
+            }, 
+            {
+              "category": 3, 
+              "defaultColourHEX": "FFF380", 
+              "index": 6
+            }, 
+            {
+              "category": 3, 
+              "defaultColourHEX": "FFF380", 
+              "index": 7
+            }, 
+            {
+              "category": 3, 
+              "defaultColourHEX": "FFF380", 
+              "index": 8
+            }, 
+            {
+              "category": 3, 
+              "defaultColourHEX": "FFF380", 
+              "index": 9
+            }
+          ], 
+          "subgroupTitle": "3-σύλλαβες, σε αρχική θέση"
+        }, 
+        {
+          "items": [
+            {
+              "category": 3, 
+              "defaultColourHEX": "B8860B", 
+              "index": 10
+            }, 
+            {
+              "category": 3, 
+              "defaultColourHEX": "B8860B", 
+              "index": 11
+            }, 
+            {
+              "category": 3, 
+              "defaultColourHEX": "B8860B", 
+              "index": 12
+            }, 
+            {
+              "category": 3, 
+              "defaultColourHEX": "B8860B", 
+              "index": 13
+            }, 
+            {
+              "category": 3, 
+              "defaultColourHEX": "B8860B", 
+              "index": 14
+            }
+          ], 
+          "subgroupTitle": "2-σύλλαβες, σε μέση θέση"
+        }, 
+        {
+          "items": [
+            {
+              "category": 3, 
+              "defaultColourHEX": "800000", 
+              "index": 15
+            }, 
+            {
+              "category": 3, 
+              "defaultColourHEX": "800000", 
+              "index": 16
+            }, 
+            {
+              "category": 3, 
+              "defaultColourHEX": "800000", 
+              "index": 17
+            }, 
+            {
+              "category": 3, 
+              "defaultColourHEX": "800000", 
+              "index": 18
+            }, 
+            {
+              "category": 3, 
+              "defaultColourHEX": "800000", 
+              "index": 19
+            }
+          ], 
+          "subgroupTitle": "3-σύλλαβες, σε μέση θέση"
+        }, 
+        {
+          "items": [
+            {
+              "category": 3, 
+              "defaultColourHEX": "FFD700", 
+              "index": 20
+            }, 
+            {
+              "category": 3, 
+              "defaultColourHEX": "FFD700", 
+              "index": 21
+            }
+          ], 
+          "subgroupTitle": "το -υ- ως σύμφωνο"
+        }, 
+        {
+          "items": [
+            {
+              "category": 3, 
+              "defaultColourHEX": "3CB371", 
+              "index": 22
+            }, 
+            {
+              "category": 3, 
+              "defaultColourHEX": "3CB371", 
+              "index": 23
+            }, 
+            {
+              "category": 3, 
+              "defaultColourHEX": "3CB371", 
+              "index": 24
+            }, 
+            {
+              "category": 3, 
+              "defaultColourHEX": "3CB371", 
+              "index": 25
+            }
+          ], 
+          "subgroupTitle": "το -υ- ως φωνήεν με διαλυτικά"
+        }
+      ]
+    }, 
+    {
+      "groupTitle": "Συλλαβισμός", 
+      "subgroups": [
+        {
+          "items": [
+            {
+              "category": 4, 
+              "defaultColourHEX": "FFF380", 
+              "index": 0
+            }, 
+            {
+              "category": 4, 
+              "defaultColourHEX": "FFF380", 
+              "index": 1
+            }, 
+            {
+              "category": 4, 
+              "defaultColourHEX": "FFF380", 
+              "index": 2
+            }, 
+            {
+              "category": 4, 
+              "defaultColourHEX": "FFF380", 
+              "index": 3
+            }
+          ], 
+          "subgroupTitle": "ανοιχτές συλλαβές"
+        }, 
+        {
+          "items": [
+            {
+              "category": 4, 
+              "defaultColourHEX": "B8860B", 
+              "index": 4
+            }, 
+            {
+              "category": 4, 
+              "defaultColourHEX": "B8860B", 
+              "index": 5
+            }
+          ], 
+          "subgroupTitle": "κλειστές συλλαβές"
+        }, 
+        {
+          "items": [
+            {
+              "category": 4, 
+              "defaultColourHEX": "800000", 
+              "index": 6
+            }, 
+            {
+              "category": 4, 
+              "defaultColourHEX": "800000", 
+              "index": 7
+            }, 
+            {
+              "category": 4, 
+              "defaultColourHEX": "800000", 
+              "index": 8
+            }
+          ], 
+          "subgroupTitle": "συμπλέγματα 2 συμφώνων"
+        }, 
+        {
+          "items": [
+            {
+              "category": 4, 
+              "defaultColourHEX": "FFD700", 
+              "index": 9
+            }, 
+            {
+              "category": 4, 
+              "defaultColourHEX": "FFD700", 
+              "index": 10
+            }
+          ], 
+          "subgroupTitle": "συμπλέγματα 3 συμφώνων"
+        }, 
+        {
+          "items": [
+            {
+              "category": 4, 
+              "defaultColourHEX": "3CB371", 
+              "index": 11
+            }, 
+            {
+              "category": 4, 
+              "defaultColourHEX": "3CB371", 
+              "index": 12
+            }
+          ], 
+          "subgroupTitle": "φωνήεντα"
+        }, 
+        {
+          "items": [
+            {
+              "category": 4, 
+              "defaultColourHEX": "ADD8E6", 
+              "index": 13
+            }, 
+            {
+              "category": 4, 
+              "defaultColourHEX": "ADD8E6", 
+              "index": 14
+            }, 
+            {
+              "category": 4, 
+              "defaultColourHEX": "ADD8E6", 
+              "index": 15
+            }
+          ], 
+          "subgroupTitle": "φωνήεντα-δίφθογγοι"
+        }, 
+        {
+          "items": [
+            {
+              "category": 4, 
+              "defaultColourHEX": "C0C0C0", 
+              "index": 16
+            }, 
+            {
+              "category": 4, 
+              "defaultColourHEX": "C0C0C0", 
+              "index": 17
+            }
+          ], 
+          "subgroupTitle": "φωνήεντα με διαλυτικά"
+        }, 
+        {
+          "items": [
+            {
+              "category": 4, 
+              "defaultColourHEX": "CCFB5D", 
+              "index": 18
+            }, 
+            {
+              "category": 4, 
+              "defaultColourHEX": "CCFB5D", 
+              "index": 19
+            }
+          ], 
+          "subgroupTitle": "το -υ- ως σύμφωνο"
+        }
+      ]
+    }, 
+    {
+      "groupTitle": "Προθήματα", 
+      "subgroups": [
+        {
+          "items": [
+            {
+              "category": 5, 
+              "defaultColourHEX": "B8860B", 
+              "index": 0
+            }, 
+            {
+              "category": 5, 
+              "defaultColourHEX": "B8860B", 
+              "index": 1
+            }
+          ], 
+          "subgroupTitle": "ουσιαστικά & επίθετα"
+        }, 
+        {
+          "items": [
+            {
+              "category": 5, 
+              "defaultColourHEX": "800000", 
+              "index": 2
+            }, 
+            {
+              "category": 5, 
+              "defaultColourHEX": "800000", 
+              "index": 3
+            }
+          ], 
+          "subgroupTitle": "ρήματα, λεξικά προθήματα"
+        }, 
+        {
+          "items": [
+            {
+              "category": 5, 
+              "defaultColourHEX": "FFD700", 
+              "index": 4
+            }, 
+            {
+              "category": 5, 
+              "defaultColourHEX": "FFD700", 
+              "index": 5
+            }
+          ], 
+          "subgroupTitle": "ρήματα & λεξικά προθήματα ρημάτων"
+        }
+      ]
+    }, 
+    {
+      "groupTitle": "Παραγωγικά Επιθήματα", 
+      "subgroups": [
+        {
+          "items": [
+            {
+              "category": 6, 
+              "defaultColourHEX": "800000", 
+              "index": 0
+            }, 
+            {
+              "category": 6, 
+              "defaultColourHEX": "800000", 
+              "index": 1
+            }
+          ], 
+          "subgroupTitle": "ουσιαστικά-επίθετα"
+        }, 
+        {
+          "items": [
+            {
+              "category": 6, 
+              "defaultColourHEX": "FFD700", 
+              "index": 2
+            }, 
+            {
+              "category": 6, 
+              "defaultColourHEX": "FFD700", 
+              "index": 3
+            }
+          ], 
+          "subgroupTitle": "ουσιαστικά: επαγγέλματα/τοποθεσίες"
+        }, 
+        {
+          "items": [
+            {
+              "category": 6, 
+              "defaultColourHEX": "3CB371", 
+              "index": 4
+            }, 
+            {
+              "category": 6, 
+              "defaultColourHEX": "3CB371", 
+              "index": 5
+            }, 
+            {
+              "category": 6, 
+              "defaultColourHEX": "3CB371", 
+              "index": 6
+            }, 
+            {
+              "category": 6, 
+              "defaultColourHEX": "3CB371", 
+              "index": 7
+            }
+          ], 
+          "subgroupTitle": "ουσιαστικά: όργανα/χρώματα/δραστηριότητες"
+        }, 
+        {
+          "items": [
+            {
+              "category": 6, 
+              "defaultColourHEX": "ADD8E6", 
+              "index": 8
+            }, 
+            {
+              "category": 6, 
+              "defaultColourHEX": "ADD8E6", 
+              "index": 9
+            }
+          ], 
+          "subgroupTitle": "επίθετα"
+        }, 
+        {
+          "items": [
+            {
+              "category": 6, 
+              "defaultColourHEX": "C0C0C0", 
+              "index": 10
+            }, 
+            {
+              "category": 6, 
+              "defaultColourHEX": "C0C0C0", 
+              "index": 11
+            }, 
+            {
+              "category": 6, 
+              "defaultColourHEX": "C0C0C0", 
+              "index": 12
+            }
+          ], 
+          "subgroupTitle": "ρήματα"
+        }
+      ]
+    }, 
+    {
+      "groupTitle": "Κλιτικά/Γραμματικά Επιθήματα", 
+      "subgroups": [
+        {
+          "items": [
+            {
+              "category": 7, 
+              "defaultColourHEX": "FFD700", 
+              "index": 0
+            }, 
+            {
+              "category": 7, 
+              "defaultColourHEX": "FFD700", 
+              "index": 1
+            }, 
+            {
+              "category": 7, 
+              "defaultColourHEX": "FFD700", 
+              "index": 2
+            }
+          ], 
+          "subgroupTitle": "ουσιαστικά: συχνές κλιτικές τάξεις"
+        }, 
+        {
+          "items": [
+            {
+              "category": 7, 
+              "defaultColourHEX": "3CB371", 
+              "index": 3
+            }, 
+            {
+              "category": 7, 
+              "defaultColourHEX": "3CB371", 
+              "index": 4
+            }, 
+            {
+              "category": 7, 
+              "defaultColourHEX": "3CB371", 
+              "index": 5
+            }
+          ], 
+          "subgroupTitle": "ουσιαστικά: λιγότερο συχνές κλιτικές τάξεις"
+        }, 
+        {
+          "items": [
+            {
+              "category": 7, 
+              "defaultColourHEX": "ADD8E6", 
+              "index": 6
+            }, 
+            {
+              "category": 7, 
+              "defaultColourHEX": "ADD8E6", 
+              "index": 7
+            }, 
+            {
+              "category": 7, 
+              "defaultColourHEX": "ADD8E6", 
+              "index": 8
+            }, 
+            {
+              "category": 7, 
+              "defaultColourHEX": "ADD8E6", 
+              "index": 9
+            }
+          ], 
+          "subgroupTitle": "επίθετα: συχνές κλιτικές τάξεις"
+        }, 
+        {
+          "items": [
+            {
+              "category": 7, 
+              "defaultColourHEX": "C0C0C0", 
+              "index": 10
+            }, 
+            {
+              "category": 7, 
+              "defaultColourHEX": "C0C0C0", 
+              "index": 11
+            }
+          ], 
+          "subgroupTitle": "επίθετα: συχνές κλιτικές τάξεις"
+        }, 
+        {
+          "items": [
+            {
+              "category": 7, 
+              "defaultColourHEX": "CCFB5D", 
+              "index": 12
+            }, 
+            {
+              "category": 7, 
+              "defaultColourHEX": "CCFB5D", 
+              "index": 13
+            }
+          ], 
+          "subgroupTitle": "ρήματα: ενεργητικά"
+        }, 
+        {
+          "items": [
+            {
+              "category": 7, 
+              "defaultColourHEX": "FFF380", 
+              "index": 14
+            }, 
+            {
+              "category": 7, 
+              "defaultColourHEX": "FFF380", 
+              "index": 15
+            }
+          ], 
+          "subgroupTitle": "ρήματα: παθητικά"
+        }, 
+        {
+          "items": [
+            {
+              "category": 7, 
+              "defaultColourHEX": "B8860B", 
+              "index": 16
+            }
+          ], 
+          "subgroupTitle": "επιθετικές μετοχές"
+        }
+      ]
+    }, 
+    {
+      "groupTitle": "Γραμματικές/Λειτουργικές Λέξεις", 
+      "subgroups": [
+        {
+          "items": [
+            {
+              "category": 8, 
+              "defaultColourHEX": "3CB371", 
+              "index": 0
+            }, 
+            {
+              "category": 8, 
+              "defaultColourHEX": "3CB371", 
+              "index": 1
+            }
+          ], 
+          "subgroupTitle": "αόριστο άρθρο"
+        }, 
+        {
+          "items": [
+            {
+              "category": 8, 
+              "defaultColourHEX": "ADD8E6", 
+              "index": 2
+            }, 
+            {
+              "category": 8, 
+              "defaultColourHEX": "ADD8E6", 
+              "index": 3
+            }, 
+            {
+              "category": 8, 
+              "defaultColourHEX": "ADD8E6", 
+              "index": 4
+            }, 
+            {
+              "category": 8, 
+              "defaultColourHEX": "ADD8E6", 
+              "index": 5
+            }
+          ], 
+          "subgroupTitle": "οριστικό άρθρο"
+        }, 
+        {
+          "items": [
+            {
+              "category": 8, 
+              "defaultColourHEX": "C0C0C0", 
+              "index": 6
+            }, 
+            {
+              "category": 8, 
+              "defaultColourHEX": "C0C0C0", 
+              "index": 7
+            }
+          ], 
+          "subgroupTitle": "προθέσεις α': σε, με"
+        }, 
+        {
+          "items": [
+            {
+              "category": 8, 
+              "defaultColourHEX": "CCFB5D", 
+              "index": 8
+            }, 
+            {
+              "category": 8, 
+              "defaultColourHEX": "CCFB5D", 
+              "index": 9
+            }
+          ], 
+          "subgroupTitle": "προθέσεις β': για, από"
+        }
+      ]
+    }
+  ]
+}
+

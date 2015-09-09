@@ -28,14 +28,14 @@
 		class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
 		<property name="basename" value="classpath:strings" />
 	</bean>
-
+	
 	<bean id="localeResolver"
 		class="org.springframework.web.servlet.i18n.CookieLocaleResolver">
 		<property name="defaultLocale" value="en"></property>
 		<property name="cookieName" value="myAppLocaleCookie"></property>
 		<property name="cookieMaxAge" value="3600"></property>
 	</bean>
-
+      
 	<mvc:interceptors>
 		<bean id="localeChangeInterceptor"
 			class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">

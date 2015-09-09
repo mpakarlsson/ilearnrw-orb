@@ -12,7 +12,7 @@ public class HardcodedUsers {
 	public static User[] defaultStudents() {
 		User[] students = new User[2];
 		students[0] = new User(LanguageCode.EN, "english_profile", -10);
-		students[1] = new User(LanguageCode.EN, "greek_profile", -20);
+		students[1] = new User(LanguageCode.GR, "greek_profile", -20);
 		return students;
 	}
 	

@@ -106,7 +106,7 @@ public class AnalysisController {
 		} catch (NumberFormatException e) {
 			e.printStackTrace();
 		} catch (Exception e) {
-			e.printStackTrace();
+			//e.printStackTrace();
 		}
 		return model;
 

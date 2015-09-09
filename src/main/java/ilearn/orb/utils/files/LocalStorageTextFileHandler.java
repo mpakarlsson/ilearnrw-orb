@@ -3,12 +3,14 @@ package ilearn.orb.utils.files;
  * Copyright (c) 2015, iLearnRW. Licensed under Modified BSD Licence. See licence.txt for details.
  */
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.PrintWriter;
+import java.util.Scanner;
 
 public class LocalStorageTextFileHandler {
 	public static InputStream loadInputStream(String resource) {
@@ -53,6 +55,22 @@ public class LocalStorageTextFileHandler {
 			} catch (IOException ex) {
 				ex.printStackTrace();
 			}
+		}
+		return null;
+	}
+
+	public static String loadFileAsString(File file) {
+		try {
+			Scanner scanner = new Scanner(file);
+			StringBuilder result = new StringBuilder("");
+			while (scanner.hasNextLine()) {
+				String line = scanner.nextLine();
+				result.append(line).append("\n");
+			}
+			scanner.close();
+			return result.toString();
+		} catch (IOException e) {
+			e.printStackTrace();
 		}
 		return null;
 	}

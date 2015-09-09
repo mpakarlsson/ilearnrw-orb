@@ -18,11 +18,14 @@ import ilearn.orb.entities.User;
 import ilearn.orb.services.external.TextServices;
 import ilearn.orb.services.external.UserServices;
 import ilearn.orb.services.external.utils.UtilDateDeserializer;
+import ilearn.orb.utils.files.LocalStorageTextFileHandler;
+import ilearn.orb.utils.presents.Groups;
 import ilearnrw.annotation.AnnotatedPack;
 import ilearnrw.textadaptation.TextAnnotationModule;
 import ilearnrw.user.profile.UserProfile;
 import ilearnrw.utils.LanguageCode;
 
+import java.io.File;
 import java.io.UnsupportedEncodingException;
 import java.text.DateFormat;
 import java.util.Locale;
@@ -43,7 +46,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 @Controller
-public class AnnotationController {
+public class AnnotationController {	
+	
 	private TextAnnotationModule txModule;
 	private AnnotatedPack annotatedPack;
 	private static final Logger logger = LoggerFactory
@@ -52,6 +56,7 @@ public class AnnotationController {
 	@RequestMapping(value = "/annotation")
 	public ModelAndView textAnnotation(Locale locale, ModelMap modelMap,
 			HttpServletRequest request, HttpSession session) {
+		
 		try {
 			request.setCharacterEncoding("UTF-8");
 		} catch (UnsupportedEncodingException e1) {
@@ -92,7 +97,7 @@ public class AnnotationController {
 			// UserProfile pr = retrieveProfile(session,
 			// Integer.parseInt(profileId));
 		} catch (NumberFormatException e) {
-			e.printStackTrace();
+			//e.printStackTrace();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -146,17 +151,22 @@ public class AnnotationController {
 			modelMap.put("selectedStudent", selectedStudent);
 			modelMap.put("students", students);
 			modelMap.put("selectedProfile", p);
+
+			ClassLoader classLoader = getClass().getClassLoader();
+			File file = new File(classLoader.getResource("data/"+(selectedStudent.getLanguage().toLowerCase())+".json").getFile());
+			String js = LocalStorageTextFileHandler.loadFileAsString(file);
+			Groups grps = new Gson().fromJson(js, Groups.class);
+			modelMap.put("presents", grps);
+			
 		} catch (NumberFormatException e) {
-			e.printStackTrace();
-		} catch (NullPointerException e) {
-			e.printStackTrace();
+			//e.printStackTrace();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return model;
 	}
 
-	@RequestMapping(value = "/annotated/{userid}")
+	@RequestMapping(value = "/annotated/{userid}", method = RequestMethod.POST)
 	public ModelAndView annotatedText(Locale locale, ModelMap modelMap,
 			HttpServletRequest request, HttpSession session,
 			@PathVariable("userid") Integer userid) {
@@ -200,8 +210,12 @@ public class AnnotationController {
 			}
 			modelMap.put("students", students);
 			String text = request.getParameter("inputText");
-			if (text == null)
+			if (text != null) {
+				text = new String(text.getBytes("8859_1"), "UTF-8");
+			} else
 				text = "";
+				
+			
 			modelMap.put("profileId", userid);
 			modelMap.put("text", text);
 			UserProfile pr = retrieveProfile(session, userid);
@@ -235,7 +249,7 @@ public class AnnotationController {
 			String result = new String(txModule.getAnnotatedHTMLFile());
 			modelMap.put("annotatedText", result);
 		} catch (NumberFormatException e) {
-			e.printStackTrace();
+			//e.printStackTrace();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
