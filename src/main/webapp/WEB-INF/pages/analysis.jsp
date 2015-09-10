@@ -243,7 +243,7 @@
 							<li><spring:message code="text.analysis.legend.click" text="default"/></li>
 						</ul>
 					</div>
-					<div class="col-md-4">
+					<div class="col-md-4" style="height:810px;overflow:auto;">
 
 
 						<c:forEach begin="0"

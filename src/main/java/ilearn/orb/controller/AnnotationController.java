@@ -113,9 +113,6 @@ public class AnnotationController {
 		} catch (UnsupportedEncodingException e1) {
 			e1.printStackTrace();
 		}
-		// System.err.println(request.getRemoteAddr());
-		// System.err.println(request.getRemoteHost());
-		// System.err.println(request.getRemotePort());
 		txModule = new TextAnnotationModule();
 		ModelAndView model = new ModelAndView();
 		model.setViewName("annotation");

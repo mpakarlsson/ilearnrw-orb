@@ -32,7 +32,8 @@
 
 	<div class="container">
 		<div class="row">
-			<div class="col-md-3">
+			<br>
+			<div class="col-md-3" style="height: 850px; overflow: auto;">
 				<br>
 				<table class="table table-hover">
 					<thead>
@@ -62,14 +63,17 @@
 					</c:when>
 					<c:otherwise>
 						<div>
-							<h2><spring:message code="profile.visualized" text="default text" />
-								${selectedStudent.getUsername()}</h2>
+							<h2>
+								<spring:message code="profile.visualized" text="default text" />
+								${selectedStudent.getUsername()}
+							</h2>
 							<div id=test></div>
 							<div id=descriptions></div>
-							<hr>
 							<ul>
-							<li><spring:message code="profile.visualized.circle" text="default text" /></li>
-							<li><spring:message code="profile.visualized.circlesize" text="default text" /></li>
+								<li><spring:message code="profile.visualized.circle"
+										text="default text" /></li>
+								<li><spring:message code="profile.visualized.circlesize"
+										text="default text" /></li>
 							</ul>
 							<hr>
 						</div>
@@ -106,48 +110,41 @@ createCircles(${dataForCircles });
 
 											<table class="table table-condensed scr_table">
 												<tbody class="scr_tbody">
-												<c:forEach begin="0"
-													end="${selectedProfile.getUserProblems().getRowLength(i)-1}"
-													var="j">
+													<c:forEach begin="0"
+														end="${selectedProfile.getUserProblems().getRowLength(i)-1}"
+														var="j">
 
-													<%
-														String str = "success";
-													%>
-													<c:choose>
-														<c:when
-															test="${selectedProfile.getUserProblems().getUserSeverity(i, j)/(selectedProfile.getUserProblems().getProblemDefinition(i).getSeverityType().equals(\"binary\")?1.0:3.0) > 0.9}">
-															<%
-																str = "danger";
-															%>
-														</c:when>
-														<c:when
-															test="${selectedProfile.getUserProblems().getUserSeverity(i, j)/(selectedProfile.getUserProblems().getProblemDefinition(i).getSeverityType().equals(\"binary\")?1.0:3.0) > 0.5}">
-															<%
-																str = "warning";
-															%>
-														</c:when>
-														<c:when
-															test="${selectedProfile.getUserProblems().getUserSeverity(i, j)/(selectedProfile.getUserProblems().getProblemDefinition(i).getSeverityType().equals(\"binary\")?1.0:3.0) > 0.3}">
-															<%
-																str = "info";
-															%>
-														</c:when>
-													</c:choose>
+														<%
+															String str = "success";
+														%>
+														<c:choose>
+															<c:when
+																test="${selectedProfile.getUserProblems().getUserSeverity(i, j)/(selectedProfile.getUserProblems().getProblemDefinition(i).getSeverityType().equals(\"binary\")?1.0:3.0) > 0.9}">
+																<%
+																	str = "danger";
+																%>
+															</c:when>
+															<c:when
+																test="${selectedProfile.getUserProblems().getUserSeverity(i, j)/(selectedProfile.getUserProblems().getProblemDefinition(i).getSeverityType().equals(\"binary\")?1.0:3.0) > 0.5}">
+																<%
+																	str = "warning";
+																%>
+															</c:when>
+															<c:when
+																test="${selectedProfile.getUserProblems().getUserSeverity(i, j)/(selectedProfile.getUserProblems().getProblemDefinition(i).getSeverityType().equals(\"binary\")?1.0:3.0) > 0.3}">
+																<%
+																	str = "info";
+																%>
+															</c:when>
+														</c:choose>
 
-													<tr class="<%=str%>">
+														<tr class="<%=str%>">
 
-														<th scope="row">${j+1}.</th>
-														<td style="width: 100%">${selectedProfile.getUserProblems().getProblemDescription(i, j).getHumanReadableDescription()}
-														</td>
-														<!--  <td style="min-width: 90px"><a href="www.google.com">[word
-																bank]</a></td> -->
-
-														<td style="min-width: 50px">${selectedProfile.getUserProblems().getUserSeverity(i, j)}
-															-
-															${selectedProfile.getUserProblems().getProblemDefinition(i).getSeverityType().equals("binary")?1:3}
-														</td>
-													</tr>
-												</c:forEach>
+															<th scope="row">${j+1}.</th>
+															<td style="width: 100%">${selectedProfile.getUserProblems().getProblemDescription(i, j).getHumanReadableDescription()}
+															</td>
+														</tr>
+													</c:forEach>
 												</tbody>
 											</table>
 										</div>
@@ -156,6 +153,10 @@ createCircles(${dataForCircles });
 							</c:forEach>
 						</div>
 
+						<ul>
+							<li><spring:message code="text.analysis.legend.colours"
+									text="default" /></li>
+						</ul>
 					</c:otherwise>
 				</c:choose>
 			</div>

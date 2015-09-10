@@ -317,15 +317,13 @@
 										tabindex="-1" href="#">${group.getGroupTitle()}</a>
 										<ul class="dropdown-menu">
 											<c:forEach items="${group.getSubgroups()}" var="subgroup" varStatus="j">
-												<!--  <li><a href="#" onclick="clearRules();enableRules(${i.index}, ${j.index});">${subgroup.getSubgroupTitle()} </a>
-												</li> -->
 												<li id="group${i.index}${j.index}"><a href="#">${subgroup.getSubgroupTitle()} </a>  </li>
 												<script>
 												$('#group${i.index}${j.index}').click(function(){
 												    obj = ${presents.getItemsJson(i.index, j.index)};
 												    clearRules();
 													for (k = 0; k < obj.length; k++) {
-														var id = obj[k].category+'_' + obj[k].index;//x[i].getAttribute("data-details");
+														var id = obj[k].category+'_' + obj[k].index;
 														$('#enabled' + id).css("color", "green");
 														$('#' + id).show();
 														$('#color' + id).colorselector("setColor", "#"+obj[k].defaultColourHEX);
@@ -364,9 +362,6 @@
 								<c:forEach begin="0"
 									end="${selectedProfile.getUserProblems().getNumerOfRows()-1}"
 									var="i">
-
-									<!-- ${selectedProfile.getUserProblems().getProblemDefinition(i).getUri()} -->
-
 									<c:forEach begin="0"
 										end="${selectedProfile.getUserProblems().getRowLength(i)-1}"
 										var="j">
@@ -447,8 +442,6 @@
 					</c:when>
 				</c:choose>
 
-
-
 			</div>
 		</div>
 
@@ -458,7 +451,6 @@
 		</footer>
 	</div>
 	<!-- /container -->
-
 
 	<!-- Bootstrap core JavaScript
     ================================================== -->

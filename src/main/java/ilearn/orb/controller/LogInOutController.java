@@ -12,30 +12,23 @@ package ilearn.orb.controller;
  * webtests / webtests / WelcomeController.java
  */
 
+import ilearn.orb.services.external.TokenPack;
 import ilearn.orb.services.external.UserServices;
 
-import java.util.Locale;
-import java.util.Map;
-
-import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.i18n.SessionLocaleResolver;
 
-import com.google.gson.JsonObject;
+import com.google.gson.Gson;
 import com.google.gson.JsonParser;
 
 @Controller
@@ -59,8 +52,8 @@ public class LogInOutController {
 
 		try {
 			String jsonTokens = UserServices.getToken(username, pass);
-			JSONObject jsonObj = new JSONObject(jsonTokens);
-			String token = jsonObj.getString("auth");
+			TokenPack tp = new Gson().fromJson(jsonTokens, TokenPack.class);
+			String token = tp.getAuth();
 			session.setAttribute("username", username);
 			session.setAttribute("auth", token);
 

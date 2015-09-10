@@ -104,9 +104,9 @@ public class AnalysisController {
 			modelMap.put("maxWordsMatched", maxWordsMatched);
 			
 		} catch (NumberFormatException e) {
-			e.printStackTrace();
-		} catch (Exception e) {
 			//e.printStackTrace();
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 		return model;
 

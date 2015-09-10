@@ -7,14 +7,6 @@ package ilearn.orb.services.external;
  */
 import ilearn.orb.services.external.utils.Connection;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.InputStream;
-
-import org.apache.commons.io.IOUtils;
-import org.json.JSONObject;
-
-
 /**
  * @author chris
  * Nov 15, 2014
@@ -37,17 +29,5 @@ public class TextServices {
 	
 	public static String getAnnotatedText(String lc, String text) throws Exception{
 		return Connection.sendPost("public/text/annotate?lc=" + lc, text);
-	}
-
-	public static String loadToken() throws Exception {
-		String token = "";
-		File f = new File("tokens.json");
-		if (f.exists()) {
-			InputStream is = new FileInputStream("tokens.json");
-			String jsonTxt = IOUtils.toString(is);
-			JSONObject json = new JSONObject(jsonTxt);
-			token = json.getString("auth");
-		}
-		return token;
 	}
 }
